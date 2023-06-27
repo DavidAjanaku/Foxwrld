@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  @media only screen and (max-width: 889px) {
+    .hide {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 890px) {
+    .hide {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: 889px) {
+    .mobile {
+     display: block;
+    }
+  }
+ 
+}
