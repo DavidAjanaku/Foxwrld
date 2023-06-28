@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className="  hide mx-8">
+    <div className="  hide mx-8 absolute left-0 right-0 z-30">
       <div className="flex justify-between items-center relative w-full h-20 max-w-[256rem] ">
         <a href="#" className="relative items-center text-black text-3xl">
           Foxwrld
@@ -47,7 +48,7 @@ export default function Header() {
             </button>
           </li>
           <li>
-            <a href="/Reg" className="px-4 sm:px-8 py-6">
+            <Link to="/signup" className="px-4 sm:px-8 py-6">
               <svg
                 role="img"
                 width="24"
@@ -65,7 +66,7 @@ export default function Header() {
                   d="M11.97 13.23a8.3597 8.3597 0 0 1 8.32 7H3.7a8.5996 8.5996 0 0 1 8.28-7m0-1.5a10.1597 10.1597 0 0 0-10 10h19.99c-.23-5.17-4-10-10-10h.01Z"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#" className="px-4 sm:px-8 py-6">

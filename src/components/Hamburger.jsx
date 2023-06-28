@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { chevronForwardOutline, chevronBackOutline } from "ionicons/icons";
 
 export default function Hamburger() {
   let [open, setOpen] = useState(false);
@@ -24,9 +23,9 @@ export default function Hamburger() {
   };
 
   return (
-    <div className="mobile hidden h-16">
+    <div className="mobile hidden h-16 fixed z-30">
       <div className="shadow- w-full fixed top-0 left-0">
-        <div className="flex items-center justify-between bg-white py-4 :px-10 px-7">
+        <div className="flex items-center justify-between  py-4 :px-10 px-7 ">
           <div className="text-3xl cursor-pointer flex items-center text-gray-800">
             <span className="text-3xl text-indigo-600 mr-1 pt-2">
               <ion-icon name="logo-ionic"></ion-icon>
@@ -107,7 +106,7 @@ export default function Hamburger() {
           </div>
           <nav>
             <ul
-              className={`:flex :items-center :pb-0 pb-12 absolute :static bg-white :z-auto z-[-1] right-0 w-full :w-auto :pr-0 pr-9 transition-all duration-500 ease-in ${
+              className={`:flex :items-center :pb-0 pb-12 absolute :static bg-white :z-auto z-[-1] right-0 w-full top-0  pt-28 :w-auto :pr-0 pr-9 transition-all duration-500 ease-in ${
                 open ? " " : "right-[-100%]"
               }`}
             >
