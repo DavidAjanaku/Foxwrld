@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from './views/Homepage';
 import ErrorPage from './views/ErrorPage';
 import SignUp from './views/SignUp';
+// import "ionicons/dist/css/ionicons.min.css";
+
 
 function App() {
   const [count, setCount] = useState(0)
