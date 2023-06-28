@@ -47,7 +47,7 @@ export default function Header() {
             </button>
           </li>
           <li>
-            <a href="#" className="px-4 sm:px-8 py-6">
+            <a href="/Reg" className="px-4 sm:px-8 py-6">
               <svg
                 role="img"
                 width="24"
