@@ -47,11 +47,11 @@ class MainPageSlider extends React.Component {
     const currentVideo = videos[currentSlide];
 
     return (
-      <div className="main-page-slider w-full absolute left-0  right-0 top-0">
-        <video className='w-full' src={currentVideo.videoUrl} autoPlay loop  muted>
+      <div className="main-page-slider w-full relative left-0  right-0 top-0">
+        <video className='w-full relative' src={currentVideo.videoUrl} autoPlay loop  muted>
           Your browser does not support the video tag.
         </video>
-        <div className="text-overlay">
+        <div className="text-overlay absolute bottom-0 left-[40%] text-center">
           <h2>{currentVideo.title}</h2>
           <p>{currentVideo.text}</p>
         </div>
