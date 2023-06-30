@@ -1,6 +1,7 @@
 import React from 'react';
-import video1 from '../assets/videos/video1.mp4'
-import video2 from '../assets/videos/video2.mp4'
+import video1 from '../assets/videos/video1.mp4';
+import video2 from '../assets/videos/video2.mp4';
+import { Link } from 'react-router-dom';
 
 class MainPageSlider extends React.Component {
   constructor(props) {
@@ -8,14 +9,18 @@ class MainPageSlider extends React.Component {
     this.state = {
       videos: [
         {
-          title: 'Men Video',
+          title: 'The Holiday Edit',
           videoUrl: video1,
-          text: 'This is a video for men.',
+          text: 'Men',
+          text1: 'Women',
         },
         {
-          title: 'Women Video',
+          title: 'The Holiday Edit',
           videoUrl: video2,
-          text: 'This is a video for women.',
+          text: 'Men',
+
+          text1: 'Women',
+
         },
       ],
       currentSlide: 0,
@@ -47,14 +52,19 @@ class MainPageSlider extends React.Component {
     const currentVideo = videos[currentSlide];
 
     return (
-      <div className="main-page-slider w-full relative left-0  right-0 top-0">
-        <video className='w-full relative' src={currentVideo.videoUrl} autoPlay loop  muted>
+      <div className="main-page-slider w-full relative left-0 right-0 top-0">
+        <video className='w-full relative' src={currentVideo.videoUrl} autoPlay loop muted>
           Your browser does not support the video tag.
         </video>
-        <div className="text-overlay absolute bottom-0 left-[40%] text-center">
-          <h2>{currentVideo.title}</h2>
-          <p>{currentVideo.text}</p>
+        <div className="text-overlay absolute bottom-12 left-0 right-0 text-center text-white">
+          <h2 className='text-white'>{currentVideo.title}</h2>
+         <div className='flex justify-center '>
+         <Link to="/" className='underline underline-offset-8'><p className='text-white m-2'>{currentVideo.text}</p></Link>
+          <Link to="/" className='underline underline-offset-8'><p className='text-white m-2'>{currentVideo.text1}</p></Link>
+         </div>
+
         </div>
+        <div className="gradient-overlay absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
       </div>
     );
   }
