@@ -8,6 +8,7 @@ import InPageNav from "../components/InPageNav";
 import bag from '../assets/gucci.jpeg';
 import sandals from '../assets/sandals.jpeg';
 import coats from '../assets/coats.jpeg';
+import Footer from "../components/Footer";
 
 export default function Homepage() {
   return (
@@ -27,7 +28,7 @@ export default function Homepage() {
           <TextualPictureFrame img={coats} title={"Coats & Jackets"} />
         </div>
       </div>
-      <MainPage />
+      <Footer/>
     </div>
   );
 }
