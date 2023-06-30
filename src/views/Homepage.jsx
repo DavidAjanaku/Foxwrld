@@ -4,6 +4,10 @@ import Hamburger from "../components/Hamburger";
 import MainPage from "../components/MainPage";
 import MainPageSlider from "../components/MainPageSlider";
 import TextualPictureFrame from "../components/TextualPictureFrame";
+import InPageNav from "../components/InPageNav";
+import bag from '../assets/gucci.jpeg';
+import sandals from '../assets/sandals.jpeg';
+import coats from '../assets/coats.jpeg';
 
 export default function Homepage() {
   return (
@@ -12,14 +16,16 @@ export default function Homepage() {
         <Header />
         <Hamburger />
         <MainPageSlider />
-        <TextualPictureFrame/>
-
+        <TextualPictureFrame img={bag} title={"Bag"} />
+        <InPageNav/>
       </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut molestias ab
-        reprehenderit excepturi ullam illo dolorum asperiores repellat, id
-        ratione, aspernatur sunt quam voluptatem, commodi ducimus iusto. Illo,
-        velit aspernatur!
+      <div className="flex justify-center flex-wrap">
+        <div className="flex-grow ">
+          <TextualPictureFrame img={sandals} title={"Sandals & Slides"} />
+        </div>
+        <div className="flex-grow ">
+          <TextualPictureFrame img={coats} title={"Coats & Jackets"} />
+        </div>
       </div>
       <MainPage />
     </div>
