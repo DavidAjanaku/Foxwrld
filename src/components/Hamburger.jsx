@@ -119,40 +119,38 @@ function Hamburger() {
                             <path d="M19 12H6M12 5l-7 7 7 7" />
                           </svg>
                         </label>
-                        <span>Item 2.3 </span>
+                        <span>Womens Gift </span>
                       </div>
                       <ul>
                         <li>
-                          <label>Item 2.3.1</label>
+                          <label>All Gifts</label>
                         </li>
                         <li>
-                          <label>Item 2.3.2</label>
+                          <label>Bags New In</label>
                         </li>
                         <li>
-                          <label>Item 2.3.3</label>
+                          <label>Personalized Gifts</label>
                         </li>
                         <li>
-                          <label>Item 2.3.4</label>
+                          <label>Home & Pet Accessories</label>
                         </li>
-                        <li>
-                          <label>Item 2.3.5</label>
-                        </li>
+                      
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <label className="a-label__chevron" htmlFor="item-2-3">
+                    <label className="a-label__chevron" htmlFor="item-2-9">
                       Men's Gifts
                     </label>
                     <input
                       type="checkbox"
-                      id="item-2-3"
+                      id="item-2-9"
                       name="item-2"
                       className="m-menu__checkbox"
                     />
                     <div className="m-menu">
                       <div className="m-menu__header mt-12">
-                        <label className="m-menu__toggle" htmlFor="item-2-3">
+                        <label className="m-menu__toggle" htmlFor="item-2-9">
                           <svg
                             width="35"
                             height="35"
@@ -166,40 +164,35 @@ function Hamburger() {
                             <path d="M19 12H6M12 5l-7 7 7 7" />
                           </svg>
                         </label>
-                        <span>Item 2.3 </span>
+                        <span>Mens Gift </span>
                       </div>
                       <ul>
                         <li>
-                          <label>Item 2.3.1</label>
+                          <label>All Gifts</label>
                         </li>
                         <li>
-                          <label>Item 2.3.2</label>
+                          <label>Personalized Gifts</label>
                         </li>
                         <li>
-                          <label>Item 2.3.3</label>
+                          <label>Home & Pet Accessories</label>
                         </li>
-                        <li>
-                          <label>Item 2.3.4</label>
-                        </li>
-                        <li>
-                          <label>Item 2.3.5</label>
-                        </li>
+                    
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <label className="a-label__chevron" htmlFor="item-2-3">
+                    <label className="a-label__chevron" htmlFor="item-2-8">
                       Children's Gifts
                     </label>
                     <input
                       type="checkbox"
-                      id="item-2-3"
+                      id="item-2-8"
                       name="item-2"
                       className="m-menu__checkbox"
                     />
                     <div className="m-menu">
                       <div className="m-menu__header mt-12">
-                        <label className="m-menu__toggle" htmlFor="item-2-3">
+                        <label className="m-menu__toggle" htmlFor="item-2-8">
                           <svg
                             width="35"
                             height="35"
@@ -213,24 +206,16 @@ function Hamburger() {
                             <path d="M19 12H6M12 5l-7 7 7 7" />
                           </svg>
                         </label>
-                        <span>Item 2.3 </span>
+                        <span>Childrens Gift </span>
                       </div>
                       <ul>
                         <li>
-                          <label>Item 2.3.1</label>
+                          <label>All Gifts</label>
                         </li>
                         <li>
-                          <label>Item 2.3.2</label>
+                          <label>Baby Gifts</label>
                         </li>
-                        <li>
-                          <label>Item 2.3.3</label>
-                        </li>
-                        <li>
-                          <label>Item 2.3.4</label>
-                        </li>
-                        <li>
-                          <label>Item 2.3.5</label>
-                        </li>
+                       
                       </ul>
                     </div>
                   </li>
