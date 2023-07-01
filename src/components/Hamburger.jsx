@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import HamburgerSlidesPictures from "./HamburgerSlidesPictures";
 import womenBag from '../assets/womenBag.jpg';
@@ -11,6 +11,13 @@ import tshirt from '../assets/tshirt.jpg';
 
 
 function Hamburger() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Function to toggle the menuOpen state
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
   return (
     <div className="wrapper mobile hidden">
       <nav>
@@ -24,7 +31,7 @@ function Hamburger() {
           name="menu"
           className="m-menu__checkbox"
         />
-        <label className="m-menu__toggle" htmlFor="menu">
+        <label className="m-menu__toggle" onClick={toggleMenu} htmlFor="menu">
           <svg
             width="35"
             height="35"
@@ -42,7 +49,7 @@ function Hamburger() {
         </label>
         <label className="m-menu__overlay" htmlFor="menu"></label>
 
-        <div className="m-menu">
+        <div  className={`m-menu ${menuOpen ? 'open' : ''}`}>
           <div className="m-menu__header">
             {/* <span>MENU</span> */}
             <label className="m-menu__toggle" htmlFor="menu">
@@ -61,7 +68,7 @@ function Hamburger() {
               </svg>
             </label>
           </div>
-          <ul>
+          <ul >
             {/* Gifts Category */}
             <li>
               <label className="a-label__chevron" htmlFor="item-2">
@@ -213,7 +220,7 @@ function Hamburger() {
                           <label>All Gifts</label>
                         </li>
                         <li>
-                          <label>Baby Gif ts</label>
+                          <label>Baby Gifts</label>
                         </li>
                        
                       </ul>
