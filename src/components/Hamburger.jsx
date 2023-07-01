@@ -213,7 +213,7 @@ function Hamburger() {
                           <label>All Gifts</label>
                         </li>
                         <li>
-                          <label>Baby Gifts</label>
+                          <label>Baby Gif ts</label>
                         </li>
                        
                       </ul>
