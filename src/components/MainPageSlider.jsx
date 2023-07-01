@@ -1,5 +1,4 @@
 import React from 'react';
-import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 import video1 from '../assets/videos/video1.mp4';
@@ -46,13 +45,16 @@ class MainPageSlider extends React.Component {
   }
 
   changeSlide() {
-    this.setState((prevState) => ({
-      currentSlide: (prevState.currentSlide + 1) % prevState.videos.length,
-    }), () => {
-      this.slideShowTimeout = setTimeout(() => {
-        this.changeSlide();
-      }, 5000);
-    });
+    this.setState(
+      (prevState) => ({
+        currentSlide: (prevState.currentSlide + 1) % prevState.videos.length,
+      }),
+      () => {
+        this.slideShowTimeout = setTimeout(() => {
+          this.changeSlide();
+        }, 5000);
+      }
+    );
   }
 
   render() {
@@ -61,11 +63,9 @@ class MainPageSlider extends React.Component {
 
     return (
       <div className="main-page-slider w-full relative left-0 right-0 top-0">
-        <LazyLoad>
-          <video className="w-full relative" src={currentVideo.videoUrl} autoPlay loop muted controls={false} >
-            Your browser does not support the video tag.
-          </video>
-        </LazyLoad>
+        <video className="w-full relative" src={currentVideo.videoUrl} autoPlay loop muted controls={false}>
+          Your browser does not support the video tag.
+        </video>
         <div className="text-overlay absolute bottom-12 left-0 right-0 text-center text-white">
           <h2 className="text-white">{currentVideo.title}</h2>
           <div className="flex justify-center">
