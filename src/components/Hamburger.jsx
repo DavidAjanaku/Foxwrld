@@ -1268,7 +1268,7 @@ function Hamburger() {
           </div>
 
 <div className='mx-4'>
-  <h1 className='font-serif'>Account</h1>
+  <h1 className=''>Account</h1>
 <div>
 <Link>Sign in/Register</Link>
 </div>
