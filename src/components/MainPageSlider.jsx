@@ -36,15 +36,23 @@ class MainPageSlider extends React.Component {
   }
 
   startSlideShow() {
-    this.slideShowInterval = setInterval(() => {
-      this.setState((prevState) => ({
-        currentSlide: (prevState.currentSlide + 1) % prevState.videos.length,
-      }));
+    this.slideShowTimeout = setTimeout(() => {
+      this.changeSlide();
     }, 5000); // Change slide every 5 seconds (adjust as needed)
   }
 
   stopSlideShow() {
-    clearInterval(this.slideShowInterval);
+    clearTimeout(this.slideShowTimeout);
+  }
+
+  changeSlide() {
+    this.setState((prevState) => ({
+      currentSlide: (prevState.currentSlide + 1) % prevState.videos.length,
+    }), () => {
+      this.slideShowTimeout = setTimeout(() => {
+        this.changeSlide();
+      }, 5000);
+    });
   }
 
   render() {
