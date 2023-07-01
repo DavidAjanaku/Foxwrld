@@ -179,7 +179,9 @@ nav .m-menu__checkbox:checked ~ .m-menu__overlay {
   display: block;
 }
 
-
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
 
 .no-scroll {
   -ms-overflow-style: none;  /* IE and Edge */
