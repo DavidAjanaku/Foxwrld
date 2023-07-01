@@ -187,3 +187,11 @@ nav .m-menu__checkbox:checked ~ .m-menu__overlay {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+@media (max-width: 800px) {
+  .main-page-slider video {
+    height: 500px; /* Adjust the height as needed */
+    object-fit: cover;
+  }
+}
+
