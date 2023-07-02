@@ -195,3 +195,7 @@ nav .m-menu__checkbox:checked ~ .m-menu__overlay {
   }
 }
 
+.video-element::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
