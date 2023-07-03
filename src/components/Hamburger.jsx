@@ -21,7 +21,7 @@ function Hamburger() {
   return (
     <div className="wrapper mobile hidden">
       <nav>
-        <Link to="/" className=" font-extrabold  text-3xl">
+        <Link to="/" className="z-30 font-extrabold  text-3xl">
           <p className="font-mono">Foxwrld</p>
         </Link>
 
@@ -31,7 +31,7 @@ function Hamburger() {
           name="menu"
           className="m-menu__checkbox"
         />
-        <label className="m-menu__toggle z-40" onClick={toggleMenu} htmlFor="menu">
+        <label className="m-menu__toggle z-10" onClick={toggleMenu} htmlFor="menu">
           <svg
             width="35"
             height="35"
