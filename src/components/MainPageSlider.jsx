@@ -1,24 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import video1 from '../assets/videos/video1.mp4';
 import video2 from '../assets/videos/video2.mp4';
 
-const MainPageSlider = () => {
+const VideoSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const videos = [
-    {
-      title: 'The Holiday Edit',
-      videoUrl: video1,
-      text: 'Men',
-      text1: 'Women',
-    },
-    {
-      title: 'The Holiday Edit',
-      videoUrl: video2,
-      text: 'Men',
-      text1: 'Women',
-    },
+   video1,
+   video2,
   ];
 
   useEffect(() => {
@@ -40,34 +29,19 @@ const MainPageSlider = () => {
   const currentVideo = videos[currentSlide];
 
   return (
-    <div className="main-page-slider w-full relative left-0 right-0 top-0">
+    <div className="video-slider">
       <video
-       className="w-full relative video-element z-9999"
-       src={currentVideo.videoUrl}
-       autoPlay
-       loop
-       muted
-
-       onEnded={handleVideoEnded}
-       style={{ outline: 'none' }}
-       controlsList="nodownload"
+        className="video-element"
+        src={currentVideo}
+        autoPlay
+        loop
+        muted
+        onEnded={handleVideoEnded}
       >
         Your browser does not support the video tag.
       </video>
-      <div className="text-overlay absolute bottom-12 left-0 right-0 text-center text-white">
-        <h2 className="text-white">{currentVideo.title}</h2>
-        <div className="flex justify-center">
-          <Link to="/" className="underline underline-offset-8">
-            <p className="text-white m-2">{currentVideo.text}</p>
-          </Link>
-          <Link to="/" className="underline underline-offset-8">
-            <p className="text-white m-2">{currentVideo.text1}</p>
-          </Link>
-        </div>
-      </div>
-      <div className="gradient-overlay absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
     </div>
   );
 };
 
-export default MainPageSlider;
+export default VideoSlider;
