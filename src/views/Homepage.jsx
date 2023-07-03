@@ -16,7 +16,7 @@ export default function Homepage() {
       <div>
         <Header />
         <Hamburger />
-        {/* <MainPageSlider /> */}
+        <MainPageSlider />
         <TextualPictureFrame img={bag} title={"Bag"} />
         <InPageNav/>
       </div>
