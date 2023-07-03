@@ -31,7 +31,7 @@ function Hamburger() {
           name="menu"
           className="m-menu__checkbox"
         />
-        <label className="m-menu__toggle" onClick={toggleMenu} htmlFor="menu">
+        <label className="m-menu__toggle z-40" onClick={toggleMenu} htmlFor="menu">
           <svg
             width="35"
             height="35"
