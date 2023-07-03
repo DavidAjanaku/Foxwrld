@@ -200,7 +200,6 @@ nav .m-menu__checkbox:checked ~ .m-menu__overlay {
   -webkit-appearance: none;
 }
 
-.hide-controls::-webkit-media-controls-start-playback-button,
-.hide-controls::-webkit-media-controls-play-button {
-  display: none;
-}
+video::-webkit-media-controls-panel {
+  display: none !important;
+  opacity: 1 !important;}
