@@ -42,7 +42,7 @@ const MainPageSlider = () => {
   return (
     <div className="main-page-slider w-full relative left-0 right-0 top-0">
       <video
-       className="w-full relative video-element"
+        className="w-full relative video-element hide-controls"
        src={currentVideo.videoUrl}
        autoPlay
        loop
