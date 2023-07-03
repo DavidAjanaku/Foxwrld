@@ -21,7 +21,7 @@ function Hamburger() {
   return (
     <div className="wrapper mobile hidden">
       <nav>
-        <Link to="/" className="z-20 font-extrabold  text-3xl">
+        <Link to="/" className=" font-extrabold  text-3xl">
           <p className="font-mono">Foxwrld</p>
         </Link>
 
