@@ -9,7 +9,7 @@ export default function MainPageSlider() {
   }, []);
 
   return (
-    <div className="main">
+    <div className="main relative">
       <div className="overlay absolute inset-0 bg-black opacity-50"></div>{" "}
       <video
         ref={videoRef}
@@ -18,7 +18,7 @@ export default function MainPageSlider() {
         muted
         loop
         playsInline
-        className="object-cover h-[60vh]"
+        className="object-cover h-[70vh] min-w-full"
       />
       <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center  text-white">
         <h1>Welcome</h1>
