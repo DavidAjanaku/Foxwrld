@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div className="  hide mx-8 absolute left-0 right-0 z-30">
       <div className="flex justify-between items-center relative w-full h-20 max-w-[256rem] ">
-        <a href="#" className="relative items-center text-black text-3xl">
+        <a href="#" className="relative items-center text-black text-3xl font-sans font-extrabold">
           Foxwrld
         </a>
         <header className="text-white">
