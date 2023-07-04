@@ -1,3 +1,9 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
+import video1 from '../assets/videos/video1.mp4';
+import video2 from '../assets/videos/video2.mp4';
+
 const MainPageSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const videos = [
@@ -64,3 +70,4 @@ const MainPageSlider = () => {
 };
 
 export default MainPageSlider;
+
