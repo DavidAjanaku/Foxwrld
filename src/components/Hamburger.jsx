@@ -20,6 +20,7 @@ function Hamburger() {
   };
   return (
     <div className="wrapper mobile hidden">
+      
       <nav>
         <Link to="/" className="z-30 font-extrabold  text-3xl">
           <p className="font-mono">Foxwrld</p>
@@ -1266,6 +1267,7 @@ function Hamburger() {
               </div>
             </div>
           </div>
+        
 
 <div className='mx-4'>
   <h1 className=''>Account</h1>
@@ -1274,6 +1276,46 @@ function Hamburger() {
 </div>
 
 </div>
+<div className='flex items-center'>
+         <li>
+            <button className="px-4 sm:px-8 py-6">
+              <svg
+                role="img"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M11.0499 3.55a7.5 7.5 0 1 1 0 15.0002 7.5 7.5 0 0 1 0-15.0001Zm0-1.5a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"
+                ></path>
+                <path stroke="currentColor" d="m16.72 16.72 4.56 4.56"></path>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <Link to="/signup" className="px-4 sm:px-8 py-6">
+              <svg
+                role="img"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  d="M11.98 8.99c1.6568 0 3-1.3432 3-3 0-1.6569-1.3432-3-3-3-1.6569 0-3 1.3431-3 3 0 1.6568 1.3431 3 3 3Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M11.97 13.23a8.3597 8.3597 0 0 1 8.32 7H3.7a8.5996 8.5996 0 0 1 8.28-7m0-1.5a10.1597 10.1597 0 0 0-10 10h19.99c-.23-5.17-4-10-10-10h.01Z"
+                ></path>
+              </svg>
+            </Link>
+          </li>
+         </div>
           </ul>
       
         </div>
