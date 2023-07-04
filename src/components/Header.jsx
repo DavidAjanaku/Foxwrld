@@ -8,7 +8,7 @@ export default function Header() {
         <a href="#" className="relative items-center text-black text-3xl">
           Foxwrld
         </a>
-        <header>
+        <header className="text-white">
           <ul className="flex">
             <li>
               <a href="#" className="px-4 sm:px-8 py-6">

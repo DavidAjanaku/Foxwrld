@@ -21,8 +21,8 @@ export default function MainPageSlider() {
         className="object-cover h-[70vh] min-w-full"
       />
       <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center  text-white">
-        <h1>Welcome</h1>
-        <p>To my site.</p>
+        <h1>Welcome to</h1>
+        <p className="text-4xl font-extrabold font-sans"> FOXWRLD</p>
       </div>
     </div>
   );
