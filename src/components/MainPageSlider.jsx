@@ -6,7 +6,27 @@ export default function MainPageSlider() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    videoRef.current.play();
+    const playVideo = () => {
+      videoRef.current.play().catch(error => {
+        // Autoplay was prevented. Handle or ignore the error.
+        // For example, you can show a play button and let the user manually start the video.
+      });
+    };
+
+    // Add event listener for user interaction to start the video
+    const handleInteraction = () => {
+      playVideo();
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
+    };
+
+    window.addEventListener("touchstart", handleInteraction);
+    window.addEventListener("click", handleInteraction);
+
+    return () => {
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
+    };
   }, []);
 
   return (
@@ -17,7 +37,7 @@ export default function MainPageSlider() {
         autoPlay
         muted
         loop
-        playsInline // Add playsInline attribute
+        playsInline
         ref={videoRef}
       >
         <source src={video1} type="video/mp4" />
