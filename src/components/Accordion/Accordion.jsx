@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Accordion() {
   const [categoryOpen, setCategoryOpen] = useState(false);
@@ -69,6 +69,22 @@ export default function Accordion() {
   const handleSelectAllSizes = () => {
     setSelectedSizes(["35", "36", "37"]);
   };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setCategoryOpen(false);
+      setStyleOpen(false);
+      setSizeOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
 
   return (
     <div className="accordion flex justify-between border-4 py-4 px-12">
