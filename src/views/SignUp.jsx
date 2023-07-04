@@ -17,7 +17,7 @@ export default function SignUp() {
           <input
             type="email"
             id="email"
-            className="border border-gray-300 rounded px-2 py-1 mb-4"
+            className="border border-gray-300 rounded px-2 py-1 mb-4 w-full"
           />
 
           <label htmlFor="password" className="mb-2 block">
@@ -26,17 +26,18 @@ export default function SignUp() {
           <input
             type="password"
             id="password"
-            className="border border-gray-300 rounded px-2 py-1 mb-4"
+            className="border border-gray-300 rounded px-2 py-1 mb-4 w-full"
           />
 
-          <div className="flex justify-between">
+          <div className="flex flex-col justify-between">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white rounded px-4 py-2"
+              className="bg-black hover:bg-black-700 text-white rounded px-4 py-2"
             >
               Create Account
             </button>
-            <a href="#" className="text-blue-500 hover:text-blue-700">
+            <br />
+            <a href="#" className="text-black hover:text-blue-700 block">
               Forgot Password?
             </a>
           </div>

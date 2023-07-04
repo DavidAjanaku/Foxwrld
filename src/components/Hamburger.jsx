@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import HamburgerSlidesPictures from "./HamburgerSlidesPictures";
-import womenBag from '../assets/womenBag.jpg';
-import trenchCoats from '../assets/trenchcoats.jpg';
-import kiddies from '../assets/kiddies.jpg';
-import tshirt from '../assets/tshirt.jpg';
-
-
-
-
+import womenBag from "../assets/womenBag.jpg";
+import trenchCoats from "../assets/trenchcoats.jpg";
+import kiddies from "../assets/kiddies.jpg";
+import tshirt from "../assets/tshirt.jpg";
 
 function Hamburger() {
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Function to toggle the menuOpen state
@@ -20,7 +15,6 @@ function Hamburger() {
   };
   return (
     <div className="wrapper mobile hidden">
-      
       <nav>
         <Link to="/" className="z-30 font-extrabold  text-3xl">
           <p className="font-mono">Foxwrld</p>
@@ -32,7 +26,54 @@ function Hamburger() {
           name="menu"
           className="m-menu__checkbox"
         />
-        <label className="m-menu__toggle z-3" onClick={toggleMenu} htmlFor="menu">
+        <div className="flex absolute right-20">
+         <span>
+          <Link>
+          <svg
+              role="img"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                d="M11.98 8.99c1.6568 0 3-1.3432 3-3 0-1.6569-1.3432-3-3-3-1.6569 0-3 1.3431-3 3 0 1.6568 1.3431 3 3 3Z"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M11.97 13.23a8.3597 8.3597 0 0 1 8.32 7H3.7a8.5996 8.5996 0 0 1 8.28-7m0-1.5a10.1597 10.1597 0 0 0-10 10h19.99c-.23-5.17-4-10-10-10h.01Z"
+              ></path>
+            </svg>
+          </Link>
+         </span>
+         <span>
+          <Link>
+          <svg
+              className="search-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000000"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </Link>
+         </span>
+        </div>
+
+        <label
+          className="m-menu__toggle z-3"
+          onClick={toggleMenu}
+          htmlFor="menu"
+        >
           <svg
             width="35"
             height="35"
@@ -48,9 +89,10 @@ function Hamburger() {
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </label>
+
         <label className="m-menu__overlay" htmlFor="menu"></label>
 
-        <div  className={`m-menu ${menuOpen ? 'open' : ''}`}>
+        <div className={`m-menu ${menuOpen ? "open" : ""}`}>
           <div className="m-menu__header">
             {/* <span>MENU</span> */}
             <label className="m-menu__toggle" htmlFor="menu">
@@ -69,7 +111,7 @@ function Hamburger() {
               </svg>
             </label>
           </div>
-          <ul >
+          <ul>
             {/* Gifts Category */}
             <li>
               <label className="a-label__chevron" htmlFor="item-2">
@@ -142,7 +184,6 @@ function Hamburger() {
                         <li>
                           <label>Home & Pet Accessories</label>
                         </li>
-                      
                       </ul>
                     </div>
                   </li>
@@ -184,7 +225,6 @@ function Hamburger() {
                         <li>
                           <label>Home & Pet Accessories</label>
                         </li>
-                    
                       </ul>
                     </div>
                   </li>
@@ -223,7 +263,6 @@ function Hamburger() {
                         <li>
                           <label>Baby Gifts</label>
                         </li>
-                       
                       </ul>
                     </div>
                   </li>
@@ -1055,7 +1094,7 @@ function Hamburger() {
                   </li>
                   <li>
                     <label className="a-label__chevron" htmlFor="item-5-3">
-                     Baby 0-24 MTHS
+                      Baby 0-24 MTHS
                     </label>
                     <input
                       type="checkbox"
@@ -1196,7 +1235,7 @@ function Hamburger() {
                   </li>
                   <li>
                     <label className="a-label__chevron" htmlFor="item-5-6">
-                     Accessories
+                      Accessories
                     </label>
                     <input
                       type="checkbox"
@@ -1257,67 +1296,27 @@ function Hamburger() {
             <li>
               <label>Item 6</label>
             </li> */}
-                <div>
-            <div className="overflow-scroll no-scroll my-4">
-              <div className="flex w-[500px] overflow-scroll no-scroll" >
-              <HamburgerSlidesPictures img={womenBag} text={"Bag"}/>
-              <HamburgerSlidesPictures img={trenchCoats} text={"Trench Coats"}/>
-              <HamburgerSlidesPictures img={kiddies} text={"Children"}/>
-              <HamburgerSlidesPictures img={tshirt} text={"T shirt"}/>
+            <div>
+              <div className="overflow-scroll no-scroll my-4">
+                <div className="flex w-[500px] overflow-scroll no-scroll">
+                  <HamburgerSlidesPictures img={womenBag} text={"Bag"} />
+                  <HamburgerSlidesPictures
+                    img={trenchCoats}
+                    text={"Trench Coats"}
+                  />
+                  <HamburgerSlidesPictures img={kiddies} text={"Children"} />
+                  <HamburgerSlidesPictures img={tshirt} text={"T shirt"} />
+                </div>
               </div>
             </div>
-          </div>
-        
 
-<div className='mx-4'>
-  <h1 className=''>Account</h1>
-<div>
-<Link>Sign in/Register</Link>
-</div>
-
-</div>
-<div className='flex items-center'>
-         <li>
-            <button className="px-4 sm:px-8 py-6">
-              <svg
-                role="img"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fill="currentColor"
-                  d="M11.0499 3.55a7.5 7.5 0 1 1 0 15.0002 7.5 7.5 0 0 1 0-15.0001Zm0-1.5a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"
-                ></path>
-                <path stroke="currentColor" d="m16.72 16.72 4.56 4.56"></path>
-              </svg>
-            </button>
-          </li>
-          <li>
-            <Link to="/signup" className="px-4 sm:px-8 py-6">
-              <svg
-                role="img"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  d="M11.98 8.99c1.6568 0 3-1.3432 3-3 0-1.6569-1.3432-3-3-3-1.6569 0-3 1.3431-3 3 0 1.6568 1.3431 3 3 3Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  d="M11.97 13.23a8.3597 8.3597 0 0 1 8.32 7H3.7a8.5996 8.5996 0 0 1 8.28-7m0-1.5a10.1597 10.1597 0 0 0-10 10h19.99c-.23-5.17-4-10-10-10h.01Z"
-                ></path>
-              </svg>
-            </Link>
-          </li>
-         </div>
+            <div className="mx-4">
+              <h1 className="">Account</h1>
+              <div>
+                <Link>Sign in/Register</Link>
+              </div>
+            </div>
           </ul>
-      
         </div>
       </nav>
     </div>
