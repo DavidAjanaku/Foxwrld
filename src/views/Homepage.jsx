@@ -11,11 +11,13 @@ import coats from '../assets/coats.jpeg';
 import Footer from "../components/Navigation/Footer";
 
 export default function Homepage() {
+  const color = "white"; // Define the color value
+
   return (
     <div>
       <div>
         <Header />
-        <Hamburger />
+        <Hamburger color={color} />
         <MainPageSlider />
         <TextualPictureFrame img={bag} title={"Bag"} />
         <InPageNav/>

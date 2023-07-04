@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from './views/Homepage';
 import ErrorPage from './views/ErrorPage';
 import SignUp from './views/SignUp';
+import NewArrivals from './views/NewArrivals';
 // import "ionicons/dist/css/ionicons.min.css";
 
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/Signup" element={<SignUp />} />
+        <Route path="/NewArrivals" element={<NewArrivals />} />
 
 
         <Route path="/*" element={<ErrorPage />} />

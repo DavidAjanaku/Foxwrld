@@ -7,9 +7,9 @@ import kiddies from "../../assets/kiddies.jpg";
 import tshirt from "../../assets/tshirt.jpg";
 
 
-function Hamburger() {
+function Hamburger(props) {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const { color } = props;
   // Function to toggle the menuOpen state
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -80,7 +80,7 @@ function Hamburger() {
             height="35"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#fff"
+            stroke={color}
             strokeWidth="2"
             strokeLinecap="butt"
             strokeLinejoin="arcs"
@@ -311,7 +311,9 @@ function Hamburger() {
                     <label>Womens New in </label>
                   </li>
                   <li>
-                    <label>Mens New in </label>
+                   <Link to="/NewArrivals">
+                   <label>Mens New in </label>
+                   </Link>
                   </li>
                   <li>
                     <label>Childrens New in </label>
