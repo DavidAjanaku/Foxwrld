@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import video2 from "../assets/videos/video2.mp4";
+import video2 from "../assets/videos/backgroundVideo.webm";
 
 export default function MainPageSlider() {
   const videoRef = useRef(null);
