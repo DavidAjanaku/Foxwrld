@@ -6,6 +6,7 @@ import trenchCoats from "../assets/trenchcoats.jpg";
 import kiddies from "../assets/kiddies.jpg";
 import tshirt from "../assets/tshirt.jpg";
 
+
 function Hamburger() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -16,7 +17,7 @@ function Hamburger() {
   return (
     <div className="wrapper mobile hidden">
       <nav>
-        <Link to="/" className="z-30 font-extrabold  text-3xl">
+        <Link to="#" className="z-30 font-extrabold  text-3xl">
           <p className="font-mono">Foxwrld</p>
         </Link>
 
@@ -27,8 +28,8 @@ function Hamburger() {
           className="m-menu__checkbox"
         />
         <div className="flex absolute right-20">
-         <span>
-          <Link>
+         <span className="m-3">
+          <Link to="/signup">
           <svg
               role="img"
               width="24"
@@ -48,7 +49,7 @@ function Hamburger() {
             </svg>
           </Link>
          </span>
-         <span>
+         <span className="m-3">
           <Link>
           <svg
               className="search-icon"
