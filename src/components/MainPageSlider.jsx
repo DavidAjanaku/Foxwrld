@@ -1,9 +1,3 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-
-import video1 from '../assets/videos/video1.mp4';
-import video2 from '../assets/videos/video2.mp4';
-
 const MainPageSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const videos = [
@@ -20,28 +14,6 @@ const MainPageSlider = () => {
       text1: 'Women',
     },
   ];
-
-
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-
-    const playVideo = () => {
-      video.play().catch(error => {
-        // Autoplay was prevented, handle the error
-        console.log('Autoplay prevented:', error);
-      });
-    };
-
-    // Start playing the video when it's loaded
-    video.addEventListener('loadedmetadata', playVideo);
-
-    // Clean up event listener
-    return () => {
-      video.removeEventListener('loadedmetadata', playVideo);
-    };
-  }, []);
 
   useEffect(() => {
     const slideShowTimeout = setTimeout(changeSlide, 5000);
@@ -64,16 +36,14 @@ const MainPageSlider = () => {
   return (
     <div className="main-page-slider w-full relative left-0 right-0 top-0">
       <video
-       className="w-full relative video-element"
-       src={currentVideo.videoUrl}
-       ref={videoRef}
-       autoPlay
-       loop
-       muted
-       controls={false}
-       onEnded={handleVideoEnded}
-       style={{ outline: 'none' }}
-       controlsList="nodownload"
+        className="w-full relative video-element"
+        src={currentVideo.videoUrl}
+        autoPlay
+        loop
+        muted
+        onEnded={handleVideoEnded}
+        style={{ outline: 'none' }}
+        controlsList="nodownload"
       >
         Your browser does not support the video tag.
       </video>
