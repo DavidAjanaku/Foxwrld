@@ -20,7 +20,7 @@ export default function MainPageSlider() {
         playsInline
         className="object-cover h-[60vh]"
       />
-      <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center ">
+      <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center  text-white">
         <h1>Welcome</h1>
         <p>To my site.</p>
       </div>
