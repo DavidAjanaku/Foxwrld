@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
-import Hamburger from "../components/Hamburger";
+import Header from "../components/Navigation/Header";
+import Hamburger from "../components/Navigation/Hamburger";
 import MainPage from "../components/MainPage";
 import MainPageSlider from "../components/MainPageSlider";
 import TextualPictureFrame from "../components/TextualPictureFrame";
@@ -8,7 +8,7 @@ import InPageNav from "../components/InPageNav";
 import bag from '../assets/gucci.jpeg';
 import sandals from '../assets/sandals.jpeg';
 import coats from '../assets/coats.jpeg';
-import Footer from "../components/Footer";
+import Footer from "../components/Navigation/Footer";
 
 export default function Homepage() {
   return (

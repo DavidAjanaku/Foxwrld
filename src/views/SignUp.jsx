@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/Header";
-import Hamburger from "../components/Hamburger";
-import Footer from "../components/Footer";
+import Header from "../components/Navigation/Header";
+import Hamburger from "../components/Navigation/Hamburger";
+import Footer from "../components/Navigation/Footer";
 
 export default function SignUp() {
   return (

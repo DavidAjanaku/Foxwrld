@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import HamburgerSlidesPictures from "./HamburgerSlidesPictures";
-import womenBag from "../assets/womenBag.jpg";
-import trenchCoats from "../assets/trenchcoats.jpg";
-import kiddies from "../assets/kiddies.jpg";
-import tshirt from "../assets/tshirt.jpg";
+import HamburgerSlidesPictures from "../HamburgerSlidesPictures";
+import womenBag from "../../assets/womenBag.jpg";
+import trenchCoats from "../../assets/trenchcoats.jpg";
+import kiddies from "../../assets/kiddies.jpg";
+import tshirt from "../../assets/tshirt.jpg";
 
 
 function Hamburger() {
