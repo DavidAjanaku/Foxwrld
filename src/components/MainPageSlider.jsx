@@ -1,37 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import video2 from '../assets/videos/video2.mp4';
 
 const MainPageSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const videos = [
-   
-    {
-      title: 'The Holiday Edit',
-      videoUrl: video2,
-      text: 'Men',
-      text1: 'Women',
-    },
-  ];
-
-  useEffect(() => {
-    const slideShowTimeout = setTimeout(changeSlide, 5000);
-
-    return () => {
-      clearTimeout(slideShowTimeout);
-    };
-  }, [currentSlide]);
-
-  const changeSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % videos.length);
+  const currentVideo = {
+    title: 'The Holiday Edit',
+    videoUrl: video2,
+    text: 'Men',
+    text1: 'Women',
   };
-
-  const handleVideoEnded = () => {
-    changeSlide();
-  };
-
-  const currentVideo = videos[currentSlide];
 
   return (
     <div className="main-page-slider w-full relative left-0 right-0 top-0">
@@ -41,7 +19,6 @@ const MainPageSlider = () => {
         autoPlay
         loop
         muted
-        onEnded={handleVideoEnded}
         style={{ outline: 'none' }}
         controlsList="nodownload"
       >
@@ -64,4 +41,3 @@ const MainPageSlider = () => {
 };
 
 export default MainPageSlider;
-
