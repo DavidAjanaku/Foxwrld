@@ -6,7 +6,7 @@ export default function MainPageSlider() {
   return (
     <div className='main'>
     <div className="overlay"></div>
-    <video src={video2} autoPlay loop muted />
+    <video src={video2} autoPlay loop  />
     <div className="content">
         <h1>Welcome</h1>
         <p>To my site.</p>
