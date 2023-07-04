@@ -199,7 +199,3 @@ nav .m-menu__checkbox:checked ~ .m-menu__overlay {
   display: none!important;
   -webkit-appearance: none;
 }
-
-video::-webkit-media-controls-panel {
-  display: none !important;
-  opacity: 1 !important;}

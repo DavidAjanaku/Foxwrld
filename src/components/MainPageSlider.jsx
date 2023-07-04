@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import video1 from '../assets/videos/video1.mp4';
@@ -20,6 +20,28 @@ const MainPageSlider = () => {
       text1: 'Women',
     },
   ];
+
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    const playVideo = () => {
+      video.play().catch(error => {
+        // Autoplay was prevented, handle the error
+        console.log('Autoplay prevented:', error);
+      });
+    };
+
+    // Start playing the video when it's loaded
+    video.addEventListener('loadedmetadata', playVideo);
+
+    // Clean up event listener
+    return () => {
+      video.removeEventListener('loadedmetadata', playVideo);
+    };
+  }, []);
 
   useEffect(() => {
     const slideShowTimeout = setTimeout(changeSlide, 5000);
@@ -44,6 +66,7 @@ const MainPageSlider = () => {
       <video
        className="w-full relative video-element"
        src={currentVideo.videoUrl}
+       ref={videoRef}
        autoPlay
        loop
        muted
