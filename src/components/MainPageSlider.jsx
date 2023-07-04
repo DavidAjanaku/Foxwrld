@@ -5,11 +5,7 @@ import video2 from '../assets/videos/video2.mp4';
 export default function MainPageSlider() {
   return (
     <div className="video-container">
-      <video className="video-bg" autoPlay muted loop>
-        <source src={video2} type="video/mp4" />
-        {/* Add additional <source> tags for different video formats (e.g., WebM, Ogg) */}
-        Your browser does not support the video tag.
-      </video>
+     <video src={video2} autoPlay loop muted />
       <div className="content">
         {/* Place your content (e.g., text, buttons) on top of the video */}
         <h1>Welcome to the website</h1>
