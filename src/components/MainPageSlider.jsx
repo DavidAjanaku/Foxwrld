@@ -33,7 +33,7 @@ export default function MainPageSlider() {
     <div className="main relative">
       <div className="overlay absolute inset-0 bg-black opacity-50"></div>{" "}
       <video
-        className="video-bg object-cover h-[70vh] min-w-full"
+        className="video-bg object-cover h-[100vh] min-w-full"
         autoPlay
         muted
         loop

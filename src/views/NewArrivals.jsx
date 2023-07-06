@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Navigation/Header";
 import Hamburger from "../components/Navigation/Hamburger";
 import Accordion from "../components/Accordion/Accordion";
+import FilterDesktop from "../components/Filter/FilterDesktop";
 
 export default function NewArrivals(props) {
   const color = "black"; // Define the color value
@@ -18,7 +19,8 @@ export default function NewArrivals(props) {
             Mens New Arrival
           </div>
           <div>
-<Accordion/>
+{/* <Accordion/> */}
+<FilterDesktop/>
           </div>
         </div>
       </main>
