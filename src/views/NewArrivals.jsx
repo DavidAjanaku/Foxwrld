@@ -34,8 +34,8 @@ export default function NewArrivals(props) {
           </div>
         </div>
         <div >
-        <div className="flex">
-          <ProductCard image={sandals} alternateImage={coats} title={"Heyy"} color={"3"}  category={"New In"}/>
+        <div className="flex flex-wrap justify-center">
+          <ProductCard image={sandals} alternateImage={coats} title={"Oversized Cat-eye Frame Sunglasses "} color={"3"}  category={"New In"}/>
           <ProductCard image={sandals} alternateImage={coats} title={"Heyy"} color={"3"}  category={"New In"}/>
           <ProductCard image={sandals} alternateImage={coats} title={"Heyy"} color={"3"}  category={"New In"}/>
           <ProductCard image={sandals} alternateImage={coats} title={"Heyy"} color={"3"}  category={"New In"}/>

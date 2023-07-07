@@ -22,15 +22,15 @@ export default function ProductCard({ image,alternateImage, title, color, catego
   };
 
   return (
-    <div className="product-card w-96 h-96">
+    <div className="product-card w-40 h-96 m-2">
     <div
-      className="product-image relative w-full h-full pb-square"
+      className="product-image relative w-full  h-[65%] pb-square"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className="absolute top-0 left-0 right-0 bottom-0">{renderImage()}</div>
     </div>
-    <div className="product-details text-center">
+    <div className="product-details text-center h-2/4 overflow-y-auto">
       <h2 className="product-title">{title}</h2>
       <p className="product-color">Color: {color}</p>
       <p className="product-category">{category}</p>
