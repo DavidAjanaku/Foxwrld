@@ -3,6 +3,7 @@ import Header from "../components/Navigation/Header";
 import Hamburger from "../components/Navigation/Hamburger";
 import Accordion from "../components/Accordion/Accordion";
 import FilterDesktop from "../components/Filter/FilterDesktop";
+import FilterSection from "../components/Navigation/FilterSection";
 
 export default function NewArrivals(props) {
   const color = "black"; // Define the color value
@@ -21,6 +22,7 @@ export default function NewArrivals(props) {
           <div>
 {/* <Accordion/> */}
 <FilterDesktop/>
+<FilterSection/>
           </div>
         </div>
       </main>

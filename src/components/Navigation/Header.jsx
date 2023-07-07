@@ -1,15 +1,11 @@
-import React,{ useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNewInDropdownOpen, setIsNewInDropdownOpen] = useState(false);
   const [isWomenDropdown, setIsWomenDropdown] = useState(false);
   const [isMenDropdown, setIsMenDropdown] = useState(false);
-
-
-  
 
   const dropdownTimeoutRef = useRef(null);
   const newInDropdownTimeoutRef = useRef(null);
@@ -28,6 +24,7 @@ export default function Header() {
   const handleDropdownEnter = () => {
     clearTimeout(dropdownTimeoutRef.current);
   };
+
   const handleNewInDropdownToggle = () => {
     clearTimeout(newInDropdownTimeoutRef.current);
     setIsNewInDropdownOpen(true);
@@ -43,57 +40,64 @@ export default function Header() {
     clearTimeout(newInDropdownTimeoutRef.current);
   };
 
-
-  const handleDropdownWomenToggle = () => {
+  const handleWomenDropdownToggle = () => {
     clearTimeout(dropdownTimeoutRef.current);
     setIsWomenDropdown(true);
   };
 
-  const handleDropdownWomenClose = () => {
+  const handleWomenDropdownClose = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setIsWomenDropdown(false);
-    }, 300); // Adjust the delay as needed
+    }, 300);
   };
 
-  const handleDropdownWomenEnter = () => {
+  const handleWomenDropdownEnter = () => {
     clearTimeout(dropdownTimeoutRef.current);
   };
 
-
-  const handleDropdownMenToggle = () => {
+  const handleMenDropdownToggle = () => {
     clearTimeout(dropdownTimeoutRef.current);
     setIsMenDropdown(true);
   };
 
-  const handleDropdownMenClose = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setIsMenDropdown(false);
-    }, 300); // Adjust the delay as needed
+  const handleMenDropdownClose = () => {
+    clearTimeout(dropdownTimeoutRef.current);
+    setIsMenDropdown(false);
   };
 
-  const handleDropdownMenEnter = () => {
+  const handleMenDropdownEnter = () => {
     clearTimeout(dropdownTimeoutRef.current);
   };
 
-  
+
   return (
     <div className="  hide px-8 absolute left-0 right-0 z-30">
       <div className="flex justify-between items-center relative w-full h-20 max-w-[256rem] ">
-        <a href="#" className="relative items-center text-black z-30 text-3xl font-sans font-extrabold">
+        <a
+          href="#"
+          className="relative items-center text-black z-30 text-3xl font-sans font-extrabold"
+        >
           Foxwrld
         </a>
         <header className="text-white ">
           <ul className="flex ">
-          <li className="group" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownClose}>
-              <a
-                href="#"
-                className="px-4 sm:px-8 py-6"
-              >
+            <li
+              className="group"
+              onMouseEnter={handleDropdownToggle}
+              onMouseLeave={handleDropdownClose}
+            >
+              <a href="#" className="px-4 sm:px-8 py-6">
                 Gifts
               </a>
               {isDropdownOpen && (
-                <div className="absolute left-0 top-full w-full bg-white h-[80vh] p-10" onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownClose}>
-                      <h1 className="text-black font-extrabold uppercase mb-3">Womens Gifts</h1>
+                <div
+                  className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
+                  onMouseEnter={handleDropdownEnter}
+                  onMouseLeave={handleDropdownClose}
+                >
+                  <h1 className="text-black font-extrabold uppercase mb-3">
+                    Womens Gifts
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="">
@@ -128,7 +132,9 @@ export default function Header() {
                     {/* Add more subcategories here */}
                   </ul>
 
-                  <h1 className="text-black uppercase mb-3 mt-3">Womens Gifts</h1>
+                  <h1 className="text-black uppercase mb-3 mt-3">
+                    Womens Gifts
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="p">
@@ -165,16 +171,23 @@ export default function Header() {
                 </div>
               )}
             </li>
-            <li className="group" onMouseEnter={handleNewInDropdownToggle} onMouseLeave={handleNewInDropdownClose}>
-              <a
-                href="#"
-                className="px-4 sm:px-8 py-6"
-              >
+            <li
+              className="group"
+              onMouseEnter={handleNewInDropdownToggle}
+              onMouseLeave={handleNewInDropdownClose}
+            >
+              <a href="#" className="px-4 sm:px-8 py-6">
                 New in
               </a>
               {isNewInDropdownOpen && (
-                <div className="absolute left-0 top-full w-full bg-white h-[80vh] p-10" onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownClose}>
-                      <h1 className="text-black font-extrabold uppercase mb-3">New in</h1>
+                <div
+                  className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
+                  onMouseEnter={handleNewInDropdownEnter}
+                  onMouseLeave={handleDropdownClose}
+                >
+                  <h1 className="text-black font-extrabold uppercase mb-3">
+                    New in
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="">
@@ -209,7 +222,9 @@ export default function Header() {
                     {/* Add more subcategories here */}
                   </ul>
 
-                  <h1 className="text-black uppercase mb-3 mt-3">Womens Gifts</h1>
+                  <h1 className="text-black uppercase mb-3 mt-3">
+                    Womens Gifts
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="p">
@@ -246,16 +261,23 @@ export default function Header() {
                 </div>
               )}
             </li>
-            <li className="group" onMouseEnter={handleDropdownWomenToggle} onMouseLeave={handleDropdownWomenClose}>
-              <a
-                href="#"
-                className="px-4 sm:px-8 py-6"
-              >
-               Women
+            <li
+              className="group"
+              onMouseEnter={handleWomenDropdownToggle}
+              onMouseLeave={handleWomenDropdownClose}
+            >
+              <a href="#" className="px-4 sm:px-8 py-6">
+                Women
               </a>
               {isWomenDropdown && (
-                <div className="absolute left-0 top-full w-full bg-white h-[80vh] p-10" onMouseEnter={handleDropdownWomenEnter} onMouseLeave={handleDropdownWomenClose}>
-                      <h1 className="text-black font-extrabold uppercase mb-3">Women</h1>
+                <div
+                  className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
+                  onMouseEnter={handleWomenDropdownEnter}
+                  onMouseLeave={handleWomenDropdownClose}
+                >
+                  <h1 className="text-black font-extrabold uppercase mb-3">
+                    Women
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="">
@@ -290,7 +312,9 @@ export default function Header() {
                     {/* Add more subcategories here */}
                   </ul>
 
-                  <h1 className="text-black uppercase mb-3 mt-3">Womens Gifts</h1>
+                  <h1 className="text-black uppercase mb-3 mt-3">
+                    Womens Gifts
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="p">
@@ -327,16 +351,23 @@ export default function Header() {
                 </div>
               )}
             </li>
-            <li className="group" onMouseEnter={handleDropdownMenToggle} onMouseLeave={handleDropdownMenClose}>
-              <a
-                href="#"
-                className="px-4 sm:px-8 py-6"
-              >
-               Men
+            <li
+              className="group"
+              onMouseEnter={handleMenDropdownToggle}
+              onMouseLeave={handleMenDropdownClose}
+            >
+              <a href="#" className="px-4 sm:px-8 py-6">
+                Men
               </a>
               {isMenDropdown && (
-                <div className="absolute left-0 top-full w-full bg-white h-[80vh] p-10" onMouseEnter={handleDropdownMenEnter} onMouseLeave={handleDropdownMenClose}>
-                      <h1 className="text-black font-extrabold uppercase mb-3">Men</h1>
+                <div
+                  className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
+                  onMouseEnter={handleMenDropdownEnter}
+                  onMouseLeave={handleMenDropdownClose}
+                >
+                  <h1 className="text-black font-extrabold uppercase mb-3">
+                    Men Gifts
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="">
@@ -371,7 +402,9 @@ export default function Header() {
                     {/* Add more subcategories here */}
                   </ul>
 
-                  <h1 className="text-black uppercase mb-3 mt-3">Womens Gifts</h1>
+                  <h1 className="text-black uppercase mb-3 mt-3">
+                    Womens Gifts
+                  </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
                       <a href="#" className="p">
@@ -470,4 +503,4 @@ export default function Header() {
       </div>
     </div>
   );
-  }
+}
