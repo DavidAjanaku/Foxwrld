@@ -22,7 +22,7 @@ export default function ProductCard({ image,alternateImage, title, color, catego
   };
 
   return (
-    <div className="product-card w-40 h-96 m-2">
+    <div className="product-card w-40 h-96 m-2  md:w-96  md:h-[500px]">
     <div
       className="product-image relative w-full  h-[65%] pb-square"
       onMouseEnter={handleMouseEnter}
