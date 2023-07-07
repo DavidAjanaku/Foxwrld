@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Accordion() {
   const [categoryOpen, setCategoryOpen] = useState(false);
@@ -85,187 +86,268 @@ export default function Accordion() {
     };
   }, []);
 
-
   return (
-    <div className="accordion flex justify-between border-4 py-4 px-12">
+    <div className="accordion relative flex  border-2 uppercase py-2 text-sm text-black px-12 z-10">
       <div
-        className="category relative "
+        className="category  mr-6 cursor-pointer"
         onMouseEnter={toggleCategory}
         onMouseLeave={toggleCategory}
       >
         Category
         {categoryOpen && (
-          <ul className="sub-categories absolute bg-white shadow-md w-60">
-            <li className="py-2 px-4 flex items-center justify-between">
+          <ul className="sub-categories left-0 absolute w-full bg-white shadow-md p-4">
             <button
-          className="select-all-button"
-          onClick={handleSelectAllCategories}
-        >
-          Select All
-        </button>
-            </li>
-            <li
-              className={`py-2 px-4 flex items-center justify-between ${
-                selectedCategories.includes("Bags") ? "bg-blue-200" : ""
-              }`}
-              onClick={() => handleCategorySelection("Bags")}
+              className="select-all-button m-3"
+              onClick={handleSelectAllCategories}
             >
-              Bags
-              {selectedCategories.includes("Bags") && (
-                <span className="ml-2">&#10003;</span>
-              )}
-            </li>
-            <li
-              className={`py-2 px-4 flex items-center justify-between ${
-                selectedCategories.includes("Blazers") ? "bg-blue-200" : ""
-              }`}
-              onClick={() => handleCategorySelection("Blazers")}
-            >
-              Blazers
-              {selectedCategories.includes("Blazers") && (
-                <span className="ml-2">&#10003;</span>
-              )}
-            </li>
-            <li
-              className={`py-2 px-4 flex items-center justify-between ${
-                selectedCategories.includes("Capes") ? "bg-blue-200" : ""
-              }`}
-              onClick={() => handleCategorySelection("Capes")}
-            >
-              Capes
-              {selectedCategories.includes("Capes") && (
-                <span className="ml-2">&#10003;</span>
-              )}
-            </li>
-            <li
-              className={`py-2 px-4 flex items-center justify-between ${
-                selectedCategories.includes("Dresses") ? "bg-blue-200" : ""
-              }`}
-              onClick={() => handleCategorySelection("Dresses")}
-            >
-              Dresses
-              {selectedCategories.includes("Dresses") && (
-                <span className="ml-2">&#10003;</span>
-              )}
-            </li>
-            <li
-              className={`py-2 px-4 flex items-center justify-between ${
-                selectedCategories.includes("Hats") ? "bg-blue-200" : ""
-              }`}
-              onClick={() => handleCategorySelection("Hats")}
-            >
-              Hats
-              {selectedCategories.includes("Hats") && (
-                <span className="ml-2">&#10003;</span>
-              )}
-            </li>
-          </ul>
-        )}
-        {selectedCategories.length > 0 && (
+              <Link to="#" className="underline"> 
+             Select All
+             </Link>
+            </button>
+            {selectedCategories.length > 0 && (
           <button className="reset-button ml-2" onClick={handleResetCategories}>
             Reset
           </button>
         )}
+            <div className="w-1/3 grid grid-cols-2 gap-4">
+              <li
+                className={`py-2 px-4 flex items-center ${
+                  selectedCategories.includes("Bags") ? "bg-blue-200" : ""
+                } hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Bags")}
+              >
+                Bags &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Bags") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Blazers") ? "bg-blue-200" : ""
+                }hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Blazers")}
+              >
+                Blazers &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Blazers") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Capes") ? "bg-blue-200" : ""
+                } hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Capes")}
+              >
+                Capes &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Capes") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Dresses") ? "bg-blue-200" : ""
+                }hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Dresses")}
+              >
+                Dresses &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Dresses") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Hats") ? "bg-blue-200" : ""
+                }hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Hats")}
+              >
+                Hats &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Hats") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Dresses") ? "bg-blue-200" : ""
+                }hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Dresses")}
+              >
+                Dresses &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Dresses") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Hats") ? "bg-blue-200" : ""
+                }hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Hats")}
+              >
+                Hats &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Hats") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Dresses") ? "bg-blue-200" : ""
+                }hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Dresses")}
+              >
+                Dresses &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Dresses") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+              <li
+                className={`py-2 px-4 flex items-center  ${
+                  selectedCategories.includes("Hats") ? "bg-blue-200" : ""
+                }hover:bg-blue-200  cursor-pointer`}
+                onClick={() => handleCategorySelection("Hats")}
+              >
+                Hats &nbsp;<span>(32)</span>
+                {selectedCategories.includes("Hats") && (
+                  <span className="ml-2">&#10003;</span>
+                )}
+              </li>
+            </div>
+          </ul>
+        )}
       
       </div>
+
+
       <div
-        className="style relative"
+        className="style mx-6 cursor-pointer"
         onMouseEnter={toggleStyle}
         onMouseLeave={toggleStyle}
       >
         Style
         {styleOpen && (
-          <ul className="sub-categories absolute bg-white shadow-md">
-            <li className="py-2 px-4 flex items-center justify-between">
-            <button className="select-all-button" onClick={handleSelectAllStyles}>
-          Select All
-        </button>
-            </li>
+          <ul className="sub-categories absolute left-0 w-full bg-white shadow-md p-4 z-10">
+              <button
+                className="select-all-button m-4"
+                onClick={handleSelectAllStyles}
+              >
+               <Link to="#" className="underline"> 
+             Select All
+             </Link>
+              </button>
+              {selectedStyles.length > 0 && (
+          <button className="reset-button" onClick={handleResetStyles}>
+            Reset
+          </button>
+        )}
+          <div className="w-1/3 grid grid-cols-2 gap-4">
+        
             <li
-              className={`py-2 px-4 flex items-center justify-between ${
+              className={`py-2 px-4 flex items-center  ${
                 selectedStyles.includes("Boots") ? "bg-blue-200" : ""
-              }`}
+              }  hover:bg-blue-200  cursor-pointer`}
               onClick={() => handleStyleSelection("Boots")}
             >
-              Boots
+              Boots&nbsp;<span>(323)</span>
               {selectedStyles.includes("Boots") && (
                 <span className="ml-2">&#10003;</span>
               )}
             </li>
             <li
-              className={`py-2 px-4 flex items-center justify-between ${
+              className={`py-2 px-4 flex items-center  ${
                 selectedStyles.includes("Cardigans") ? "bg-blue-200" : ""
-              }`}
+              }  hover:bg-blue-200  cursor-pointer`}
               onClick={() => handleStyleSelection("Cardigans")}
             >
-              Cardigans
+              Cardigans&nbsp;<span>(12)</span>
               {selectedStyles.includes("Cardigans") && (
                 <span className="ml-2">&#10003;</span>
               )}
             </li>
+            <li
+              className={`py-2 px-4 flex items-center  ${
+                selectedStyles.includes("Cardigans") ? "bg-blue-200" : ""
+              } hover:bg-blue-200  cursor-pointer`}
+              onClick={() => handleStyleSelection("Cardigans")}
+            >
+              Cardigans&nbsp;<span>(2)</span>
+              {selectedStyles.includes("Cardigans") && (
+                <span className="ml-2">&#10003;</span>
+              )}
+            </li>
+            <li
+              className={`py-2 px-4 flex items-center  ${
+                selectedStyles.includes("Cardigans") ? "bg-blue-200" : ""
+              } hover:bg-blue-200  cursor-pointer`}
+              onClick={() => handleStyleSelection("Cardigans")}
+            >
+              Cardigans&nbsp;<span>(32)</span>
+              {selectedStyles.includes("Cardigans") && (
+                <span className="ml-2">&#10003;</span>
+              )}
+            </li>
+          </div>
           </ul>
         )}
-        {selectedStyles.length > 0 && (
-          <button className="reset-button" onClick={handleResetStyles}>
-            Reset
-          </button>
-        )}
-     
+      
       </div>
       <div
-        className="size relative"
+        className="size ml-6 cursor-pointer"
         onMouseEnter={toggleSize}
         onMouseLeave={toggleSize}
       >
         Size
         {sizeOpen && (
-          <ul className="sub-categories absolute bg-white shadow-md " >
-            <li className="py-2 px-4 flex items-center justify-between">
-            <button className="select-all-button" onClick={handleSelectAllSizes}>
-          Select All
-        </button>
-            </li>
+          <ul className="sub-categories absolute left-0 w-full bg-white  shadow-md p-4 z-10">
+               <button
+                className="select-all-button m-4"
+                onClick={handleSelectAllSizes}
+              >
+             <Link to="#" className="underline"> 
+             Select All
+             </Link>
+              </button>
+              {selectedSizes.length > 0 && (
+          <button className="reset-button" onClick={handleResetSizes}>
+            Reset
+          </button>
+        )}
+         <div className="w-1/3 grid grid-cols-2 gap-4">
+        
             <li
-              className={`py-2 px-4 flex items-center justify-between ${
+              className={`py-2 px-4 flex items-center  ${
                 selectedSizes.includes("35") ? "bg-blue-200" : ""
-              }`}
+              } hover:bg-blue-200  cursor-pointer`}
               onClick={() => handleSizeSelection("35")}
             >
-              35
+             S  &nbsp;<span>(32)</span>
               {selectedSizes.includes("35") && (
                 <span className="ml-2">&#10003;</span>
               )}
             </li>
             <li
-              className={`py-2 px-4 flex items-center justify-between ${
+              className={`py-2 px-4 flex items-center  ${
                 selectedSizes.includes("36") ? "bg-blue-200" : ""
-              }`}
+              } hover:bg-blue-200  cursor-pointer`}
               onClick={() => handleSizeSelection("36")}
             >
-              36
+              M  &nbsp;<span>(32)</span>
               {selectedSizes.includes("36") && (
                 <span className="ml-2">&#10003;</span>
               )}
             </li>
             <li
-              className={`py-2 px-4 flex items-center justify-between ${
+              className={`py-2 px-4 flex items-center  ${
                 selectedSizes.includes("37") ? "bg-blue-200" : ""
-              }`}
+              } hover:bg-blue-200  cursor-pointer`}
               onClick={() => handleSizeSelection("37")}
             >
-              37
+              L  &nbsp;<span>(32)</span>
               {selectedSizes.includes("37") && (
                 <span className="ml-2">&#10003;</span>
               )}
             </li>
+         </div>
           </ul>
         )}
-        {selectedSizes.length > 0 && (
-          <button className="reset-button" onClick={handleResetSizes}>
-            Reset
-          </button>
-        )}
-   
+      
       </div>
     </div>
   );
