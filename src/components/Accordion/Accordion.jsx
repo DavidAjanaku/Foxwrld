@@ -87,7 +87,7 @@ export default function Accordion() {
   }, []);
 
   return (
-    <div className="accordion relative flex  border-2 uppercase py-2 text-sm text-black px-12 z-10">
+    <div className="accordion relative flex  border-2 uppercase py-2 text-sm text-black px-12 ">
       <div
         className="category  mr-6 cursor-pointer"
         onMouseEnter={toggleCategory}
@@ -95,7 +95,7 @@ export default function Accordion() {
       >
         Category
         {categoryOpen && (
-          <ul className="sub-categories left-0 absolute w-full bg-white shadow-md p-4">
+          <ul className="sub-categories left-0 absolute w-full bg-white shadow-md p-4 z-10">
             <button
               className="select-all-button m-3"
               onClick={handleSelectAllCategories}

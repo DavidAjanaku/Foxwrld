@@ -14,7 +14,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center ">
       <button
         className="pagination-button bg-slate-600 hover:bg-slate-900 text-white font-bold py-2 px-4 rounded-l"
         disabled={currentPage === 1}

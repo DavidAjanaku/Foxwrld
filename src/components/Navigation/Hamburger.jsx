@@ -15,7 +15,7 @@ function Hamburger(props) {
     setMenuOpen(!menuOpen);
   };
   return (
-    <div className="wrapper mobile hidden">
+    <div className="wrapper mobile hidden ">
       <nav>
         <Link to="#" className="z-30 font-extrabold  text-3xl">
           <p className="font-mono">Foxwrld</p>
@@ -91,7 +91,7 @@ function Hamburger(props) {
           </svg>
         </label>
 
-        <label className="m-menu__overlay" htmlFor="menu"></label>
+        <label className="m-menu__overlay " htmlFor="menu"></label>
 
         <div className={`m-menu ${menuOpen ? "open" : ""}`}>
           <div className="m-menu__header">

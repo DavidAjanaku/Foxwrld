@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div >
     
-      <div className=" py-10 absolute left-0 right-0 " >
+      <div className=" py-10 absolute left-0 right-0  border-t-2 mt-2" >
         <div className="flex mx-20 flex-wrap ">
           <section className="  flex-grow m-3">
             <div className="">

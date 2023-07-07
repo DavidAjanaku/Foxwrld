@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({color}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNewInDropdownOpen, setIsNewInDropdownOpen] = useState(false);
   const [isWomenDropdown, setIsWomenDropdown] = useState(false);
@@ -71,6 +71,10 @@ export default function Header() {
 
 
   return (
+    <div className="relative">
+    {isDropdownOpen || isNewInDropdownOpen || isWomenDropdown || isMenDropdown ? (
+      <div className="fixed inset-0 bg-black opacity-50 " />
+    ) : null}
     <div className="  hide px-8 absolute left-0 right-0 z-30">
       <div className="flex justify-between items-center relative w-full h-20 max-w-[256rem] ">
         <a
@@ -79,7 +83,7 @@ export default function Header() {
         >
           Foxwrld
         </a>
-        <header className="text-white ">
+        <header className={`text-${color}`}>
           <ul className="flex ">
             <li
               className="group"
@@ -501,6 +505,7 @@ export default function Header() {
           </li>
         </ul>
       </div>
+    </div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import ProductCard from "../components/ProductsDetails/ProductCard";
 import sandals from '../assets/sandals.jpeg';
 import coats from '../assets/jacket.jpeg';
 import Pagination from "../components/Navigation/Pagination";
-
+import Footer from "../components/Navigation/Footer.jsx"
 
 
 
@@ -17,7 +17,7 @@ export default function NewArrivals(props) {
   return (
     <div>
       <div className="h-14">
-        <Header />
+        <Header  color={"black"} />
         <Hamburger color={color} />
       </div>
       <main>
@@ -47,6 +47,8 @@ export default function NewArrivals(props) {
           <Pagination/>
         </div>
       </main>
+      <Footer/>
     </div>
+
   );
 }
