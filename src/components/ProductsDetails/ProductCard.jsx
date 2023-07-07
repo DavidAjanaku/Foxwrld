@@ -14,10 +14,10 @@ export default function ProductCard({ image,alternateImage, title, color, catego
   const renderImage = () => {
     if (hovered) {
       // Render the alternate image when hovered
-      return <img src={alternateImage} className="object-cover w-full h-full" alt={title} />;
+      return <img src={alternateImage} className="object-contain w-full h-full" alt={title} />;
     } else {
       // Render the default image
-      return <img src={image} className="object-cover w-full h-full" alt={title}  />;
+      return <img src={image} className="object-contain w-full h-full" alt={title}  />;
     }
   };
 
