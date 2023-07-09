@@ -19,7 +19,7 @@ export default function ProductDetails() {
       <Hamburger color={"black"} />
 
       <div className="pt-36">
-        <div className="product-details flex">
+        <div className="product-details flex flex-wrap">
           <div className="w-2/4 h-52 justify-center">
             <img
               src={pyjamas}
@@ -43,7 +43,7 @@ export default function ProductDetails() {
               }`}
             />
           </div>
-          <div className="w-full">
+          <div className="w-2/4">
             <div>
               <div className="product-info py-6 border-b-2">
                 <div className="product-info-panel pb-10">
@@ -54,7 +54,7 @@ export default function ProductDetails() {
                     <li className="mr-2">
                       <Link>New Arrivals</Link>
                     </li>
-                    <li className="mr-2">
+                    <li className="mr-2 underline">
                       <Link>New in</Link>
                     </li>
                   </ul>
@@ -124,6 +124,11 @@ export default function ProductDetails() {
                 </div>
               </div>
                 </div>
+              </div>
+              <div className="products-action--panel py-8">
+              <button className="bg-slate-700 hover:bg-slate-900 text-white font-bold py-2 px-4 rounded">
+                Add to Shopping Cart
+              </button>
               </div>
             </div>
           </div>
