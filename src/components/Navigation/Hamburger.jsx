@@ -96,7 +96,7 @@ function Hamburger(props) {
         <div className={`m-menu ${menuOpen ? "open" : ""}`}>
           <div className="m-menu__header">
             {/* <span>MENU</span> */}
-            <label className="m-menu__toggle" htmlFor="menu">
+            <label className="m-menu__toggle z-30" htmlFor="menu">
               <svg
                 width="35"
                 height="35"
