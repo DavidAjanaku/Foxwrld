@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Navigation/Header";
 import Hamburger from "../components/Navigation/Hamburger";
 import Accordion from "../components/Accordion/Accordion";
+import MobileFilterModal from "../components/Filter/MobileFilterModal";
 
 import ProductCard from "../components/ProductsDetails/ProductCard";
 import sandals from '../assets/sandals.jpeg';
@@ -33,7 +34,11 @@ export default function NewArrivals(props) {
             Mens New Arrival
           </div>
           <div>
+            <div className="hidden md:block">
+
 <Accordion/>
+            </div>
+<MobileFilterModal/>
 
 {/* <FilterSection/> */}
 <div className="pt-14 pb-12 text-center  text-sm">

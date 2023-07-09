@@ -7,6 +7,7 @@ import Homepage from './views/Homepage';
 import ErrorPage from './views/ErrorPage';
 import SignUp from './views/SignUp';
 import NewArrivals from './views/NewArrivals';
+import ProductCardDetails from './components/ProductsDetails/ProductCardDetails';
 // import "ionicons/dist/css/ionicons.min.css";
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/NewArrivals" element={<NewArrivals />} />
+        <Route path="/ProductCardDetails" element={<ProductCardDetails />} />
 
 
         <Route path="/*" element={<ErrorPage />} />
