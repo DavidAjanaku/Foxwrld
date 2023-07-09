@@ -71,7 +71,7 @@ function Hamburger(props) {
         </div>
 
         <label
-          className="m-menu__toggle z-3"
+          className="m-menu__toggle z-10"
           onClick={toggleMenu}
           htmlFor="menu"
         >
