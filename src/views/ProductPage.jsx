@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from "../components/Navigation/Header";
 import ProductDetails from '../components/ProductsDetails/ProductDetails';
 import Footer from '../components/Navigation/Footer';
+import RecommendedProducts from '../components/ProductsDetails/RecommendedProducts';
 
 export default function ProductPage() {
   const [cartCount, setCartCount] = useState(0);
@@ -20,7 +21,7 @@ export default function ProductPage() {
       <div>
         <ProductDetails updateCartCount={updateCartCount} />
       </div>
-
+<RecommendedProducts/>
       <Footer/>
     </div>
   );

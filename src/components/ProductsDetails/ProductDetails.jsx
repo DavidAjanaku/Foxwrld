@@ -6,7 +6,6 @@ import jacket from "../../assets/jacket1.jpeg";
 import jacke2 from "../../assets/jacket2.jpeg";
 import { Link } from "react-router-dom";
 
-
 export default function ProductDetails({ updateCartCount }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState("");

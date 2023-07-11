@@ -27,7 +27,7 @@ function Hamburger(props) {
           name="menu"
           className="m-menu__checkbox"
         />
-        <div className="flex absolute right-20">
+        {/* <div className="flex absolute right-20">
          <span className="m-3">
           <Link to="/signup">
           <svg
@@ -68,7 +68,7 @@ function Hamburger(props) {
             </svg>
           </Link>
          </span>
-        </div>
+        </div> */}
 
         <label
           className="m-menu__toggle z-10"
@@ -1316,7 +1316,7 @@ function Hamburger(props) {
             <div className="mx-4">
               <h1 className="">Account</h1>
               <div>
-                <Link>Sign in/Register</Link>
+                <Link to="/signup">Sign in/Register</Link>
               </div>
             </div>
           </ul>

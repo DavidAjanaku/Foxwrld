@@ -16,7 +16,7 @@ export default function CartProducts() {
         </div>
       </div>
 
-      <Link to="" className="block w-full">
+      <Link to="/Checkout" className="block w-full">
         <button className="bg-black text-white py-2 px-4 mt-2 w-full">
           Checkout
         </button>
