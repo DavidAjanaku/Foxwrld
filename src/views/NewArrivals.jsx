@@ -3,7 +3,7 @@ import Header from "../components/Navigation/Header";
 import Hamburger from "../components/Navigation/Hamburger";
 import Accordion from "../components/Accordion/Accordion";
 import MobileFilterModal from "../components/Filter/MobileFilterModal";
-
+import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductsDetails/ProductCard";
 import sandals from '../assets/sandals.jpeg';
 import coats from '../assets/jacket.jpeg';
@@ -48,7 +48,10 @@ export default function NewArrivals(props) {
         </div>
         <div >
         <div className="flex flex-wrap justify-center">
+          <Link to="/ProductPage">
           <ProductCard image={sandals} alternateImage={coats} title={"Oversized Cat-eye Frame Sunglasses "} color={"3"}  category={"New In"}/>
+
+          </Link>
           <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"}  category={"New In"}/>
           <ProductCard image={sandals} alternateImage={coats} title={"Heyy"} color={"3"}  category={"New In"}/>
           <ProductCard image={sandals} alternateImage={coats} title={"Heyy"} color={"3"}  category={"New In"}/>

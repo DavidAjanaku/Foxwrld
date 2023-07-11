@@ -6,12 +6,12 @@ import Footer from "../components/Navigation/Footer";
 export default function SignUp() {
   return (
     <div className="flex flex-col h-screen">
-      <Header />
+      <Header color="black"/>
       <Hamburger />
       <div className="flex flex-col items-center justify-center flex-grow">
-        <h2 className="text-2xl font-bold mb-4">Create an Account</h2>
+        <h2 className="text-2xl font-bold mb-4 fontBold">Create an Account</h2>
         <form className="w-64">
-          <label htmlFor="email" className="mb-2 block">
+          <label htmlFor="email" className="mb-2 block fontBold">
             Email:
           </label>
           <input
@@ -20,7 +20,7 @@ export default function SignUp() {
             className="border border-gray-300 rounded px-2 py-1 mb-4 w-full"
           />
 
-          <label htmlFor="password" className="mb-2 block">
+          <label htmlFor="password" className="mb-2 block fontBold">
             Password:
           </label>
           <input
@@ -37,7 +37,7 @@ export default function SignUp() {
               Create Account
             </button>
             <br />
-            <a href="#" className="text-black hover:text-blue-700 block">
+            <a href="#" className="text-black hover:text-blue-700 block fontBold">
               Forgot Password?
             </a>
           </div>

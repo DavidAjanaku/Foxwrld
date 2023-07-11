@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import CartProducts from "../Cart/CartProducts";
 
-export default function Header({color}) {
+export default function Header({ color, cartCount }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNewInDropdownOpen, setIsNewInDropdownOpen] = useState(false);
   const [isWomenDropdown, setIsWomenDropdown] = useState(false);
@@ -9,6 +10,8 @@ export default function Header({color}) {
 
   const dropdownTimeoutRef = useRef(null);
   const newInDropdownTimeoutRef = useRef(null);
+  // const [cartCount, setCartCount] = useState(0);
+
 
   const handleDropdownToggle = () => {
     clearTimeout(dropdownTimeoutRef.current);
@@ -70,6 +73,22 @@ export default function Header({color}) {
   };
 
 
+
+  const handleDropdownCart = () => {
+    clearTimeout(dropdownTimeoutRef.current);
+    setCartCount((prevCount) => prevCount + 1);
+  };
+
+  const [isCartDropdownOpen, setIsCartDropdownOpen] = useState(false);
+
+const handleCartDropdownToggle = () => {
+  setIsCartDropdownOpen(!isCartDropdownOpen);
+};
+
+const handleCartDropdownClose = () => {
+  setIsCartDropdownOpen(false);
+};
+
   return (
     <div className="relative">
     {isDropdownOpen || isNewInDropdownOpen || isWomenDropdown || isMenDropdown ? (
@@ -90,7 +109,7 @@ export default function Header({color}) {
               onMouseEnter={handleDropdownToggle}
               onMouseLeave={handleDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6">
+              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 Gifts
               </a>
               {isDropdownOpen && (
@@ -99,79 +118,85 @@ export default function Header({color}) {
                   onMouseEnter={handleDropdownEnter}
                   onMouseLeave={handleDropdownClose}
                 >
-                  <h1 className="text-black font-extrabold uppercase mb-3">
-                    Womens Gifts
-                  </h1>
-                  <ul className="flex flex-col text-black">
-                    <li className="text-black">
-                      <a href="#" className="">
-                        Subcategory 1
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    {/* Add more subcategories here */}
-                  </ul>
+                  <section className="my-4">
 
-                  <h1 className="text-black uppercase mb-3 mt-3">
+                  <h1 className="text-black font-extrabold uppercase mb-1 text-[12px] fontBold">
                     Womens Gifts
                   </h1>
-                  <ul className="flex flex-col text-black">
+                  <ul className="flex flex-col text-black text-sm">
                     <li className="text-black">
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 1
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
+                  </section>
+
+                  <section className="my-4">
+
+<h1 className="text-black font-extrabold uppercase mb-1 text-[12px] fontBold">
+  Womens Gifts
+</h1>
+<ul className="flex flex-col text-black text-sm">
+  <li className="text-black">
+    <a href="#" className="text-[12px] font-thin">
+      Subcategory 1
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-thin">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-thin">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-thin">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-thin">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-thin">
+      Subcategory 2
+    </a>
+  </li>
+  {/* Add more subcategories here */}
+</ul>
+</section>
                 </div>
               )}
             </li>
@@ -180,7 +205,7 @@ export default function Header({color}) {
               onMouseEnter={handleNewInDropdownToggle}
               onMouseLeave={handleNewInDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6">
+              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 New in
               </a>
               {isNewInDropdownOpen && (
@@ -189,79 +214,86 @@ export default function Header({color}) {
                   onMouseEnter={handleNewInDropdownEnter}
                   onMouseLeave={handleDropdownClose}
                 >
-                  <h1 className="text-black font-extrabold uppercase mb-3">
+
+                  <section className="my-4">
+
+                  <h1 className="text-black font-extrabold uppercase mb-1 text-[12px] fontBold">
                     New in
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-light">
                         Subcategory 1
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
+                  </section>
 
-                  <h1 className="text-black uppercase mb-3 mt-3">
-                    Womens Gifts
-                  </h1>
-                  <ul className="flex flex-col text-black">
-                    <li className="text-black">
-                      <a href="#" className="p">
-                        Subcategory 1
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    {/* Add more subcategories here */}
-                  </ul>
+                  <section className="my-4">
+
+<h1 className="text-black font-extrabold uppercase mb-1 text-[12px] fontBold">
+  New in
+</h1>
+<ul className="flex flex-col text-black">
+  <li className="text-black">
+    <a href="#" className="text-[12px] font-light">
+      Subcategory 1
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className="text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  {/* Add more subcategories here */}
+</ul>
+</section>
                 </div>
               )}
             </li>
@@ -270,7 +302,7 @@ export default function Header({color}) {
               onMouseEnter={handleWomenDropdownToggle}
               onMouseLeave={handleWomenDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6">
+              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 Women
               </a>
               {isWomenDropdown && (
@@ -279,79 +311,86 @@ export default function Header({color}) {
                   onMouseEnter={handleWomenDropdownEnter}
                   onMouseLeave={handleWomenDropdownClose}
                 >
-                  <h1 className="text-black font-extrabold uppercase mb-3">
+
+                  <section className="my-4">
+
+                  <h1 className="text-black font-extrabold uppercase mb-1 text-[12px] fontBold">
                     Women
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className="">
+                      <a href="#" className=" text-[12px] font-light">
                         Subcategory 1
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className=" text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className=" text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className=" text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className=" text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className=" text-[12px] font-light">
                         Subcategory 2
                       </a>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
+                  </section>
 
-                  <h1 className="text-black uppercase mb-3 mt-3">
-                    Womens Gifts
-                  </h1>
-                  <ul className="flex flex-col text-black">
-                    <li className="text-black">
-                      <a href="#" className="p">
-                        Subcategory 1
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="p">
-                        Subcategory 2
-                      </a>
-                    </li>
-                    {/* Add more subcategories here */}
-                  </ul>
+                  <section className="my-4">
+
+<h1 className="text-black font-extrabold uppercase mb-1 text-[12px]  fontBold">
+  Women
+</h1>
+<ul className="flex flex-col text-black">
+  <li className="text-black">
+    <a href="#" className=" text-[12px] font-light">
+      Subcategory 1
+    </a>
+  </li>
+  <li>
+    <a href="#" className=" text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className=" text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className=" text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className=" text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  <li>
+    <a href="#" className=" text-[12px] font-light">
+      Subcategory 2
+    </a>
+  </li>
+  {/* Add more subcategories here */}
+</ul>
+</section>
                 </div>
               )}
             </li>
@@ -360,7 +399,7 @@ export default function Header({color}) {
               onMouseEnter={handleMenDropdownToggle}
               onMouseLeave={handleMenDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6">
+              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 Men
               </a>
               {isMenDropdown && (
@@ -369,79 +408,89 @@ export default function Header({color}) {
                   onMouseEnter={handleMenDropdownEnter}
                   onMouseLeave={handleMenDropdownClose}
                 >
-                  <h1 className="text-black font-extrabold uppercase mb-3">
+
+                  <section className="my-4">
+
+
+                  <h1 className="text-black font-extrabold uppercase mb-1 text-[12px] fontBold">
                     Men Gifts
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 1
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
+                  </section>
 
-                  <h1 className="text-black uppercase mb-3 mt-3">
-                    Womens Gifts
+                  
+                  <section className="my-4">
+
+
+                  <h1 className="text-black font-extrabold uppercase mb-1 text-[12px] fontBold">
+                    Men Gifts
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 1
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="p">
+                      <a href="#" className="text-[12px] font-thin">
                         Subcategory 2
                       </a>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
+                  </section>
                 </div>
               )}
             </li>
@@ -458,10 +507,10 @@ export default function Header({color}) {
                 aria-hidden="true"
               >
                 <path
-                  fill="#fff"
+                  fill={color}
                   d="M11.0499 3.55a7.5 7.5 0 1 1 0 15.0002 7.5 7.5 0 0 1 0-15.0001Zm0-1.5a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"
                 ></path>
-                <path stroke="#fff" d="m16.72 16.72 4.56 4.56"></path>
+                <path stroke={color} d="m16.72 16.72 4.56 4.56"></path>
               </svg>
             </button>
           </li>
@@ -476,32 +525,51 @@ export default function Header({color}) {
               >
                 <path
                   fill="none"
-                  stroke="#fff"
+                  stroke={color}
                   d="M11.98 8.99c1.6568 0 3-1.3432 3-3 0-1.6569-1.3432-3-3-3-1.6569 0-3 1.3431-3 3 0 1.6568 1.3431 3 3 3Z"
                 ></path>
                 <path
-                  fill="#fff"
+                  fill={color}
                   d="M11.97 13.23a8.3597 8.3597 0 0 1 8.32 7H3.7a8.5996 8.5996 0 0 1 8.28-7m0-1.5a10.1597 10.1597 0 0 0-10 10h19.99c-.23-5.17-4-10-10-10h.01Z"
                 ></path>
               </svg>
             </Link>
           </li>
-          <li>
-            <a href="#" className="px-4 sm:px-8 py-6">
-              <svg
-                role="img"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fill="none"
-                  stroke="#fff"
-                  d="M20.9999 8.99h-18v12h18v-12ZM15.97 8.97v-2a4.0002 4.0002 0 0 0-4-4 4 4 0 0 0-4 4v2"
-                ></path>
-              </svg>
-            </a>
+          <li className="relative">
+          <a
+  href="#"
+  className="px-4 sm:px-8 py-6 relative"
+  onClick={handleCartDropdownToggle}
+>
+  <svg
+    role="img"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      fill="none"
+      stroke={color}
+      d="M20.9999 8.99h-18v12h18v-12ZM15.97 8.97v-2a4.0002 4.0002 0 0 0-4-4 4 4 0 0 0-4 4v2"
+    ></path>
+  </svg>
+  {cartCount > 0 && (
+    <span className="absolute bottom-8 -right-1 z-40 text-center p-2 h-4 w-4 rounded-full fontBold text-xs px-1 py-0.5">
+      {cartCount}
+    </span>
+  )}
+    {isCartDropdownOpen && (
+                <div
+                  className="absolute top-full right-0 bg-white mt-2 p-2"
+                  onMouseLeave={handleCartDropdownClose}
+                >
+                  {/* Add your cart dropdown content here */}
+                  <CartProducts />
+                </div>
+              )}
+</a>
+
           </li>
         </ul>
       </div>

@@ -9,6 +9,7 @@ import SignUp from './views/SignUp';
 import NewArrivals from './views/NewArrivals';
 import ProductCardDetails from './components/ProductsDetails/ProductCardDetails';
 import ProductDetails from './components/ProductsDetails/ProductDetails';
+import ProductPage from './views/ProductPage';
 // import "ionicons/dist/css/ionicons.min.css";
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/NewArrivals" element={<NewArrivals />} />
         <Route path="/ProductCardDetails" element={<ProductCardDetails />} />
         <Route path="/ProductDetails" element={<ProductDetails />} />
+        <Route path="/ProductPage" element={<ProductPage />} />
 
 
         <Route path="/*" element={<ErrorPage />} />

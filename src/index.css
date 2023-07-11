@@ -23,3 +23,13 @@
   }
  
 }
+
+@font-face {
+  font-family: "Styrene";
+  src: url("./assets/fonts/StyreneAWeb-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Styrenes";
+  src: url("./assets/fonts/StyreneAWeb-Thin.ttf") format("truetype");
+}
