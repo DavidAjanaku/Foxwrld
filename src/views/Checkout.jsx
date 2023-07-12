@@ -6,7 +6,7 @@ import sandals from '../assets/sandals.jpeg';
 import CheckOutCard from '../components/Checkout/CheckOutCard';
 import Footer from '../components/Navigation/Footer';
 
-export default function Checkout() {
+export default function CheckOut() {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
