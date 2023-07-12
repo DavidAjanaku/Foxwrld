@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Hamburger from '../components/Navigation/Hamburger';
 import Header from '../components/Navigation/Header';
 import sandals from '../assets/sandals.jpeg';
-import CheckoutCard from '../components/Checkout/CheckOutCard';
+import CheckOutCard from '../components/Checkout/CheckOutCard';
 import Footer from '../components/Navigation/Footer';
 
 export default function Checkout() {
@@ -35,8 +35,8 @@ export default function Checkout() {
 
                 <div className="shopping-bag__container flex flex-wrap">
                   <div className="shopping-bag__products md:w-2/4 h-full md:h-[50vh] overflow-y-scroll">
-                    <CheckoutCard />
-                    <CheckoutCard />
+                    <CheckOutCard />
+                    <CheckOutCard />
                   </div>
                   <div className="shopping-bag__payment bg-gray-100 w-full md:w-2/4 p-5 md:h-[30vh] m-3 md:m-0">
                     <h2 className='text-lg font-bold mb-4'>Payment</h2>
