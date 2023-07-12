@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 export default function TextualPictureFrame(props) {
   return (
     <div className='text-center relative'>
