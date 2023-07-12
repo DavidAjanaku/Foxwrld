@@ -96,12 +96,12 @@ const handleCartDropdownClose = () => {
     ) : null}
     <div className="  hide px-8 absolute left-0 right-0 z-30">
       <div className="flex justify-between items-center relative w-full h-20 max-w-[256rem] ">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="relative items-center text-black z-30 text-3xl font-sans font-extrabold"
         >
           Foxwrld
-        </a>
+        </Link>
         <header className={`text-${color}`}>
           <ul className="flex ">
             <li
@@ -109,9 +109,9 @@ const handleCartDropdownClose = () => {
               onMouseEnter={handleDropdownToggle}
               onMouseLeave={handleDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
+              <Link to="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 Gifts
-              </a>
+              </Link>
               {isDropdownOpen && (
                 <div
                   className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
@@ -125,34 +125,34 @@ const handleCartDropdownClose = () => {
                   </h1>
                   <ul className="flex flex-col text-black text-sm">
                     <li className="text-black">
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 1
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
@@ -165,34 +165,34 @@ const handleCartDropdownClose = () => {
 </h1>
 <ul className="flex flex-col text-black text-sm">
   <li className="text-black">
-    <a href="#" className="text-[12px] font-thin">
+    <Link to="#" className="text-[12px] font-thin">
       Subcategory 1
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-thin">
+    <Link to="#" className="text-[12px] font-thin">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-thin">
+    <Link to="#" className="text-[12px] font-thin">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-thin">
+    <Link to="#" className="text-[12px] font-thin">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-thin">
+    <Link to="#" className="text-[12px] font-thin">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-thin">
+    <Link to="#" className="text-[12px] font-thin">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   {/* Add more subcategories here */}
 </ul>
@@ -205,9 +205,9 @@ const handleCartDropdownClose = () => {
               onMouseEnter={handleNewInDropdownToggle}
               onMouseLeave={handleNewInDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
+              <Link to="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 New in
-              </a>
+              </Link>
               {isNewInDropdownOpen && (
                 <div
                   className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
@@ -222,34 +222,34 @@ const handleCartDropdownClose = () => {
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className="text-[12px] font-light">
+                      <Link to="#" className="text-[12px] font-light">
                         Subcategory 1
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-light">
+                      <Link to="#" className="text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-light">
+                      <Link to="#" className="text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-light">
+                      <Link to="#" className="text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-light">
+                      <Link to="#" className="text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-light">
+                      <Link to="#" className="text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
@@ -262,34 +262,34 @@ const handleCartDropdownClose = () => {
 </h1>
 <ul className="flex flex-col text-black">
   <li className="text-black">
-    <a href="#" className="text-[12px] font-light">
+    <Link to="#" className="text-[12px] font-light">
       Subcategory 1
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-light">
+    <Link to="#" className="text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-light">
+    <Link to="#" className="text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-light">
+    <Link to="#" className="text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-light">
+    <Link to="#" className="text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className="text-[12px] font-light">
+    <Link to="#" className="text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   {/* Add more subcategories here */}
 </ul>
@@ -302,9 +302,9 @@ const handleCartDropdownClose = () => {
               onMouseEnter={handleWomenDropdownToggle}
               onMouseLeave={handleWomenDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
+              <Link to="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 Women
-              </a>
+              </Link>
               {isWomenDropdown && (
                 <div
                   className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
@@ -319,34 +319,34 @@ const handleCartDropdownClose = () => {
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className=" text-[12px] font-light">
+                      <Link to="#" className=" text-[12px] font-light">
                         Subcategory 1
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className=" text-[12px] font-light">
+                      <Link to="#" className=" text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className=" text-[12px] font-light">
+                      <Link to="#" className=" text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className=" text-[12px] font-light">
+                      <Link to="#" className=" text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className=" text-[12px] font-light">
+                      <Link to="#" className=" text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className=" text-[12px] font-light">
+                      <Link to="#" className=" text-[12px] font-light">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
@@ -359,34 +359,34 @@ const handleCartDropdownClose = () => {
 </h1>
 <ul className="flex flex-col text-black">
   <li className="text-black">
-    <a href="#" className=" text-[12px] font-light">
+    <Link to="#" className=" text-[12px] font-light">
       Subcategory 1
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className=" text-[12px] font-light">
+    <Link to="#" className=" text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className=" text-[12px] font-light">
+    <Link to="#" className=" text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className=" text-[12px] font-light">
+    <Link to="#" className=" text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className=" text-[12px] font-light">
+    <Link to="#" className=" text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   <li>
-    <a href="#" className=" text-[12px] font-light">
+    <Link to="#" className=" text-[12px] font-light">
       Subcategory 2
-    </a>
+    </Link>
   </li>
   {/* Add more subcategories here */}
 </ul>
@@ -399,9 +399,9 @@ const handleCartDropdownClose = () => {
               onMouseEnter={handleMenDropdownToggle}
               onMouseLeave={handleMenDropdownClose}
             >
-              <a href="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
+              <Link to="#" className="px-4 sm:px-8 py-6 fontBold uppercase">
                 Men
-              </a>
+              </Link>
               {isMenDropdown && (
                 <div
                   className="absolute left-0 top-full w-full bg-white h-[80vh] p-10"
@@ -417,34 +417,34 @@ const handleCartDropdownClose = () => {
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 1
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
@@ -459,34 +459,34 @@ const handleCartDropdownClose = () => {
                   </h1>
                   <ul className="flex flex-col text-black">
                     <li className="text-black">
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 1
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#" className="text-[12px] font-thin">
+                      <Link to="#" className="text-[12px] font-thin">
                         Subcategory 2
-                      </a>
+                      </Link>
                     </li>
                     {/* Add more subcategories here */}
                   </ul>
