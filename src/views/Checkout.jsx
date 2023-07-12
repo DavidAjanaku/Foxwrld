@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Hamburger from '../components/Navigation/Hamburger';
 import Header from '../components/Navigation/Header';
 import sandals from '../assets/sandals.jpeg';
-import CheckOutCard from '../components/Checkout/CheckOutCard';
+import CheckOutCard from '../components/CheckoutComponent/CheckOutCard';
+import CheckoutCards from  '../components/CheckoutComponent/CheckOutCard'
 import Footer from '../components/Navigation/Footer';
 
 export default function CheckOut() {
