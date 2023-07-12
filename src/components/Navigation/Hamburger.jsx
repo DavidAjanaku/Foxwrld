@@ -17,8 +17,8 @@ function Hamburger(props) {
   return (
     <div className="wrapper mobile hidden ">
       <nav>
-        <Link to="#" className="z-30 font-extrabold  text-3xl">
-          <p className="font-mono">Foxwrld</p>
+        <Link to="#" className="z-30 font-extrabold zIndexs text-3xl">
+          <p className="font-mono zIndexs">Foxwrld</p>
         </Link>
 
         <input
@@ -93,8 +93,8 @@ function Hamburger(props) {
 
         <label className="m-menu__overlay " htmlFor="menu"></label>
 
-        <div className={`m-menu ${menuOpen ? "open" : ""}`}>
-          <div className="m-menu__header">
+        <div className={`m-menu zIndex ${menuOpen ? "open" : ""}`}>
+          <div className="m-menu__header ">
             {/* <span>MENU</span> */}
             <label className="m-menu__toggle z-30" htmlFor="menu">
               <svg
@@ -106,6 +106,7 @@ function Hamburger(props) {
                 strokeWidth="2"
                 strokeLinecap="butt"
                 strokeLinejoin="arcs"
+                className="z-30"
               >
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />

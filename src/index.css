@@ -8,6 +8,8 @@
     .hide {
       display: none;
     }
+
+  
   }
   
   @media only screen and (min-width: 890px) {
@@ -22,6 +24,7 @@
     }
   }
  
+
 }
 
 @font-face {
@@ -32,4 +35,12 @@
 @font-face {
   font-family: "Styrenes";
   src: url("./assets/fonts/StyreneAWeb-Thin.ttf") format("truetype");
+}
+
+.zIndex {
+  z-index: 999 !important;
+}
+
+.zIndexs {
+  z-index: 9999 !important;
 }
