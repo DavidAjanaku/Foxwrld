@@ -26,7 +26,7 @@ export default function NewArrivals(props) {
     <div>
       <div className="h-14">
         <Header  color={"black"} />
-        <Hamburger color={color} />
+        {/* <Hamburger color={color} /> */}
       </div>
       <main>
         <div>
