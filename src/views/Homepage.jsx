@@ -16,7 +16,10 @@ export default function Homepage() {
     <div>
       <div>
         <Header  color={"white"} />
+        <div className="z-30">
         <Hamburger color={color} />
+
+        </div>
         <MainPageSlider />
        <div>
          <TextualPictureFrame img={bag} title={"Bag"} />
