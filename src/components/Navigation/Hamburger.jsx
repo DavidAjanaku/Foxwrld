@@ -12,7 +12,7 @@ function Hamburger(props) {
   const { color } = props;
   // Function to toggle the menuOpen state
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen(false);
   };
   return (
     <div className="wrapper mobile hidden ">
