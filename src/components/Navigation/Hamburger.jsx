@@ -162,7 +162,7 @@ const HamburgerMenu = ({color}) => {
 
   return (
     <div className="hamburger-menu mobile hidden">
-      <div className={`menu-icon fixed z-50 flex items-center justify-between w-full px-3 ${isOpen ? 'text-black' : ''}`}>
+      <div className={`menu-icon absolute z-50 flex items-center justify-between w-full px-3 ${isOpen ? 'text-black' : ''}`}>
         <div className="logo">
         <Link to="/" className={`fontBold text-2xl ${isOpen ? 'text-black' : `text-${color}`}`}>
             Foxwrld
