@@ -17,6 +17,7 @@ export default function ProductDetails({ updateCartCount }) {
   const handleAddToCart = () => {
     updateCartCount((prevCount) => prevCount + 1);
   };
+  
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
@@ -41,7 +42,6 @@ export default function ProductDetails({ updateCartCount }) {
   return (
     <div>
       <Header color="black" />
-      <Hamburger color={"black"} />
 
       <div className="pt-36">
         <div className="product-details flex flex-wrap">
