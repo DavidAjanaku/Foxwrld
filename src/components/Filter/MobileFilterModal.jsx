@@ -3,7 +3,7 @@ import Modal from "react-modal";
 
 const MobileFilterModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [accordionOpen, setAccordionOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -11,10 +11,7 @@ const MobileFilterModal = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-  };
-
-  const toggleAccordion = () => {
-    setAccordionOpen(!accordionOpen);
+    console.log(selectedCategory);
   };
 
   const customModalStyles = {
@@ -30,6 +27,10 @@ const MobileFilterModal = () => {
     },
   };
 
+  const handleCategorySelect = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
   Modal.setAppElement("#root"); // Replace '#root' with the root element of your app
 
   return (
@@ -39,7 +40,7 @@ const MobileFilterModal = () => {
         className="bg-black hover:bg-slate-800 text-white font-bold p-5 rounded-full"
       >
         <svg
-          className={`icon__content ${accordionOpen ? "open" : ""}`}
+          className="icon__content"
           viewBox="0 0 1 0.75"
           focusable="false"
           width="16"
@@ -59,29 +60,38 @@ const MobileFilterModal = () => {
         contentLabel="Mobile Filter Modal"
       >
         <h2 className="text-2xl font-bold mb-4">Mobile Filter Modal</h2>
-        <div className="accordion">
-          <button className="accordion-button" onClick={toggleAccordion}>
-            Accordion Title
-            <svg
-              className={`arrow ${accordionOpen ? "open" : ""}`}
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-            >
-              <path d="M7 10l5 5 5-5z"></path>
-            </svg>
-          </button>
-          {accordionOpen && (
+        <form>
+          <div className="accordion">
+            <button className="accordion-button">
+              Accordion Title
+              {/* Accordion icon */}
+            </button>
             <div className="accordion-content">
-              <p>Accordion content goes here...</p>
+              <select
+                value={selectedCategory}
+                onChange={handleCategorySelect}
+                className="border border-gray-300 px-4 py-2 rounded-md"
+              >
+                <option value="">Select a category</option>
+                <option value="subcategory1">Subcategory 1</option>
+                <option value="subcategory2">Subcategory 2</option>
+                {/* Add more subcategories as needed */}
+              </select>
             </div>
-          )}
-        </div>
+          </div>
+          <button
+            onClick={closeModal}
+            type="submit"
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
+          >
+            Submit
+          </button>
+        </form>
         <button
           onClick={closeModal}
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
+          className="text-black font-bold py-2 px-4 rounded mt-4"
         >
-          Close Modal
+          X
         </button>
       </Modal>
     </div>
