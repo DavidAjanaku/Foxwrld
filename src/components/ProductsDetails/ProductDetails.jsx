@@ -45,7 +45,7 @@ export default function ProductDetails({ updateCartCount }) {
 
       <div className="pt-36">
         <div className="product-details flex flex-wrap">
-          <div className="w-full lg:w-2/4 h-full md:h-52 relative justify-center slideshow">
+          <div className="w-full lg:w-2/4 h-full md:h-100vh relative justify-center slideshow">
             <button
               className="prev-arrow absolute left-10 top-32 md:top-2/3"
               onClick={handlePrevSlide}
@@ -61,14 +61,14 @@ export default function ProductDetails({ updateCartCount }) {
             <img
               src={images[activeIndex].src}
               alt={images[activeIndex].alt}
-              className="product-image cursor-crosshair h-[70vh] w-full object-contain"
+              className="product-image cursor-crosshair h-[50vh] md:h-[50vh] w-full object-contain"
             />
           </div>
           <div className="w-full lg:w-2/4 details px-8" >
             <div>
               <div className="product-info py-6 border-b-2">
                 <div className="product-info-panel pb-10">
-                  <ul className="breadcumbs flex">
+                  <ul className="breadcumbs flex flex-wrap">
                     <li className="mr-2">
                       <Link>Women</Link>
                     </li>

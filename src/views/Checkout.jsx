@@ -23,7 +23,7 @@ export default function CheckOut() {
             <button className='text-2xl' onClick={handleGoBack}>
               &#8592;
             </button>
-            <Link className='mx-auto fontBold'>
+            <Link className='mx-auto fontBold text-4xl'>
               Foxwrld
             </Link>
           </section>
