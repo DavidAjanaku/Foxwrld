@@ -50,7 +50,7 @@ const HamburgerMenu = ({color}) => {
         );
       case 'home':
         return (
-          <ul className='pt-24'>
+          <ul className='pt-24 px-3'>
             <li>
               <span className="cursor-pointer " onClick={navigateBack}>
               &#8592;
@@ -75,7 +75,7 @@ const HamburgerMenu = ({color}) => {
         );
         case 'new':
         return (
-          <ul className='pt-24'>
+          <ul className='pt-24 px-3'>
             <li>
               <span className="cursor-pointer " onClick={navigateBack}>
               &#8592;
@@ -102,7 +102,7 @@ const HamburgerMenu = ({color}) => {
         );
         case 'women':
           return (
-            <ul className='pt-24'>
+            <ul className='pt-24 px-3'>
               <li>
                 <span className="cursor-pointer " onClick={navigateBack}>
                 &#8592;
@@ -130,7 +130,7 @@ const HamburgerMenu = ({color}) => {
 
           case 'men':
             return (
-              <ul className='pt-24'>
+              <ul className='pt-24 px-3'>
                 <li>
                   <span className="cursor-pointer " onClick={navigateBack}>
                   &#8592;
