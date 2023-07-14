@@ -98,7 +98,7 @@ const handleCartDropdownClose = () => {
       <div className="flex justify-between items-center relative w-full h-20 max-w-[256rem] ">
         <Link
           to="/"
-          className="relative items-center text-black z-30 text-3xl font-sans font-extrabold"
+          className={`relative items-center text-${color} z-30 text-3xl font-sans font-extrabold`}
         >
           Foxwrld
         </Link>
