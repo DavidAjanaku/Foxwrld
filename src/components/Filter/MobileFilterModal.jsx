@@ -3,7 +3,11 @@ import Modal from "react-modal";
 
 const MobileFilterModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [accordionOpen, setAccordionOpen] = useState(false);
+  const [accordionStylesOpen, setAccordionStylesOpen] = useState(false);
+  const [accordionSizesOpen, setAccordionSizesOpen] = useState(false);
+
+  const [selectedTags, setSelectedTags] = useState([]);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -11,7 +15,27 @@ const MobileFilterModal = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    console.log(selectedCategory);
+    console.log("Selected tags:", selectedTags); // Output selected tags to console
+  };
+
+  const toggleAccordion = () => {
+    setAccordionOpen(!accordionOpen);
+  };
+
+  const toggleStylesAccordion = () => {
+    setAccordionStylesOpen(!accordionStylesOpen);
+  };
+
+  const toggleSizesAccordion = () => {
+    setAccordionSizesOpen(!accordionSizesOpen);
+  };
+
+  const handleTagClick = (tag) => {
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(selectedTags.filter((t) => t !== tag));
+    } else {
+      setSelectedTags([...selectedTags, tag]);
+    }
   };
 
   const customModalStyles = {
@@ -27,10 +51,6 @@ const MobileFilterModal = () => {
     },
   };
 
-  const handleCategorySelect = (e) => {
-    setSelectedCategory(e.target.value);
-  };
-
   Modal.setAppElement("#root"); // Replace '#root' with the root element of your app
 
   return (
@@ -39,19 +59,7 @@ const MobileFilterModal = () => {
         onClick={openModal}
         className="bg-black hover:bg-slate-800 text-white font-bold p-5 rounded-full"
       >
-        <svg
-          className="icon__content"
-          viewBox="0 0 1 0.75"
-          focusable="false"
-          width="16"
-          height="12"
-          style={{ fill: "#ffffff" }}
-        >
-          <title>facets</title>
-          <path
-            d="M.63.03v.03H0v.13h.63v.06h.12V.19H1V.06H.75V0H.63v.03M0 .125V.09v.035M.19.53v.03H0v.13h.19v.06h.12V.69H1V.56H.31V.5H.19v.03M0 .63V.59v.04"
-          ></path>
-        </svg>
+        {/* SVG and button content */}
       </button>
       <Modal
         isOpen={modalIsOpen}
@@ -60,38 +68,272 @@ const MobileFilterModal = () => {
         contentLabel="Mobile Filter Modal"
       >
         <h2 className="text-2xl font-bold mb-4">Mobile Filter Modal</h2>
-        <form>
-          <div className="accordion">
-            <button className="accordion-button">
-              Accordion Title
-              {/* Accordion icon */}
-            </button>
-            <div className="accordion-content">
-              <select
-                value={selectedCategory}
-                onChange={handleCategorySelect}
-                className="border border-gray-300 px-4 py-2 rounded-md"
-              >
-                <option value="">Select a category</option>
-                <option value="subcategory1">Subcategory 1</option>
-                <option value="subcategory2">Subcategory 2</option>
-                {/* Add more subcategories as needed */}
-              </select>
-            </div>
-          </div>
+        <div className="accordion">
           <button
-            onClick={closeModal}
-            type="submit"
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
+            className="accordion-button fontBold"
+            onClick={toggleAccordion}
           >
-            Submit
+            Category
+            {/* SVG */}
           </button>
-        </form>
+          {accordionOpen && (
+            <div className="accordion-content">
+              <div>
+                <label
+                  className={`inline-flex items-center mt-2 cursor-pointer ${
+                    selectedTags.includes("bag(323)")
+                      ? "text-green-500"
+                      : "text-gray-500"
+                  }`}
+                  onClick={() => handleTagClick("bag(323)")}
+                >
+                  <span className="ml-2">bag(323)</span>
+                  {selectedTags.includes("bag(323)") && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-1"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </label>
+                <label
+                  className={`inline-flex items-center mt-2 cursor-pointer ${
+                    selectedTags.includes("Cape (23)")
+                      ? "text-green-500"
+                      : "text-gray-500"
+                  }`}
+                  onClick={() => handleTagClick("Cape (23)")}
+                >
+                  <span className="ml-2">Cape (23)</span>
+                  {selectedTags.includes("Cape (23)") && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-1"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </label>
+                <label
+                  className={`inline-flex items-center mt-2 cursor-pointer ${
+                    selectedTags.includes("Blazers (22)")
+                      ? "text-green-500"
+                      : "text-gray-500"
+                  }`}
+                  onClick={() => handleTagClick("Blazers (22)")}
+                >
+                  <span className="ml-2">Blazers (22)</span>
+                  {selectedTags.includes("Blazers (22)") && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-1"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </label>
+              </div>
+            </div>
+          )}
+          <div>
+            <button
+              className="accordion-button fontBold"
+              onClick={toggleStylesAccordion}
+            >
+              Styles
+              {/* SVG */}
+            </button>
+            {accordionStylesOpen && (
+              <div className="accordion-content">
+                <div>
+                  <label
+                    className={`inline-flex items-center mt-2 cursor-pointer ${
+                      selectedTags.includes("Style 1")
+                        ? "text-green-500"
+                        : "text-gray-500"
+                    }`}
+                    onClick={() => handleTagClick("Style 1")}
+                  >
+                    <span className="ml-2">Style 1</span>
+                    {selectedTags.includes("Style 1") && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </label>
+                  <label
+                    className={`inline-flex items-center mt-2 cursor-pointer ${
+                      selectedTags.includes("Style 2")
+                        ? "text-green-500"
+                        : "text-gray-500"
+                    }`}
+                    onClick={() => handleTagClick("Style 2")}
+                  >
+                    <span className="ml-2">Style 2</span>
+                    {selectedTags.includes("Style 2") && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </label>
+                  <label
+                    className={`inline-flex items-center mt-2 cursor-pointer ${
+                      selectedTags.includes("Style 3")
+                        ? "text-green-500"
+                        : "text-gray-500"
+                    }`}
+                    onClick={() => handleTagClick("Style 3")}
+                  >
+                    <span className="ml-2">Style 3</span>
+                    {selectedTags.includes("Style 3") && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </label>
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            <button
+              className="accordion-button fontBold"
+              onClick={toggleSizesAccordion}
+            >
+              Sizes
+              {/* SVG */}
+            </button>
+            {accordionSizesOpen && (
+              <div className="accordion-content">
+                <div>
+                  <label
+                    className={`inline-flex items-center mt-2 cursor-pointer ${
+                      selectedTags.includes("S(32)")
+                        ? "text-green-500"
+                        : "text-gray-500"
+                    }`}
+                    onClick={() => handleTagClick("S(32)")}
+                  >
+                    <span className="ml-2">S(32)</span>
+                    {selectedTags.includes("S(32)") && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </label>
+                  <label
+                    className={`inline-flex items-center mt-2 cursor-pointer ${
+                      selectedTags.includes("L (333)")
+                        ? "text-green-500"
+                        : "text-gray-500"
+                    }`}
+                    onClick={() => handleTagClick("L (333)")}
+                  >
+                    <span className="ml-2">L (333)</span>
+                    {selectedTags.includes("L (333)") && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </label>
+                  <label
+                    className={`inline-flex items-center mt-2 cursor-pointer ${
+                      selectedTags.includes("Large")
+                        ? "text-green-500"
+                        : "text-gray-500"
+                    }`}
+                    onClick={() => handleTagClick("Large")}
+                  >
+                    <span className="ml-2">Large</span>
+                    {selectedTags.includes("Large") && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 ml-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L9.586 10 7.293 7.707a1 1 0 111.414-1.414L11 8.586l2.293-2.293a1 1 0 111.414 1.414L12.414 10l2.293 2.293a1 1 0 01-1.414 1.414L11 11.414l-2.293 2.293a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </label>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
         <button
           onClick={closeModal}
-          className="text-black font-bold py-2 px-4 rounded mt-4"
+          className="bg-black text-white font-bold py-2 px-4 rounded mt-4"
         >
-          X
+          Submit
         </button>
       </Modal>
     </div>
