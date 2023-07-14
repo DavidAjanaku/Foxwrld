@@ -172,7 +172,7 @@ const HamburgerMenu = ({color}) => {
             toggle={toggleMenu}
             size={24}
             duration={0.6}
-            color={color}
+            color={isOpen ? 'black' : color}
           />
         </div>
       </div>
