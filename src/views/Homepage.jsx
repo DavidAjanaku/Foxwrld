@@ -16,7 +16,7 @@ export default function Homepage() {
     <div>
       <div>
         <Header  color={"white"} />
-        <Hamburger  />
+        <Hamburger color={color} />
 
         <MainPageSlider />
        <div>
