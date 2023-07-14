@@ -7,7 +7,7 @@ export default function SignUp() {
   return (
     <div className="flex flex-col h-screen">
       <Header color="black"/>
-      <Hamburger />
+      <Hamburger color="black" />
       <div className="flex flex-col items-center justify-center flex-grow">
         <h2 className="text-2xl font-bold mb-4 fontBold">Create an Account</h2>
         <form className="w-64">
