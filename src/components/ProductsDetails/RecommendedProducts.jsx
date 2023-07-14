@@ -13,7 +13,6 @@ export default function RecommendedProducts() {
         <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"} />
         <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"} />
         <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"} />
-        <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"} />
 
 
 
