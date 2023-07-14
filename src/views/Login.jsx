@@ -6,13 +6,13 @@ import googleLogo from "../assets/googleLogo.png";
 import appleLogo from "../assets/appleLogo.png";
 import { Link } from "react-router-dom";
 
-export default function SignUp() {
+export default function Login() {
   return (
     <div className="flex flex-col h-screen">
       <Header color="black" />
       <Hamburger color="black" />
       <div className="flex flex-col items-center justify-center flex-grow mt-14">
-        <h2 className="text-2xl font-bold mb-4 fontBold">Create an Account</h2>
+        <h2 className="text-2xl font-bold mb-4 fontBold">Login</h2>
         <form className="w-64">
           <label htmlFor="email" className="mb-2 block fontBold">
             Email:
@@ -23,23 +23,8 @@ export default function SignUp() {
             className="border border-gray-300 rounded px-2 py-1 mb-4 w-full"
           />
 
-          <label htmlFor="email" className="mb-2 block fontBold">
-            Fullname:
-          </label>
-          <input
-            type="text"
-            id="fullname"
-            className="border border-gray-300 rounded px-2 py-1 mb-4 w-full"
-          />
+         
 
-          <label htmlFor="dob" className="mb-2 block fontBold">
-            Date of Birth:
-          </label>
-          <input
-            type="date"
-            id="dob"
-            className="border border-gray-300 rounded px-2 py-1 mb-4 w-full"
-          />
 
           <label htmlFor="password" className="mb-2 block fontBold">
             Password:
@@ -72,7 +57,7 @@ export default function SignUp() {
                 <img src={appleLogo} className="w-6 " alt="" />
               </span>
               &nbsp;
-              <span className="uppercase text-sm fontBold">
+              <span className=" text-sm fontBold uppercase">
                 continue with apple
               </span>
             </button>
@@ -83,11 +68,11 @@ export default function SignUp() {
               Forgot Password?
             </Link>
             <p className="text-sm  mt-4 fontBold">
-              Already have an account?
-              <Link to="/Login"
+              Don't have an account?
+              <Link to="/signup"
                 className="text-blue-700 hover:text-blue-900 fontBold"
               >
-                Login
+                Signup
               </Link>
             </p>
           </div>
