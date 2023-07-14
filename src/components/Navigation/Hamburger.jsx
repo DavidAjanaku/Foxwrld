@@ -161,10 +161,12 @@ const HamburgerMenu = ({color}) => {
   };
 
   return (
-    <div className="hamburger-menu mobile hidden">
-      <div className="menu-icon fixed z-50 flex items-center justify-between w-full px-3">
+    <div className="hamburger-menu">
+      <div className={`menu-icon fixed z-50 flex items-center justify-between w-full px-3 ${isOpen ? 'text-black' : ''}`}>
         <div className="logo">
-          <Link to="/" className='fontBold text-2xl'>Foxwrld</Link>
+        <Link to="/" className={`fontBold text-2xl ${isOpen ? 'text-black' : `text-${color}`}`}>
+            Foxwrld
+          </Link>
         </div>
         <div className="hamburger-button z-20">
           <Hamburger
@@ -185,5 +187,7 @@ const HamburgerMenu = ({color}) => {
     </div>
   );
 };
+
+
 
 export default HamburgerMenu;
