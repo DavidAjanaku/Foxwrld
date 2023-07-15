@@ -11,6 +11,10 @@ import ProductDetails from './components/ProductsDetails/ProductDetails';
 import ProductPage from './views/ProductPage';
 import Checkout from './views/Checkout';
 import Login from './views/Login';
+import Account from './components/UserDashboard/Account';
+import AccountSettings from './components/UserDashboard/AccountSettings';
+import AccountAddress from './components/UserDashboard/AccountAddress';
+import AccountOrder from './components/UserDashboard/AccountOrder';
 // import "ionicons/dist/css/ionicons.min.css";
 
 
@@ -27,6 +31,12 @@ function App() {
         <Route path="/ProductPage" element={<ProductPage />} />
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Account" element={<Account />} />
+        <Route path="/AccountSettings" element={<AccountSettings />} />
+        <Route path="/AccountAddress" element={<AccountAddress />} />
+        <Route path="/AccountOrder" element={<AccountOrder />} />
+
+
 
 
         <Route path="/*" element={<ErrorPage />} />
