@@ -4,6 +4,7 @@ import HamburgerMenu from '../Navigation/Hamburger';
 import HeroSlider from '../../assets/hero-slider.webp';
 import { Link } from 'react-router-dom';
 import Footer from '../Navigation/Footer';
+import Pagination from '../Navigation/Pagination';
 
 export default function AccountSettings() {
   const orders = [
@@ -65,6 +66,9 @@ export default function AccountSettings() {
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className='mt-10'>
+            <Pagination/>
             </div>
           </div>
         </section>
