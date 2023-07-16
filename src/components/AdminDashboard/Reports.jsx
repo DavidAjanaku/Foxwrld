@@ -28,6 +28,17 @@ export default function Reports() {
   };
 
 
+  const topCategory = 'Electronics';
+  const categoryItemsSold = 500;
+  const categoryTotalEarnings = 25000;
+
+  const topProduct = {
+    name: 'Smartphone',
+    image: 'https://example.com/smartphone-image.jpg',
+    quantitySold: 200,
+    totalEarnings: 10000,
+  };
+
   return (
     <div className="flex">
       <div className="sidebar bg-gray-200 w-1/4 border border-gray-300 h-[100vh]">
@@ -47,37 +58,63 @@ export default function Reports() {
         </ul>
       </div>
       <div className="main-content flex-1 bg-white h-[100vh] overflow-scroll p-4">
-      <div className="max-w-md mx-auto p-4 bg-white rounded shadow">
-      <h1 className="text-2xl font-bold mb-4">Reports</h1>
+      <div className="  p-4 bg-white rounded shadow">
+      <h1 className="text-2xl font-bold mb-4 fontBold">Reports</h1>
      <div className="flex  flex-wrap gap-4">
      <div className="mb-4">
-        <div className="border rounded p-4">
-          <strong>Total Sales:</strong> {totalSales}
+        <div className="border rounded p-6 text-center">
+          <strong className="text-sm fontBold">Total Sales</strong>
+          <div className="mt-4">
+          999
+          </div>
         </div>
       </div>
       <div className="mb-4">
-        <div className="border rounded p-4">
-          <strong>Net Sales:</strong> {netSales}
+        <div className="border rounded p-6 text-center">
+          <strong className="text-sm fontBold">Net Sales</strong>
+          <div className="mt-4">
+          999
+          </div>
         </div>
       </div>
       <div className="mb-4">
-        <div className="border rounded p-4">
-          <strong>Orders:</strong> {orders}
+        <div className="border rounded p-6 text-center">
+          <strong className="text-sm fontBold">Orders </strong>
+          <div className="mt-4">
+          $12
+          </div>
         </div>
       </div>
       <div className="mb-4">
-        <div className="border rounded p-4">
-          <strong>Product Sales:</strong> {productSales}
+        <div className="border rounded p-6 text-center">
+          <strong className="text-sm fontBold">Product Sales</strong>
+          <div className="mt-4">
+          $1200
+          </div>
         </div>
       </div>
       <div className="mb-4">
-        <div className="border rounded p-4">
-          <strong>Visitors:</strong> {visitors}
+        <div className="border rounded p-6 text-center">
+          <strong className="text-sm fontBold">Visitors</strong>
+          <div className="mt-4">
+          123
+          </div>
         </div>
       </div>
       <div className="mb-4">
-        <div className="border rounded p-4">
-          <strong>Views:</strong> {views}
+        <div className="border rounded p-6 text-center">
+          <strong className="text-sm fontBold">Views</strong>
+          <div className="mt-4">
+          999
+          </div>
+        </div>
+      </div>
+      <div className="mb-4">
+        <div className="border rounded p-6 text-center">
+          <strong className="text-sm fontBold">Returns</strong>
+          <div className="mt-4">
+          23
+          </div>
         </div>
       </div>
       <div className="mb-4">
@@ -100,15 +137,31 @@ export default function Reports() {
 
       <div className="sidebar bg-gray-200 w-1/4 border border-gray-300 h-[100vh] overflow-scroll">
       <div>
-          <div className="border-b border-gray-300 p-4 fontBold">
-            <h2 className=" py-4 fontBold text-2xl">
-              Order Actions
-            </h2>
-           <p></p>
-          </div>
-          <button className="bg-black text-white  m-4 p-2 ">Move to Trash</button>
-         
+        <div className="border-b border-gray-300 p-4 font-bold">
+          <h2 className="py-4 text-2xl">Order Actions</h2>
+          <p></p>
         </div>
+        <button className="bg-black text-white m-4 p-2">Move to Trash</button>
+      </div>
+
+      <div>
+        <div className="border-b border-gray-300 p-4 font-bold">
+          <h2 className="py-4 text-2xl">Top Category</h2>
+        <h1 className="uppercase fontBold">Item mostly sold</h1 >
+        </div>
+       <div className="p-4">
+          <div className="flex items-center">
+            <img src={coats} alt={topProduct.name} className="w-12 h-12 mr-4" />
+            <div>
+              <p>Name: {topProduct.name}</p>
+              <p>Quantity Sold: {topProduct.quantitySold}</p>
+              <p>Total Earnings: ${topProduct.totalEarnings}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
       </div>
     </div>
   );
