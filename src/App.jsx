@@ -15,6 +15,9 @@ import Account from './components/UserDashboard/Account';
 import AccountSettings from './components/UserDashboard/AccountSettings';
 import AccountAddress from './components/UserDashboard/AccountAddress';
 import AccountOrder from './components/UserDashboard/AccountOrder';
+import Products from './components/AdminDashboard/Products';
+import NewProducts from './components/AdminDashboard/NewProducts';
+
 // import "ionicons/dist/css/ionicons.min.css";
 
 
@@ -35,6 +38,9 @@ function App() {
         <Route path="/AccountSettings" element={<AccountSettings />} />
         <Route path="/AccountAddress" element={<AccountAddress />} />
         <Route path="/AccountOrder" element={<AccountOrder />} />
+        <Route path="/Products" element={<Products />} />
+        <Route path="/NewProducts" element={<NewProducts />} />
+
 
 
 
