@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import coats from "../../assets/coats.jpeg";
+import Button from "../Button";
 import Pagination from "../Navigation/Pagination";
 
 export default function Layout() {
@@ -45,7 +46,7 @@ export default function Layout() {
           </li>
           <li>
             <div className="p-4 hover:bg-slate-300 border-b">
-              <Link to="/Reports" className="text-black  ">
+              <Link to="/EditHomepage" className="text-black  ">
                 <div>EditHomepage</div>
               </Link>
             </div>
@@ -98,20 +99,20 @@ export default function Layout() {
             <h1 className="fontBold text-lg">Edit Order</h1>
           </div>
         </header>
-        <div className="">
+        <div className="bg-slate-200 rounded-lg shadow-lg p-4">
           <div className="  p-4 bg-white rounded shadow">
-            <h1 className="text-2xl font-bold mb-4">
+            <h1 className="text-2xl fontBold uppercase mb-4">
               Order Label <span>#599</span>
             </h1>
-            <div>
-              <p>
+            <div className="uppercase ">
+              <p className="fontBold mb-4">
                 Payment via credit card (Stripe){" "}
                 <Link className="underline fontBold">ch KLnSjnfjJDkdB</Link> Paid on May
                 1, 2023 @2:23pm.
               </p>
             </div>
 
-            <div className="flex justify-between ">
+            <div className="flex justify-between mb-4">
               <div>
                 <h2 className="fontBold">General</h2>
                 <h4>Date created</h4>
@@ -129,11 +130,11 @@ export default function Layout() {
             </div>
 
             <div className="mb-4">
-              <strong>Status:</strong>
+              <strong className="fontBold">Status:</strong>
               <select
                 value={status}
                 onChange={handleStatusChange}
-                className="block mt-1 w-full rounded-md border-gray-300 border focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="block mt-1 w-full rounded-md border-gray-300 border focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-4"
               >
                 <option value="Processing">Processing</option>
                 <option value="On Hold">On Hold</option>
@@ -154,7 +155,7 @@ export default function Layout() {
               <div className="">johndoe@example.com</div>
             </div>
           </div>
-          <table className="w-full border border-gray-300">
+          <table className="w-full border border-gray-300 mt-4">
             <thead>
               <tr>
                 <th className="font-bold bg-slate-500 p-2">
@@ -164,12 +165,12 @@ export default function Layout() {
                     onChange={handleSelectAllChange}
                   />
                 </th>
-                <th className="font-bold bg-slate-500 p-2">Image</th>
-                <th className="font-bold bg-slate-500 p-2">Name</th>
-                <th className="font-bold bg-slate-500 p-2">Cost</th>
+                <th className="fontBold bg-slate-500 p-2 uppercase text-white">Image</th>
+                <th className="fontBold bg-slate-500 p-2 uppercase text-white">Name</th>
+                <th className="fontBold bg-slate-500 p-2 uppercase text-white">Cost</th>
 
-                <th className="font-bold bg-slate-500 p-2">Qty</th>
-                <th className="font-bold bg-slate-500 p-2">Total</th>
+                <th className="fontBold bg-slate-500 p-2 uppercase text-white">Qty</th>
+                <th className="fontBold bg-slate-500 p-2 uppercase text-white">Total</th>
               </tr>
             </thead>
             <tbody className="p-5 ">
@@ -200,7 +201,7 @@ export default function Layout() {
               </tr>
             </tbody>
           </table>
-          <button className="bg-black text-white  my-4 p-2 ">Refund</button>
+         <Button text="Refund"/>
         </div>
       </div>
 
@@ -210,9 +211,9 @@ export default function Layout() {
             <h2 className=" py-4 fontBold text-2xl">Order Actions</h2>
             <p></p>
           </div>
-          <button className="bg-black text-white  m-4 p-2 ">
-            Move to Trash
-          </button>
+       <div className="m-4">
+       <Button text=" Move to Trash" />
+       </div>
         </div>
       </div>
     </div>

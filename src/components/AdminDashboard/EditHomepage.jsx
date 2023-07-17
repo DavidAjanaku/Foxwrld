@@ -60,7 +60,7 @@ export default function EditHomepage() {
           </li>
           <li>
             <div className="p-4 bg-slate-400 border-b">
-              <Link to="/Reports" className="text-white  ">
+              <Link to="/EditHomepage" className="text-white  ">
                 <div>EditHomepage</div>
               </Link>
             </div>

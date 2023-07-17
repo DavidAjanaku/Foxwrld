@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import coats from "../../assets/coats.jpeg";
 import Pagination from "../Navigation/Pagination";
+import Button from "../Button";
 
 export default function Products() {
   const [selectAll, setSelectAll] = useState(false);
@@ -25,7 +26,7 @@ export default function Products() {
           </li>
           <li>
             <div className="p-4 hover:bg-slate-300 border-b">
-              <Link to="/Reports" className="text-black  ">
+              <Link to="/EditHomepage" className="text-black  ">
                 <div>EditHomepage</div>
               </Link>
             </div>
@@ -75,17 +76,19 @@ export default function Products() {
       <div className="col-span-9 bg-white h-[100vh] overflow-scroll">
         <div className="p-4">
           <header>
-            <div className="flex my-4 items-center">
-              <h1 className="font-bold text-lg">Products</h1>
-              <button className="bg-black text-white ml-4 p-2">Add New</button>
+            <div className=" my-4 items-center">
+              <h1 className="font-bold text-lg block fontBold">Products</h1>
+            <div className="block">
+            <Button  text="Add New"/>
             </div>
-            <div>
-              <span>All (13)</span>
-              <span className="ml-4">Published (13)</span>
+            </div>
+            <div className="my-4">
+              <span className="text-sm">All (13)</span>
+              <span className="ml-4 text-sm">Published (13)</span>
             </div>
           </header>
-          <form>
-            <div className="flex flex-wrap mb-4 items-center">
+          <form className="bg-slate-200 rounded-lg shadow-lg p-4">
+            <div className="flex flex-wrap mb-4 mt-4 items-center">
               <div className="m-4">
                 <select className="px-2 py-1 border border-gray-300 rounded">
                   <option>Bulk Actions</option>
@@ -117,7 +120,7 @@ export default function Products() {
               </div>
             </div>
           </form>
-          <table className="w-full border border-gray-300">
+          <table className="w-full border border-gray-300 bg-slate-200 rounded-lg shadow-lg p-4 mt-6">
             <thead>
               <tr>
                 <th className="font-bold bg-slate-500 p-2">
@@ -127,25 +130,25 @@ export default function Products() {
                     onChange={handleSelectAllChange}
                   />
                 </th>
-                <th className="font-bold bg-slate-500 p-2">Image</th>
-                <th className="font-bold bg-slate-500 p-2">Name</th>
-                <th className="font-bold bg-slate-500 p-2">SKU</th>
-                <th className="font-bold bg-slate-500 p-2">Stock</th>
-                <th className="font-bold bg-slate-500 p-2">Price</th>
-                <th className="font-bold bg-slate-500 p-2">Categories</th>
-                <th className="font-bold bg-slate-500 p-2">Tags</th>
-                <th className="font-bold bg-slate-500 p-2">Published</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Image</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Name</th>
+                <th className="fontBold bg-slate-500  text-white p-4">SKU</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Stock</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Price</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Categories</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Tags</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Published</th>
               </tr>
             </thead>
             <tbody className="p-5 ">
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <input type="checkbox" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <Link to="/">Louviena Gucci savaeleone</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -156,21 +159,21 @@ export default function Products() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">SKU123</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
-                <td className="text-center">Category A</td>
-                <td className="text-center">Tag 1, Tag 2</td>
-                <td className="text-center">2023/08/19 at 4:15pm</td>
+                <td className="text-center p-4 bg-white">SKU123</td>
+                <td className="text-center p-4 bg-white">10</td>
+                <td className="text-center p-4 bg-white">$19.99</td>
+                <td className="text-center p-4 bg-white">Category A</td>
+                <td className="text-center p-4 bg-white">Tag 1, Tag 2</td>
+                <td className="text-center p-4 bg-white">2023/08/19 at 4:15pm</td>
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4">
                   <input type="checkbox" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4">
                   <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -181,21 +184,46 @@ export default function Products() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">SKU123</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
-                <td className="text-center">Category A</td>
-                <td className="text-center">Tag 1, Tag 2</td>
-                <td className="text-center">2023/08/19 at 4:15pm</td>
+                <td className="text-center p-4">SKU123</td>
+                <td className="text-center p-4">10</td>
+                <td className="text-center p-4">$19.99</td>
+                <td className="text-center p-4">Category A</td>
+                <td className="text-center p-4">Tag 1, Tag 2</td>
+                <td className="text-center p-4">2023/08/19 at 4:15pm</td>
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <input type="checkbox" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
+                  <Link to="/">Louviena Gucci savaeleone</Link>
+                  <div className="hover:visible">
+                    <Link to="/" className="text-red-500 hover:underline">
+                      Delete
+                    </Link>
+                    <Link to="/" className=" hover:underline ml-4">
+                      View
+                    </Link>
+                  </div>
+                </td>
+                <td className="text-center p-4 bg-white">SKU123</td>
+                <td className="text-center p-4 bg-white">10</td>
+                <td className="text-center p-4 bg-white">$19.99</td>
+                <td className="text-center p-4 bg-white">Category A</td>
+                <td className="text-center p-4 bg-white">Tag 1, Tag 2</td>
+                <td className="text-center p-4 bg-white">2023/08/19 at 4:15pm</td>
+              </tr>
+              <tr className="p-5">
+                <td className="text-center p-4">
+                  <input type="checkbox" />
+                </td>
+                <td className="text-center p-4">
+                  <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
+                </td>
+                <td className="text-center p-4">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -206,21 +234,46 @@ export default function Products() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">SKU123</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
-                <td className="text-center">Category A</td>
-                <td className="text-center">Tag 1, Tag 2</td>
-                <td className="text-center">2023/08/19 at 4:15pm</td>
+                <td className="text-center p-4">SKU123</td>
+                <td className="text-center p-4">10</td>
+                <td className="text-center p-4">$19.99</td>
+                <td className="text-center p-4">Category A</td>
+                <td className="text-center p-4">Tag 1, Tag 2</td>
+                <td className="text-center p-4">2023/08/19 at 4:15pm</td>
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <input type="checkbox" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
+                  <Link to="/">Louviena Gucci savaeleone</Link>
+                  <div className="hover:visible">
+                    <Link to="/" className="text-red-500 hover:underline">
+                      Delete
+                    </Link>
+                    <Link to="/" className=" hover:underline ml-4">
+                      View
+                    </Link>
+                  </div>
+                </td>
+                <td className="text-center p-4 bg-white">SKU123</td>
+                <td className="text-center p-4 bg-white">10</td>
+                <td className="text-center p-4 bg-white">$19.99</td>
+                <td className="text-center p-4 bg-white">Category A</td>
+                <td className="text-center p-4 bg-white">Tag 1, Tag 2</td>
+                <td className="text-center p-4 bg-white">2023/08/19 at 4:15pm</td>
+              </tr>
+              <tr className="p-5">
+                <td className="text-center p-4">
+                  <input type="checkbox" />
+                </td>
+                <td className="text-center p-4">
+                  <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
+                </td>
+                <td className="text-center p-4">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -231,73 +284,23 @@ export default function Products() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">SKU123</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
-                <td className="text-center">Category A</td>
-                <td className="text-center">Tag 1, Tag 2</td>
-                <td className="text-center">2023/08/19 at 4:15pm</td>
-              </tr>
-              <tr className="p-5">
-                <td className="text-center">
-                  <input type="checkbox" />
-                </td>
-                <td className="text-center">
-                  <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
-                </td>
-                <td className="text-center">
-                  <Link to="/">Product 1</Link>
-                  <div className="hover:visible">
-                    <Link to="/" className="text-red-500 hover:underline">
-                      Delete
-                    </Link>
-                    <Link to="/" className=" hover:underline ml-4">
-                      View
-                    </Link>
-                  </div>
-                </td>
-                <td className="text-center">SKU123</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
-                <td className="text-center">Category A</td>
-                <td className="text-center">Tag 1, Tag 2</td>
-                <td className="text-center">2023/08/19 at 4:15pm</td>
-              </tr>
-              <tr className="p-5">
-                <td className="text-center">
-                  <input type="checkbox" />
-                </td>
-                <td className="text-center">
-                  <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
-                </td>
-                <td className="text-center">
-                  <Link to="/">Product 1</Link>
-                  <div className="hover:visible">
-                    <Link to="/" className="text-red-500 hover:underline">
-                      Delete
-                    </Link>
-                    <Link to="/" className=" hover:underline ml-4">
-                      View
-                    </Link>
-                  </div>
-                </td>
-                <td className="text-center">SKU123</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
-                <td className="text-center">Category A</td>
-                <td className="text-center">Tag 1, Tag 2</td>
-                <td className="text-center">2023/08/19 at 4:15pm</td>
+                <td className="text-center p-4">SKU123</td>
+                <td className="text-center p-4">10</td>
+                <td className="text-center p-4">$19.99</td>
+                <td className="text-center p-4">Category A</td>
+                <td className="text-center p-4">Tag 1, Tag 2</td>
+                <td className="text-center p-4">2023/08/19 at 4:15pm</td>
               </tr>
               
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <input type="checkbox" />
                 </td>
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
                 </td>
-                <td className="text-center">
-                  <Link to="/">Product 1</Link>
+                <td className="text-center p-4 bg-white">
+                  <Link to="/">Louviena Gucci savaeleone</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
                       Delete
@@ -307,12 +310,12 @@ export default function Products() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">SKU123</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
-                <td className="text-center">Category A</td>
-                <td className="text-center">Tag 1, Tag 2</td>
-                <td className="text-center">2023/08/19 at 4:15pm</td>
+                <td className="text-center p-4 bg-white">SKU123</td>
+                <td className="text-center p-4 bg-white">10</td>
+                <td className="text-center p-4 bg-white">$19.99</td>
+                <td className="text-center p-4 bg-white">Category A</td>
+                <td className="text-center p-4 bg-white">Tag 1, Tag 2</td>
+                <td className="text-center p-4 bg-white">2023/08/19 at 4:15pm</td>
               </tr>
             </tbody>
           </table>

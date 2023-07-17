@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import coats from "../../assets/coats.jpeg";
+import Button from "../Button";
 import Pagination from "../Navigation/Pagination";
 
 export default function Order() {
@@ -75,17 +76,17 @@ export default function Order() {
       <div className="col-span-9 bg-white h-[100vh] overflow-scroll">
         <div className="p-4">
           <header>
-            <div className="flex my-4 items-center">
+            <div className=" my-4 items-center">
               <h1 className="font-bold text-lg fontBold">Order</h1>
-              <button className="bg-black text-white ml-4 p-2">Add order</button>
+             <Button text="Add order" />
             </div>
             <div>
-              <span>All (13)</span>
-              <span className="ml-4">Published (13)</span>
+              <span className="text-sm">All (13)</span>
+              <span className="ml-4 text-sm">Published (13)</span>
             </div>
           </header>
           <form>
-            <div className="flex flex-wrap mb-4 items-center">
+            <div className="flex flex-wrap mb-4 items-center bg-slate-200 rounded-lg shadow-lg p-4 my-6">
               <div className="m-4">
                 <select className="px-2 py-1 border border-gray-300 rounded">
                   <option>Bulk Actions</option>
@@ -117,7 +118,7 @@ export default function Order() {
               </div>
             </div>
           </form>
-          <table className="w-full border border-gray-300">
+          <table className="w-full border border-gray-300 bg-slate-200 rounded-lg shadow-lg p-4">
             <thead>
               <tr>
                 <th className="font-bold bg-slate-500 p-2">
@@ -127,20 +128,20 @@ export default function Order() {
                     onChange={handleSelectAllChange}
                   />
                 </th>
-                <th className="font-bold bg-slate-500 p-2">Order</th>
-                <th className="font-bold bg-slate-500 p-2">Date</th>
-                <th className="font-bold bg-slate-500 p-2">Status</th>
-                <th className="font-bold bg-slate-500 p-2">Total</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Order</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Date</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Status</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Total</th>
              
               </tr>
             </thead>
             <tbody className="p-5 ">
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4">
                   <input type="checkbox" />
                 </td>
              
-                <td className="text-center">
+                <td className="text-center p-4">
                   <Link to="/">Louviena Gucci savaeleone</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -151,17 +152,17 @@ export default function Order() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">2 days ago</td>
-                <td className="text-center "><span className="bg-gray-400 p-2 rounded-md">pending payment</span></td>
-                <td className="text-center">$19.99</td>
+                <td className="text-center p-4">2 days ago</td>
+                <td className="text-center p-4 "><span className="bg-gray-400 p-2 rounded-md">pending payment</span></td>
+                <td className="text-center p-4">$19.99</td>
           
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <input type="checkbox" />
                 </td>
              
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -172,17 +173,17 @@ export default function Order() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">2 days ago</td>
-                <td className="text-center"><span className="bg-green-300 p-2 rounded-md">pending payment</span></td>
-                <td className="text-center">$19.99</td>
+                <td className="text-center p-4 bg-white">2 days ago</td>
+                <td className="text-center p-4 bg-white"><span className="bg-green-300 p-2 rounded-md">pending payment</span></td>
+                <td className="text-center p-4 bg-white">$19.99</td>
           
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4">
                   <input type="checkbox" />
                 </td>
              
-                <td className="text-center">
+                <td className="text-center p-4">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -193,17 +194,17 @@ export default function Order() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">2 days ago</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
+                <td className="text-center p-4">2 days ago</td>
+                <td className="text-center p-4">10</td>
+                <td className="text-center p-4">$19.99</td>
           
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <input type="checkbox" />
                 </td>
              
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -214,17 +215,17 @@ export default function Order() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">2 days ago</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
+                <td className="text-center p-4 bg-white">2 days ago</td>
+                <td className="text-center p-4 bg-white">10</td>
+                <td className="text-center p-4 bg-white">$19.99</td>
           
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4">
                   <input type="checkbox" />
                 </td>
              
-                <td className="text-center">
+                <td className="text-center p-4">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -235,17 +236,17 @@ export default function Order() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">2 days ago</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
+                <td className="text-center p-4">2 days ago</td>
+                <td className="text-center p-4">10</td>
+                <td className="text-center p-4">$19.99</td>
           
               </tr>
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <input type="checkbox" />
                 </td>
              
-                <td className="text-center">
+                <td className="text-center p-4 bg-white">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -256,18 +257,18 @@ export default function Order() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">2 days ago</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
+                <td className="text-center p-4 bg-white">2 days ago</td>
+                <td className="text-center p-4 bg-white">10</td>
+                <td className="text-center p-4 bg-white">$19.99</td>
           
               </tr>
               
               <tr className="p-5">
-                <td className="text-center">
+                <td className="text-center p-4">
                   <input type="checkbox" />
                 </td>
              
-                <td className="text-center">
+                <td className="text-center p-4">
                   <Link to="/">Product 1</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
@@ -278,9 +279,9 @@ export default function Order() {
                     </Link>
                   </div>
                 </td>
-                <td className="text-center">2 days ago</td>
-                <td className="text-center">10</td>
-                <td className="text-center">$19.99</td>
+                <td className="text-center p-4">2 days ago</td>
+                <td className="text-center p-4">10</td>
+                <td className="text-center p-4">$19.99</td>
           
               </tr>
             </tbody>
