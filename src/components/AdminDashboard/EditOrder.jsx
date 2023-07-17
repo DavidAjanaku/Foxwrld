@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import coats from "../../assets/coats.jpeg";
 import Pagination from "../Navigation/Pagination";
 
-
 export default function Layout() {
   const [status, setStatus] = useState("Processing");
   const [selectAll, setSelectAll] = useState(false);
-
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
@@ -30,7 +28,9 @@ export default function Layout() {
     const checked = e.target.checked;
     setSelectAll(checked);
 
-    const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll(
+      'tbody input[type="checkbox"]'
+    );
     checkboxes.forEach((checkbox) => {
       checkbox.checked = checked;
     });
@@ -41,14 +41,47 @@ export default function Layout() {
       <div className="sidebar bg-gray-200 w-1/4 border border-gray-300 h-[100vh]">
         <ul>
           <li>
-            <div>
-              <Link to="#" className="text-blue-500 hover:underline">
-                Appearance
+            <div className="fontBold">Welcome Admin</div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 border-b">
+              <Link to="/Reports" className="text-white  ">
+                <div>Analysis</div>
               </Link>
             </div>
-            <div>
-              <Link to="#" className="text-blue-500 hover:underline">
-                Appearance
+          </li>
+          <li>
+            <div className="p-4 bg-slate-700 hover:bg-slate-700 border-b">
+              <Link to="/EditOrder" className="text-white active">
+                <div>Edit Order</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/Products" className="text-white ">
+                <div>Products</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/NewProducts" className="text-white ">
+                <div>New Products</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/Order" className="text-white ">
+                <div>Order</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/" className="text-white ">
+                <div>Logout</div>
               </Link>
             </div>
           </li>
@@ -57,7 +90,7 @@ export default function Layout() {
       <div className="main-content flex-1 bg-white h-[100vh] overflow-scroll p-4">
         <header>
           <div className="flex my-4 items-center">
-            <h1 className="fontBold text-lg">Add New Products</h1>
+            <h1 className="fontBold text-lg">Edit Order</h1>
           </div>
         </header>
         <div className="">
@@ -67,8 +100,8 @@ export default function Layout() {
             </h1>
             <div>
               <p>
-                payment via credit card (stripe){" "}
-                <Link className="underline">ch KLnSjnfjJDkdB</Link> Paid on May
+                Payment via credit card (Stripe){" "}
+                <Link className="underline fontBold">ch KLnSjnfjJDkdB</Link> Paid on May
                 1, 2023 @2:23pm.
               </p>
             </div>
@@ -86,7 +119,7 @@ export default function Layout() {
               </div>
               <div>
                 <h2 className="fontBold">Shipping</h2>
-                "123 Main St, City, State
+                123 Main St, City, State
               </div>
             </div>
 
@@ -103,7 +136,6 @@ export default function Layout() {
                 <option value="Pending">Processing</option>
                 <option value="Pending">Completed</option>
                 <option value="Pending">Cancelled</option>
-
 
                 {/* Add more options here */}
               </select>
@@ -133,7 +165,6 @@ export default function Layout() {
 
                 <th className="font-bold bg-slate-500 p-2">Qty</th>
                 <th className="font-bold bg-slate-500 p-2">Total</th>
-                
               </tr>
             </thead>
             <tbody className="p-5 ">
@@ -142,43 +173,41 @@ export default function Layout() {
                   <input type="checkbox" />
                 </td>
                 <td className="text-center">
-                  <img src={coats} alt="Product" className="w-16 h-16 mx-auto my-3" />
+                  <img
+                    src={coats}
+                    alt="Product"
+                    className="w-16 h-16 mx-auto my-3"
+                  />
                 </td>
-                
+
                 <td className="text-center">
                   <Link to="/">Louviena Gucci savaeleone</Link>
                   <div className="hover:visible">
                     <Link to="/" className="text-red-500 hover:underline">
                       Delete
                     </Link>
-                  
                   </div>
                 </td>
                 <td className="text-center">$2499</td>
 
                 <td className="text-center">*2</td>
                 <td className="text-center">$19.99</td>
-                
               </tr>
-            
             </tbody>
           </table>
           <button className="bg-black text-white  my-4 p-2 ">Refund</button>
-
         </div>
-     
       </div>
 
       <div className="sidebar bg-gray-200 w-1/4 border border-gray-300 h-[100vh] overflow-scroll">
-      <div>
+        <div>
           <div className="border-b border-gray-300 p-4 fontBold">
-            <h2 className=" py-4 fontBold text-2xl">
-              Order Actions
-            </h2>
-           <p></p>
+            <h2 className=" py-4 fontBold text-2xl">Order Actions</h2>
+            <p></p>
           </div>
-          <button className="bg-black text-white  m-4 p-2 ">Move to Trash</button>
-         
+          <button className="bg-black text-white  m-4 p-2 ">
+            Move to Trash
+          </button>
         </div>
       </div>
     </div>

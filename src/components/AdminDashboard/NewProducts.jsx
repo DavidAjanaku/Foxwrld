@@ -90,16 +90,49 @@ export default function Layout() {
   return (
     <div className="flex">
       <div className="sidebar bg-gray-200 w-1/4 border border-gray-300 h-[100vh]">
-        <ul>
+      <ul>
           <li>
-            <div>
-              <Link to="#" className="text-blue-500 hover:underline">
-                Appearance
+            <div className="fontBold">Welcome Admin</div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 border-b">
+              <Link to="/Reports" className="text-white  ">
+                <div>Analysis</div>
               </Link>
             </div>
-            <div>
-              <Link to="#" className="text-blue-500 hover:underline">
-                Appearance
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/EditOrder" className="text-white active">
+                <div>Edit Order</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/Products" className="text-white ">
+                <div>Products</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-700 hover:bg-slate-700 border-b">
+              <Link to="/NewProducts" className="text-white ">
+                <div>New Products</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/Order" className="text-white ">
+                <div>Order</div>
+              </Link>
+            </div>
+          </li>
+          <li>
+            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
+              <Link to="/" className="text-white ">
+                <div>Logout</div>
               </Link>
             </div>
           </li>
