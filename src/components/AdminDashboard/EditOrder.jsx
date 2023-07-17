@@ -150,6 +150,11 @@ export default function Layout() {
               <strong className="fontBold">Customer:</strong>
               <div>JohnDoe</div>
             </div>
+
+            <div className="mb-2">
+              <strong className="fontBold">Gender:</strong>
+              <div>Male</div>
+            </div>
             <div className="mb-2">
               <strong className="fontBold">Email:</strong>
               <div className="">johndoe@example.com</div>

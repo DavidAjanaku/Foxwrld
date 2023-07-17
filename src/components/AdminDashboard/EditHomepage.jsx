@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import coats from "../../assets/coats.jpeg";
-import ImageUpload from "../../assets/imageUpload.png";
+import ImageUpload from "../../assets/ImageUpload.png";
 import Button from "../Button";
 
 import Pagination from "../Navigation/Pagination";

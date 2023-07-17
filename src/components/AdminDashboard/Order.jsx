@@ -130,8 +130,11 @@ export default function Order() {
                 </th>
                 <th className="fontBold bg-slate-500  text-white p-4">Order</th>
                 <th className="fontBold bg-slate-500  text-white p-4">Date</th>
+
+
                 <th className="fontBold bg-slate-500  text-white p-4">Status</th>
                 <th className="fontBold bg-slate-500  text-white p-4">Total</th>
+                <th className="fontBold bg-slate-500  text-white p-4">Qty</th>
              
               </tr>
             </thead>
@@ -155,6 +158,51 @@ export default function Order() {
                 <td className="text-center p-4">2 days ago</td>
                 <td className="text-center p-4 "><span className="bg-gray-400 p-2 rounded-md">pending payment</span></td>
                 <td className="text-center p-4">$19.99</td>
+                <td className="text-center p-4">12</td>
+          
+              </tr>
+              <tr className="p-5">
+                <td className="text-center p-4 bg-white">
+                  <input type="checkbox" />
+                </td>
+             
+                <td className="text-center p-4 bg-white">
+                  <Link to="/">Product 1</Link>
+                  <div className="hover:visible">
+                    <Link to="/" className="text-red-500 hover:underline">
+                      Delete
+                    </Link>
+                    <Link to="/" className=" hover:underline ml-4">
+                      View
+                    </Link>
+                  </div>
+                </td>
+                <td className="text-center p-4 bg-white">2 days ago</td>
+                <td className="text-center p-4 bg-white"><span className="bg-red-500 p-2 rounded-md">cancelled</span></td>
+                <td className="text-center p-4 bg-white">$19.99</td>
+                <td className="text-center p-4 bg-white">99</td>
+
+              </tr>
+              <tr className="p-5">
+                <td className="text-center p-4">
+                  <input type="checkbox" />
+                </td>
+             
+                <td className="text-center p-4">
+                  <Link to="/">Product 1</Link>
+                  <div className="hover:visible">
+                    <Link to="/" className="text-red-500 hover:underline">
+                      Delete
+                    </Link>
+                    <Link to="/" className=" hover:underline ml-4">
+                      View
+                    </Link>
+                  </div>
+                </td>
+                <td className="text-center p-4">2 days ago</td>
+                <td className="text-center p-4 "><span className="bg-gray-400 p-2 rounded-md">pending payment</span></td>
+                <td className="text-center p-4">$19.99</td>
+                <td className="text-center p-4">9</td>
           
               </tr>
               <tr className="p-5">
@@ -176,7 +224,8 @@ export default function Order() {
                 <td className="text-center p-4 bg-white">2 days ago</td>
                 <td className="text-center p-4 bg-white"><span className="bg-green-300 p-2 rounded-md">pending payment</span></td>
                 <td className="text-center p-4 bg-white">$19.99</td>
-          
+                <td className="text-center p-4 bg-white">99</td>
+
               </tr>
               <tr className="p-5">
                 <td className="text-center p-4">
@@ -195,9 +244,10 @@ export default function Order() {
                   </div>
                 </td>
                 <td className="text-center p-4">2 days ago</td>
-                <td className="text-center p-4">10</td>
+                <td className="text-center p-4 "><span className="bg-gray-400 p-2 rounded-md">pending payment</span></td>
                 <td className="text-center p-4">$19.99</td>
-          
+                <td className="text-center p-4">99</td>
+
               </tr>
               <tr className="p-5">
                 <td className="text-center p-4 bg-white">
@@ -216,51 +266,10 @@ export default function Order() {
                   </div>
                 </td>
                 <td className="text-center p-4 bg-white">2 days ago</td>
-                <td className="text-center p-4 bg-white">10</td>
+                <td className="text-center p-4 bg-white"><span className="bg-green-300 p-2 rounded-md">pending payment</span></td>
                 <td className="text-center p-4 bg-white">$19.99</td>
-          
-              </tr>
-              <tr className="p-5">
-                <td className="text-center p-4">
-                  <input type="checkbox" />
-                </td>
-             
-                <td className="text-center p-4">
-                  <Link to="/">Product 1</Link>
-                  <div className="hover:visible">
-                    <Link to="/" className="text-red-500 hover:underline">
-                      Delete
-                    </Link>
-                    <Link to="/" className=" hover:underline ml-4">
-                      View
-                    </Link>
-                  </div>
-                </td>
-                <td className="text-center p-4">2 days ago</td>
-                <td className="text-center p-4">10</td>
-                <td className="text-center p-4">$19.99</td>
-          
-              </tr>
-              <tr className="p-5">
-                <td className="text-center p-4 bg-white">
-                  <input type="checkbox" />
-                </td>
-             
-                <td className="text-center p-4 bg-white">
-                  <Link to="/">Product 1</Link>
-                  <div className="hover:visible">
-                    <Link to="/" className="text-red-500 hover:underline">
-                      Delete
-                    </Link>
-                    <Link to="/" className=" hover:underline ml-4">
-                      View
-                    </Link>
-                  </div>
-                </td>
-                <td className="text-center p-4 bg-white">2 days ago</td>
-                <td className="text-center p-4 bg-white">10</td>
-                <td className="text-center p-4 bg-white">$19.99</td>
-          
+                <td className="text-center p-4 bg-white">8</td>
+
               </tr>
               
               <tr className="p-5">
@@ -280,9 +289,10 @@ export default function Order() {
                   </div>
                 </td>
                 <td className="text-center p-4">2 days ago</td>
-                <td className="text-center p-4">10</td>
+                <td className="text-center p-4 "><span className="bg-gray-400 p-2 rounded-md">pending payment</span></td>
                 <td className="text-center p-4">$19.99</td>
-          
+                <td className="text-center p-4">29</td>
+
               </tr>
             </tbody>
           </table>
