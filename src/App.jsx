@@ -1,32 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import './App.css'
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Homepage from './views/Homepage';
-import ErrorPage from './views/ErrorPage';
-import SignUp from './views/SignUp';
-import NewArrivals from './views/NewArrivals';
-import ProductCardDetails from './components/ProductsDetails/ProductCardDetails';
-import ProductDetails from './components/ProductsDetails/ProductDetails';
-import ProductPage from './views/ProductPage';
-import Checkout from './views/Checkout';
-import Login from './views/Login';
-import Account from './components/UserDashboard/Account';
-import AccountSettings from './components/UserDashboard/AccountSettings';
-import AccountAddress from './components/UserDashboard/AccountAddress';
-import AccountOrder from './components/UserDashboard/AccountOrder';
-import Products from './components/AdminDashboard/Products';
-import NewProducts from './components/AdminDashboard/NewProducts';
-import Order from './components/AdminDashboard/Order';
-import EditOrder from './components/AdminDashboard/EditOrder';
-import Reports from './components/AdminDashboard/Reports';
-
+import Homepage from "./views/Homepage";
+import ErrorPage from "./views/ErrorPage";
+import SignUp from "./views/SignUp";
+import NewArrivals from "./views/NewArrivals";
+import ProductCardDetails from "./components/ProductsDetails/ProductCardDetails";
+import ProductDetails from "./components/ProductsDetails/ProductDetails";
+import ProductPage from "./views/ProductPage";
+import Checkout from "./views/Checkout";
+import Login from "./views/Login";
+import Account from "./components/UserDashboard/Account";
+import AccountSettings from "./components/UserDashboard/AccountSettings";
+import AccountAddress from "./components/UserDashboard/AccountAddress";
+import AccountOrder from "./components/UserDashboard/AccountOrder";
+import Products from "./components/AdminDashboard/Products";
+import NewProducts from "./components/AdminDashboard/NewProducts";
+import Order from "./components/AdminDashboard/Order";
+import EditOrder from "./components/AdminDashboard/EditOrder";
+import Reports from "./components/AdminDashboard/Reports";
+import EditHomepage from "./components/AdminDashboard/EditHomepage";
 
 // import "ionicons/dist/css/ionicons.min.css";
 
-
 function App() {
-
   return (
     <Router>
       <Routes>
@@ -44,21 +42,16 @@ function App() {
         <Route path="/AccountOrder" element={<AccountOrder />} />
         <Route path="/Products" element={<Products />} />
         <Route path="/NewProducts" element={<NewProducts />} />
-                <Route path="/Order" element={<Order />} />
-                <Route path="/EditOrder" element={<EditOrder />} />
-                <Route path="/Reports" element={<Reports />} />
-
-
-
-
-
-
+        <Route path="/Order" element={<Order />} />
+        <Route path="/EditOrder" element={<EditOrder />} />
+        <Route path="/Reports" element={<Reports />} />
+        <Route path="/EditHomepage" element={<EditHomepage />} />
 
 
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
-  </Router>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

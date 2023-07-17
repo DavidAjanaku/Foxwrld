@@ -19,48 +19,53 @@ export default function Products() {
   return (
     <div className="grid grid-cols-12 gap-4">
       <div className="col-span-3 bg-gray-200 h-[100vh]">
-      <ul>
+      <ul className="px-4">
           <li>
             <div className="fontBold">Welcome Admin</div>
           </li>
           <li>
-            <div className="p-4 bg-slate-600 border-b">
-              <Link to="/Reports" className="text-white  ">
+            <div className="p-4 hover:bg-slate-300 border-b">
+              <Link to="/Reports" className="text-black  ">
+                <div>EditHomepage</div>
+              </Link>
+            </div>
+            <div className="p-4 hover:bg-slate-300 border-b  ">
+              <Link to="/Reports" className="text-black  ">
                 <div>Analysis</div>
               </Link>
             </div>
           </li>
           <li>
-            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
-              <Link to="/EditOrder" className="text-white active">
+            <div className="p-4  hover:bg-slate-300 border-b">
+              <Link to="/EditOrder" className="text-black active">
                 <div>Edit Order</div>
               </Link>
             </div>
           </li>
           <li>
-            <div className="p-4 bg-slate-700 hover:bg-slate-700 border-b">
-              <Link to="/Products" className="text-white ">
+            <div className="p-4 bg-slate-400 border-b">
+              <Link to="/Products" className="text-black ">
                 <div>Products</div>
               </Link>
             </div>
           </li>
           <li>
-            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
-              <Link to="/NewProducts" className="text-white ">
+            <div className="p-4  hover:bg-slate-300 border-b">
+              <Link to="/NewProducts" className="text-black ">
                 <div>New Products</div>
               </Link>
             </div>
           </li>
           <li>
-            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
-              <Link to="/Order" className="text-white ">
+            <div className="p-4  hover:bg-slate-300 border-b">
+              <Link to="/Order" className="text-black ">
                 <div>Order</div>
               </Link>
             </div>
           </li>
           <li>
-            <div className="p-4 bg-slate-600 hover:bg-slate-700 border-b">
-              <Link to="/" className="text-white ">
+            <div className="p-4  hover:bg-slate-300 border-b">
+              <Link to="/" className="text-black ">
                 <div>Logout</div>
               </Link>
             </div>
