@@ -34,6 +34,16 @@ export default function Reports() {
     totalEarnings: 10000,
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Access the selected dates from the state
+    const formattedStartDate = startDate ? startDate.toLocaleDateString() : "";
+    const formattedEndDate = endDate ? endDate.toLocaleDateString() : "";
+    
+    // Display the selected dates in an alert
+    alert(`Selected date range: ${formattedStartDate} - ${formattedEndDate}`);
+  };
+
   return (
     <div className="flex">
      <div className="sidebar bg-gray-200 w-1/4 border border-gray-300 h-[100vh]">
@@ -93,6 +103,7 @@ export default function Reports() {
       <div className="main-content flex-1 bg-white h-[100vh] overflow-scroll p-4">
       <div className="p-4 bg-white rounded shadow">
   <h1 className="text-2xl font-bold mb-4 fontBold">Reports</h1>
+  <form onSubmit={handleSubmit}>
   <div className="grid grid-cols-2 md:grid-cols-2 gap-4 bg-slate-200 rounded-lg shadow-lg p-4">
     <div className="mb-4">
       <div className="border border-slate-300 bg-white rounded p-6 text-center">
@@ -148,8 +159,15 @@ export default function Reports() {
           inline
         />
       </div>
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Submit
+      </button>
     </div>
   </div>
+  </form>
 </div>
 
       </div>
