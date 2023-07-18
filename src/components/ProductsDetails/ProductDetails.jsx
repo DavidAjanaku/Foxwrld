@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../Navigation/Header";
-import Hamburger from "../Navigation/Hamburger";
 import pyjamas from "../../assets/pjamas1.jpeg";
 import jacket from "../../assets/jacket1.jpeg";
 import jacke2 from "../../assets/jacket2.jpeg";
@@ -17,7 +16,6 @@ export default function ProductDetails({ updateCartCount }) {
   const handleAddToCart = () => {
     updateCartCount((prevCount) => prevCount + 1);
   };
-  
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
@@ -64,7 +62,7 @@ export default function ProductDetails({ updateCartCount }) {
               className="product-image cursor-crosshair h-[50vh] md:h-[50vh] w-full object-contain"
             />
           </div>
-          <div className="w-full lg:w-2/4 details px-8" >
+          <div className="w-full lg:w-2/4 details px-8">
             <div>
               <div className="product-info py-6 border-b-2">
                 <div className="product-info-panel pb-10">

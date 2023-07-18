@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const FilterSection = () => {
-  const [minPrice, setMinPrice] = useState('');
-  const [maxPrice, setMaxPrice] = useState('');
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const [brands, setBrands] = useState([]);
   const [categories, setCategories] = useState([]);
   const [sizes, setSizes] = useState([]);
@@ -43,7 +43,7 @@ const FilterSection = () => {
   };
 
   const handleApplyFilter = () => {
-    // Apply filter logic here
+  
   };
 
   return (
@@ -85,7 +85,7 @@ const FilterSection = () => {
           id="brand1"
           value="Brand 1"
           onChange={handleBrandChange}
-          checked={brands.includes('Brand 1')}
+          checked={brands.includes("Brand 1")}
           className="mr-2"
         />
         Brand 1
@@ -96,7 +96,7 @@ const FilterSection = () => {
           id="brand2"
           value="Brand 2"
           onChange={handleBrandChange}
-          checked={brands.includes('Brand 2')}
+          checked={brands.includes("Brand 2")}
           className="mr-2"
         />
         Brand 2
@@ -107,7 +107,7 @@ const FilterSection = () => {
           id="brand3"
           value="Brand 3"
           onChange={handleBrandChange}
-          checked={brands.includes('Brand 3')}
+          checked={brands.includes("Brand 3")}
           className="mr-2"
         />
         Brand3
@@ -121,7 +121,7 @@ const FilterSection = () => {
           id="category1"
           value="Category 1"
           onChange={handleCategoryChange}
-          checked={categories.includes('Category 1')}
+          checked={categories.includes("Category 1")}
           className="mr-2"
         />
         Category 1
@@ -132,7 +132,7 @@ const FilterSection = () => {
           id="category2"
           value="Category 2"
           onChange={handleCategoryChange}
-          checked={categories.includes('Category 2')}
+          checked={categories.includes("Category 2")}
           className="mr-2"
         />
         Category 2
@@ -143,7 +143,7 @@ const FilterSection = () => {
           id="category3"
           value="Category 3"
           onChange={handleCategoryChange}
-          checked={categories.includes('Category 3')}
+          checked={categories.includes("Category 3")}
           className="mr-2"
         />
         Category 3
@@ -157,7 +157,7 @@ const FilterSection = () => {
           id="size-small"
           value="Small"
           onChange={handleSizeChange}
-          checked={sizes.includes('Small')}
+          checked={sizes.includes("Small")}
           className="mr-2"
         />
         Small
@@ -168,7 +168,7 @@ const FilterSection = () => {
           id="size-medium"
           value="Medium"
           onChange={handleSizeChange}
-          checked={sizes.includes('Medium')}
+          checked={sizes.includes("Medium")}
           className="mr-2"
         />
         Medium
@@ -179,7 +179,7 @@ const FilterSection = () => {
           id="size-large"
           value="Large"
           onChange={handleSizeChange}
-          checked={sizes.includes('Large')}
+          checked={sizes.includes("Large")}
           className="mr-2"
         />
         Large

@@ -15,7 +15,7 @@ const MobileFilterModal = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    console.log("Selected tags:", selectedTags); // Output selected tags to console
+    console.log("Selected tags:", selectedTags); 
   };
 
   const toggleAccordion = () => {
@@ -51,7 +51,7 @@ const MobileFilterModal = () => {
     },
   };
 
-  Modal.setAppElement("#root"); // Replace '#root' with the root element of your app
+  Modal.setAppElement("#root"); 
 
   return (
     <div className="z-40 fixed bottom-0 right-0 m-4 md:hidden">

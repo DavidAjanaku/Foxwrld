@@ -14,7 +14,7 @@ export default function ProductCardDetails() {
             pjamas2,
             jacket1,
         ],
-        // ... other properties
+       
       };
 
   const [selectedColor, setSelectedColor] = useState(glasses.colorOptions[0]);
@@ -46,7 +46,6 @@ export default function ProductCardDetails() {
 
         <div>
           <div>
-            {/* Replace 'iframe' with the appropriate 3D image rendering component */}
             <iframe
               src={glasses.threeDImageUrl}
               width="100%"
@@ -87,7 +86,6 @@ export default function ProductCardDetails() {
           <p>Color: {selectedColor}</p>
           <p>Price: ${glasses.price}</p>
           <p>Brand: {glasses.brand}</p>
-          {/* Display additional details of the glasses */}
         </div>
       </div>
     </div>

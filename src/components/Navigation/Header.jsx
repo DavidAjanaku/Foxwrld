@@ -10,7 +10,6 @@ export default function Header({ color, cartCount }) {
 
   const dropdownTimeoutRef = useRef(null);
   const newInDropdownTimeoutRef = useRef(null);
-  // const [cartCount, setCartCount] = useState(0);
 
 
   const handleDropdownToggle = () => {
@@ -21,7 +20,7 @@ export default function Header({ color, cartCount }) {
   const handleDropdownClose = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 300); // Adjust the delay as needed
+    }, 300);
   };
 
   const handleDropdownEnter = () => {
@@ -36,7 +35,7 @@ export default function Header({ color, cartCount }) {
   const handleNewInDropdownClose = () => {
     newInDropdownTimeoutRef.current = setTimeout(() => {
       setIsNewInDropdownOpen(false);
-    }, 300); // Adjust the delay as needed
+    }, 300);
   };
 
   const handleNewInDropdownEnter = () => {

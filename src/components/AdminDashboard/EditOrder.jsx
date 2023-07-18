@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import coats from "../../assets/coats.jpeg";
 import Button from "../Button";
-import Pagination from "../Navigation/Pagination";
 
 export default function Layout() {
   const [status, setStatus] = useState("Processing");
