@@ -44,3 +44,8 @@
 .zIndexs {
   z-index: 9999 !important;
 }
+
+.noscroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

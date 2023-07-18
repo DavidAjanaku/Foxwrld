@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../Navigation/Header';
 import HamburgerMenu from '../Navigation/Hamburger';
 import HeroSlider from '../../assets/hero-slider.webp';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import Footer from '../Navigation/Footer';
 import Pagination from '../Navigation/Pagination';
 
@@ -27,6 +27,12 @@ export default function AccountSettings() {
     // Add more order objects as needed
   ];
 
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigates back to the previous page
+  };
+
   return (
     <div>
       <div className='h-24'>
@@ -42,6 +48,9 @@ export default function AccountSettings() {
         </section>
         <section className="accountOptions bg-gray-200">
           <div className="container mx-auto px-4 py-8">
+          <button className='text-2xl' onClick={handleGoBack}>
+              &#8592;
+            </button>
             <h2 className="text-3xl font-bold mb-4 fontBold">Order History</h2>
             <div className="overflow-x-auto">
               <table className="min-w-full border">

@@ -21,7 +21,7 @@ export default function Account() {
         </section>
         <section className="accountOptions">
             <div className="my-account-options flex  mt-7 mx-4 text-center flex-wrap justify-center">
-        <Link className='m-6'>
+        <Link to="/AccountOrder" className='m-6'>
         <div>
             <div className="link-my-account-options">
                 <span className='fontBold'>
@@ -50,7 +50,7 @@ export default function Account() {
         </div>
         </Link>
 
-        <Link className='m-6'>
+        <Link to="/AccountAddress" className='m-6'>
         <div>
             <div className="link-my-account-options">
             <span className='fontBold'>

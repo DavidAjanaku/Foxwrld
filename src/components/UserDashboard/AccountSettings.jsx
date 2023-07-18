@@ -2,10 +2,16 @@ import React from 'react';
 import Header from '../Navigation/Header';
 import HamburgerMenu from '../Navigation/Hamburger';
 import HeroSlider from '../../assets/hero-slider.webp';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Navigation/Footer';
 
 export default function AccountSettings() {
+
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigates back to the previous page
+  };
   return (
     <div>
       <div className='h-24'>
@@ -21,6 +27,9 @@ export default function AccountSettings() {
         </section>
         <section className="accountOptions bg-gray-200">
           <div className="container mx-auto px-4 py-20">
+          <button className='text-2xl' onClick={handleGoBack}>
+              &#8592;
+            </button>
             <h2 className='fontBold  text-3xl mb-5'>My Personal Details</h2>
             <form className="grid grid-cols-2 md:grid-cols-2 gap-4">
               <div>
