@@ -80,7 +80,7 @@ export default function Account() {
                   type="text"
                   id="firstName"
                   className="border  rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
               <div>
@@ -94,7 +94,7 @@ export default function Account() {
                   type="text"
                   id="lastName"
                   className="border  rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
               <div>
@@ -108,7 +108,7 @@ export default function Account() {
                   type="text"
                   id="addressLine1"
                   className="border  rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
               <div>
@@ -122,7 +122,7 @@ export default function Account() {
                   type="text"
                   id="addressLine2"
                   className="border  rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
               <div>
@@ -136,7 +136,7 @@ export default function Account() {
                   type="text"
                   id="city"
                   className=" border rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
               <div>
@@ -150,7 +150,7 @@ export default function Account() {
                   type="text"
                   id="state"
                   className=" border rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
               <div>
@@ -164,7 +164,7 @@ export default function Account() {
                   type="text"
                   id="zipCode"
                   className=" border rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
               <div>
@@ -178,7 +178,7 @@ export default function Account() {
                   type="text"
                   id="contactNumber"
                   className=" border rounded-md p-2 w-full"
-                  // Add any necessary event handlers or state
+                
                 />
               </div>
 
@@ -218,7 +218,7 @@ export default function Account() {
                       type="text"
                       id="firstName"
                       className="border  rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                   <div>
@@ -232,7 +232,7 @@ export default function Account() {
                       type="text"
                       id="lastName"
                       className="border  rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                   <div>
@@ -246,7 +246,7 @@ export default function Account() {
                       type="text"
                       id="addressLine1"
                       className="border  rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                   <div>
@@ -260,7 +260,7 @@ export default function Account() {
                       type="text"
                       id="addressLine2"
                       className="border  rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                   <div>
@@ -274,7 +274,7 @@ export default function Account() {
                       type="text"
                       id="city"
                       className=" border rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                   <div>
@@ -288,7 +288,7 @@ export default function Account() {
                       type="text"
                       id="state"
                       className=" border rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                   <div>
@@ -302,7 +302,7 @@ export default function Account() {
                       type="text"
                       id="zipCode"
                       className=" border rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                   <div>
@@ -316,7 +316,7 @@ export default function Account() {
                       type="text"
                       id="contactNumber"
                       className=" border rounded-md p-2 w-full"
-                      // Add any necessary event handlers or state
+                    
                     />
                   </div>
                 </form>

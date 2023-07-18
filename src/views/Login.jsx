@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/Navigation/Header";
 import Hamburger from "../components/Navigation/Hamburger";
-import Footer from "../components/Navigation/Footer";
 import googleLogo from "../assets/googleLogo.png";
 import appleLogo from "../assets/appleLogo.png";
 import { Link } from "react-router-dom";
@@ -22,9 +21,6 @@ export default function Login() {
             id="email"
             className="border border-gray-300 rounded px-2 py-1 mb-4 w-full"
           />
-
-         
-
 
           <label htmlFor="password" className="mb-2 block fontBold">
             Password:
@@ -61,15 +57,16 @@ export default function Login() {
                 continue with apple
               </span>
             </button>
-            <Link to="/"
-             
+            <Link
+              to="/"
               className="text-black hover:text-blue-700 block fontBold"
             >
               Forgot Password?
             </Link>
             <p className="text-sm  mt-4 fontBold">
               Don't have an account?
-              <Link to="/signup"
+              <Link
+                to="/signup"
                 className="text-blue-700 hover:text-blue-900 fontBold"
               >
                 Signup

@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Hamburger from '../components/Navigation/Hamburger';
-import Header from '../components/Navigation/Header';
-import sandals from '../assets/sandals.jpeg';
 import CheckOutCard from '../components/Checkout/CheckoutCard';
-import CheckoutCards from  '../components/Checkout/CheckoutCard'
+
 import Footer from '../components/Navigation/Footer';
 
 export default function CheckOut() {
   const navigate = useNavigate();
 
+  // Takes you back to previous page
   const handleGoBack = () => {
-    navigate(-1); // Navigates back to the previous page
+    navigate(-1);
   };
 
   return (

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import video2 from "../assets/videos/backgroundVideo.webm";
 import video1 from "../assets/videos/video2.mp4";
 
 export default function MainPageSlider() {
@@ -7,9 +6,8 @@ export default function MainPageSlider() {
 
   useEffect(() => {
     const playVideo = () => {
-      videoRef.current.play().catch(error => {
+      videoRef.current.play().catch((error) => {
         // Autoplay was prevented. Handle or ignore the error.
-        // For example, you can show a play button and let the user manually start the video.
       });
     };
 

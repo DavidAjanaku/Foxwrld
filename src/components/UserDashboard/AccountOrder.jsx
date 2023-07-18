@@ -24,7 +24,7 @@ export default function AccountSettings() {
       itemNo: 'DEF456',
       address: '456 Elm St, City, State, 67890',
     },
-    // Add more order objects as needed
+ 
   ];
 
   const navigate = useNavigate();

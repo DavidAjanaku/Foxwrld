@@ -10,7 +10,7 @@ import coats from '../assets/jacket.jpeg';
 import Footer from "../components/Navigation/Footer";
 
 export default function Homepage() {
-  const color = "white"; // Define the color value
+  const color = "white";
 
   return (
     <div>
