@@ -9,7 +9,7 @@ export default function RecommendedProducts() {
         <div className='text-center p-10'>
             <p className='uppercase fontBold '>We recommend</p>
         </div>
-        <div className='flex overflow-x-scroll w-[100vw] '>
+        <div className='flex overflow-x-scroll  '>
         <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"} />
         <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"} />
         <ProductCard image={jacket1} alternateImage={jacket2} title={"Varsanol Casual Leather"} color={"3"} />

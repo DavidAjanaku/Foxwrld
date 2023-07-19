@@ -19,11 +19,11 @@ export default function NewArrivals() {
     <div>
       <div className="h-14">
         <Header color={"black"} />
-        <Hamburger />
+        <Hamburger  color={"black"}/>
       </div>
       <main>
         <div>
-          <div className="pt-14 pb-12 text-center uppercase">
+          <div className="pt-14 pb-14 mt-24 mb-24 text-center uppercase fontbold">
             Mens New Arrival
           </div>
           <div>
@@ -34,7 +34,7 @@ export default function NewArrivals() {
 
             {/* <FilterSection/> */}
             <div className="pt-14 pb-12 text-center  text-sm">
-              <span className="text-sm">233 results</span>
+              <span className="text-[12px]">233 results</span>
             </div>
           </div>
         </div>

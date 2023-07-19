@@ -46,10 +46,10 @@ export default function ProductCard({
           {renderImage()}
         </div>
       </div>
-      <div className="product-details text-center h-2/4 overflow-y-auto">
-        <h2 className="product-title">{title}</h2>
-        <p className="product-color">Color: {color}</p>
-        <p className="product-category">{category}</p>
+      <div className="product-details text-center h-2/4 overflow-y-auto ">
+        <h2 className="product-title text-[12px] mb-1 fontbold ">{title}</h2>
+        <p className="product-color text-slate-400 fontThin text-[11px] mb-1">Color: {color}</p>
+        <p className="product-category text-slate-400 fontThin text-[11px] uppercase">{category}</p>
       </div>
     </div>
   );

@@ -37,6 +37,16 @@
   src: url("./assets/fonts/StyreneAWeb-Thin.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "StyreneThin";
+  src: url("./assets/fonts/StyreneAWeb-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "StyreneBold";
+  src: url("./assets/fonts/StyreneAWeb-Medium.ttf") format("truetype");
+}
+
 .zIndex {
   z-index: 999 !important;
 }

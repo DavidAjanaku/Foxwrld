@@ -10,9 +10,9 @@ export default function CheckoutCard() {
           <img src={sandals} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="w-full pl-4">
-          <h2 className="text-sm fontBold">Print Slides</h2>
-          <p className="text-gray-600 text-sm">Color: White/Blue</p>
-          <p className="text-gray-600 text-sm">Item: 654384</p>
+          <h2 className="text-sm fontbold">Print Slides</h2>
+          <p className="text-gray-600 text-sm fontThin">Color: White/Blue</p>
+          <p className="text-gray-600 text-sm fontThin">Item: 654384</p>
 
           <div className="flex items-center mt-16 md:justify-between flex-wrap">
             <p className="text-gray-600 mr-2 text-sm">Quantity: 2</p>

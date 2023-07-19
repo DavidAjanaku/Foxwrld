@@ -72,7 +72,7 @@ export default function ProductDetails({ updateCartCount }) {
                     </li>
                     <span className="divider mx-2">|</span>
                     <li className="mr-2">
-                      <Link>New Arrivals</Link>
+                      <Link to="/NewArrivals">New Arrivals</Link>
                     </li>
                     <span className="divider mx-2">|</span>
                     <li className="mr-2 underline-offset-4 underline">
@@ -81,16 +81,16 @@ export default function ProductDetails({ updateCartCount }) {
                   </ul>
                 </div>
                 <h1 className="product-info-panel-title flex flex-col">
-                  <span className="mr-6 fontBold">Mini Frances Bag</span>
-                  <span className="product-info-panel__price fontBold text-[12px]">
+                  <span className="mr-6 fontbold">Mini Frances Bag</span>
+                  <span className="product-info-panel__price fontThin text-[15px]">
                     $2000
                   </span>
                 </h1>
               </div>
               <div className="color-picker py-8 border-b-2">
-                <div className="color-picker__info flex">
-                  <span className="color-picker__text fontBold">Color:</span>
-                  <div className="color-picker__label">Optic White</div>
+                <div className="color-picker__info flex items-center mb-4">
+                  <span className="color-picker__text uppercase fontbold text-sm">Color:</span> &nbsp;
+                  <div className="color-picker__label text-sm fontLight">Optic White</div>
                 </div>
                 <div className="color-picker__swatch--container flex">
                   <div
@@ -119,32 +119,35 @@ export default function ProductDetails({ updateCartCount }) {
                   </div>
                 </div>
               </div>
-              <div className="product-dimensions border-b-2 py-6">
+              <div className="product-dimensions border-b-2 py-10">
                 <div className="product-dimensions-header">
-                  <h2 className="product-dimensions__header-title fontBold">
+                  <h2 className="product-dimensions__header-title fontbold">
                     Product details
                   </h2>
                 </div>
                 <div className="product-dimensions-content">
                   <div className="product-dimensions-content-wrapper">
-                    <div className="product-dimensions-content-description">
+                    <div className="product-dimensions-content-description my-4">
                       <div className="description text">
-                        <p>
+                        <p className="fontThin">
                           A simple, structured tote in grainy leather,
                           punctuated with the Thomas Burberry Monogram.
                         </p>
                       </div>
                       <div className="description-feature-text">
-                        <ul>
-                          <li>27 x 11 x 20cm/10.6 x 4.3 x 7.9in</li>
-                          <li>Handle drop: 9cm/3.5in</li>
-                          <li>Min. shoulder strap drop: 44.5cm/17.5in</li>
-                          <li>Max. shoulder strap drop: 55.5cm/21.9in</li>
-                          <li>Outer: 100% calf leather</li>
-                          <li>Lining: 100% lambskin</li>
-                          <li>Leather top handles</li>
-                          <li>Made in Italy</li>
-                          <li>Item 80725171</li>
+                        <ul className="">
+                        <p className="fontThin">
+  27 x 11 x 20cm/10.6 x 4.3 x 7.9in
+  Handle drop: 9cm/3.5in
+  Min. shoulder strap drop: 44.5cm/17.5in
+  Max. shoulder strap drop: 55.5cm/21.9in
+  Outer: 100% calf leather
+  Lining: 100% lambskin
+  Leather top handles
+  Made in Italy
+  Item 80725171
+</p>
+
                         </ul>
                       </div>
                     </div>
@@ -152,7 +155,7 @@ export default function ProductDetails({ updateCartCount }) {
                 </div>
               </div>
               <div className="product-sizes py-8">
-                <h3 className="fontBold mb-2">Sizes:</h3>
+                <h3 className="fontBold mb-2 uppercase fontbold  text-sm mb-4">Sizes:</h3>
                 <div className="size-options flex">
                   <button
                     className={`size-option px-4 py-2 ${

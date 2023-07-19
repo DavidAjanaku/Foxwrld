@@ -1,5 +1,5 @@
 *{
-  font-family: "Styrenes", sans-serif;
+  font-family: "Styrene", sans-serif;
 }
 
 /* Mixin */
@@ -9,10 +9,19 @@
   margin: 0;
 }
 
-.fontBold{
-  font-family: "Styrene", sans-serif;
+.fontLight{
+  font-family: "Styrenes", sans-serif;
 
 }
+
+.fontThin{
+  font-family: "StyreneThin", sans-serif;
+}
+
+.fontbold{
+  font-family: "StyreneBold", sans-serif;
+}
+
 
 
 nav .m-menu__checkbox {

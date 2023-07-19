@@ -16,7 +16,7 @@ export default function CheckOut() {
     <div>
      
       <div>
-        <section className='mt-10 p-2'>
+        <section className=' p-2'>
           <section className="header flex mx-auto">
             <button className='text-2xl' onClick={handleGoBack}>
               &#8592;
@@ -36,6 +36,7 @@ export default function CheckOut() {
                   <div className="shopping-bag__products md:w-2/4 h-full md:h-[50vh] overflow-y-scroll">
                     <CheckOutCard />
                     <CheckOutCard />
+
                   </div>
                   <div className="shopping-bag__payment bg-gray-100 w-full md:w-2/4 p-5 md:h-[30vh] m-3 md:m-0">
                     <h2 className='text-lg font-bold mb-4'>Payment</h2>
