@@ -17,12 +17,12 @@ export default function TextualPictureFrame(props) {
         </div>
       </Link>
       <div className="m-auto absolute text-white bottom-0 left-0 right-0">
-        <h1 className="text-3xl sm:text-4xl md:text-2xl">{props.title}</h1>
+        <h1 className="text-3xl sm:text-3xl md:text-[20px] fontThin">{props.title}</h1>
         <div className="flex  md:flex-row justify-center">
           <p className="m-2 md:m-4">
             <Link
               to="/NewArrivals"
-              className="text-sm md:text-sm underline font-bold hover:text-slate-700 underline-offset-8"
+              className="text-sm md:text-sm underline fontThin hover:text-slate-700 underline-offset-8"
             >
               Women
             </Link>
@@ -30,7 +30,7 @@ export default function TextualPictureFrame(props) {
           <p className="m-2 md:m-4">
             <Link
               to="/NewArrivals"
-              className="text-sm md:text-sm underline underline-offset-8 hover:text-slate-700 font-bold"
+              className="text-sm md:text-sm underline underline-offset-8 hover:text-slate-700 fontThin"
             >
               Men
             </Link>
