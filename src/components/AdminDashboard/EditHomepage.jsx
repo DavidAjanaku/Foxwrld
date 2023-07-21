@@ -11,6 +11,10 @@ export default function EditHomepage() {
   const [title, setTitle] = useState("");
   const [imageFile, setImageFile] = useState(null);
 
+  const [imageFile1, setImageFile1] = useState(null);
+  const [imageFile2, setImageFile2] = useState(null);
+  const [imageFile3, setImageFile3] = useState(null);
+
   const handleVideoSubmit = (event) => {
     event.preventDefault();
 
@@ -43,12 +47,29 @@ export default function EditHomepage() {
     setImageFile(file);
   };
 
+
+  const handleImageUpload1 = (event) => {
+    const file = event.target.files[0];
+    setImageFile1(file);
+  };
+
+  const handleImageUpload2 = (event) => {
+    const file = event.target.files[0];
+    setImageFile2(file);
+  };
+
+  const handleImageUpload3 = (event) => {
+    const file = event.target.files[0];
+    setImageFile3(file);
+  };
+
   const handleCategoryImageUpload = (event) => {
     const file = event.target.files[0];
     // Set the category image file using the appropriate state setter function
     setImageFile(file);
   };
 
+  
   return (
     <div className="flex">
       <div className="sidebar bg-gray-200 w-1/4 border border-gray-300 h-[100vh]">
@@ -181,16 +202,16 @@ export default function EditHomepage() {
               <div className="my-4">
                 <label htmlFor="imageUpload" className="font-bold block">
                   <div className="bg-white border border-gray-300 p-2 mt-2  text-center">
-                    {!imageFile && (
+                    {!imageFile1 && (
                       <span className="text-slate-500 font-bold text-sm">
                         Click to here to browse{" "}
                         <img src={ImageUpload} className="w-32 m-auto" alt="" />
                       </span>
                     )}
 
-                    {imageFile && (
+                    {imageFile1 && (
                       <img
-                        src={URL.createObjectURL(imageFile)}
+                        src={URL.createObjectURL(imageFile1)}
                         className="w-32"
                         alt="Uploaded"
                       />
@@ -201,7 +222,7 @@ export default function EditHomepage() {
                   type="file"
                   id="imageUpload"
                   accept="image/*"
-                  onChange={handleImageUpload}
+                  onChange={handleImageUpload1}
                   className="hidden"
                 />
 
@@ -234,29 +255,30 @@ export default function EditHomepage() {
                 </div>
                 <div className="my-4">
                   <label
-                    htmlFor="categoryImageUpload"
+                    htmlFor="categoryImageUpload2"
                     className="font-bold block"
                   >
                     <div className="bg-white border border-gray-300 p-2 mt-2 w-full text-center">
-                      {!imageFile && (
+                      {!imageFile2 && (
                         <span className="text-slate-500 font-bold text-sm text-center">
                           Click to here to browse{" "}
                           <img src={ImageUpload} className="w-32 m-auto" alt="" />
                         </span>
                       )}{" "}
-                      {imageFile && (
+                      {imageFile2 && (
                         <img
-                          src={URL.createObjectURL(imageFile)}
+                          src={URL.createObjectURL(imageFile2)}
                           alt="Uploaded"
+                          className="w-32"
                         />
                       )}
                     </div>
                   </label>
                   <input
                     type="file"
-                    id="categoryImageUpload"
+                    id="categoryImageUpload2"
                     accept="image/*"
-                    onChange={handleCategoryImageUpload}
+                    onChange={handleImageUpload2}
                     className="hidden"
                   />
 
@@ -289,29 +311,30 @@ export default function EditHomepage() {
                 </div>
                 <div className="my-4">
                   <label
-                    htmlFor="categoryImageUpload"
+                    htmlFor="categoryImageUpload3"
                     className="font-bold block"
                   >
                     <div className="bg-white border border-gray-300 p-2 mt-2 w-full text-center">
-                      {!imageFile && (
+                      {!imageFile3 && (
                         <span className="text-slate-500 font-bold text-sm">
                           Click to here to browse{" "}
                           <img src={ImageUpload} className="w-32 m-auto" alt="" />
                         </span>
                       )}{" "}
-                      {imageFile && (
+                      {imageFile3 && (
                         <img
-                          src={URL.createObjectURL(imageFile)}
+                          src={URL.createObjectURL(imageFile3)}
                           alt="Uploaded"
+                          className="w-32"
                         />
                       )}
                     </div>
                   </label>
                   <input
                     type="file"
-                    id="categoryImageUpload"
+                    id="categoryImageUpload3"
                     accept="image/*"
-                    onChange={handleCategoryImageUpload}
+                    onChange={handleImageUpload3}
                     className="hidden"
                   />
 
