@@ -500,14 +500,15 @@ export default function Layout() {
             Product Tags
           </h2>
           <label className="fontBold">Tags</label>
-          <div>
-            <input
-              type="text"
-              className="border border-black"
-              value={formData.tags}
-              onChange={handleChange}
-            />
-          </div>
+<div>
+  <input
+    type="text"
+    className="border border-black"
+    value={formData.tags}
+    name="tags"  
+    onChange={handleChange}
+  />
+</div>
         </div>
       </div>
 

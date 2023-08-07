@@ -21,6 +21,7 @@ import Order from "./components/AdminDashboard/Order";
 import EditOrder from "./components/AdminDashboard/EditOrder";
 import Reports from "./components/AdminDashboard/Reports";
 import EditHomepage from "./components/AdminDashboard/EditHomepage";
+import MenuEditor from "./components/AdminDashboard/MenuEditor";
 
 // import "ionicons/dist/css/ionicons.min.css";
 
@@ -31,7 +32,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/Signup" element={<SignUp />} />
         <Route path="/NewArrivals" element={<NewArrivals />} />
-        <Route path="/ProductCardDetails" element={<ProductCardDetails />} />
+        {/* <Route path="/ProductCardDetails" element={<ProductCardDetails />} /> */}
         <Route path="/ProductDetails" element={<ProductDetails />} />
         <Route path="/ProductPage" element={<ProductPage />} />
         <Route path="/Checkout" element={<Checkout />} />
@@ -46,6 +47,7 @@ function App() {
         <Route path="/EditOrder" element={<EditOrder />} />
         <Route path="/Reports" element={<Reports />} />
         <Route path="/EditHomepage" element={<EditHomepage />} />
+        <Route path="/MenuEditor" element={<MenuEditor />} />
 
 
         <Route path="/*" element={<ErrorPage />} />
