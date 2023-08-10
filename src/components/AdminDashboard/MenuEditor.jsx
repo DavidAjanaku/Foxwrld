@@ -80,12 +80,10 @@ export default function MenuEditor() {
   };
 
   const saveEditedContent1 = () => {
-    // Implement logic to save edited content for card 1
     setShowEditModal1(false);
   };
 
   const saveEditedContent2 = () => {
-    // Implement logic to save edited content for card 2
     setShowEditModal2(false);
   };
 
@@ -96,7 +94,7 @@ export default function MenuEditor() {
 
   const closeCreateModal = () => {
     setShowCreateModal(false);
-    // Reset the input fields for next use
+    // Resets the input fields for next use
     setNewMenuTitle("");
     setNewMenuSubtitle("");
     setNewMenuItems([]);
@@ -104,15 +102,74 @@ export default function MenuEditor() {
   };
 
   const saveNewMenu = () => {
-    // Implement logic to save the new menu
-    const newMenu = {
+    // Creates a newMenuData object to hold the form data
+    const newMenuData = {
       title: newMenuTitle,
-      subtitle: newMenuSubtitle,
-      items: newMenuItems,
+      subtitles: newMenuSubtitles.map((subtitle) => ({
+        text: subtitle.text,
+        items: subtitle.items.map((item) => ({
+          text: item.text,
+          link: item.link,
+        })),
+      })),
     };
-    // Add logic to update your menus state or send the new menu data to your backend
-    // Clear the input fields and close the modal
+
+    // Log the form data to the console
+    console.log("New Menu Data:", newMenuData);
+
+ 
     closeCreateModal();
+  };
+
+  // Add these state variables
+  const [newMenuSubtitles, setNewMenuSubtitles] = useState([
+    {
+      text: "",
+      items: [{ text: "", link: "" }],
+    },
+  ]);
+
+  // Update the addNewItem function
+  const addNewItem = (subtitleIndex) => {
+    setNewMenuSubtitles((prevSubtitles) => {
+      const newSubtitles = [...prevSubtitles];
+      newSubtitles[subtitleIndex].items.push({ text: "", link: "" });
+      return newSubtitles;
+    });
+  };
+
+  // Update the addNewSubtitle function
+  const addNewSubtitle = () => {
+    setNewMenuSubtitles((prevSubtitles) => [
+      ...prevSubtitles,
+      { text: "", items: [{ text: "", link: "" }] },
+    ]);
+  };
+
+  // Update the updateSubtitle function
+  const updateSubtitle = (subtitleIndex, newText) => {
+    setNewMenuSubtitles((prevSubtitles) => {
+      const newSubtitles = [...prevSubtitles];
+      newSubtitles[subtitleIndex].text = newText;
+      return newSubtitles;
+    });
+  };
+
+  // Update the updateItem function
+  const updateItem = (subtitleIndex, itemIndex, newValue, field) => {
+    setNewMenuSubtitles((prevSubtitles) => {
+      const newSubtitles = [...prevSubtitles];
+      newSubtitles[subtitleIndex].items[itemIndex][field] = newValue;
+      return newSubtitles;
+    });
+  };
+
+  const removeItem = (subtitleIndex, itemIndex) => {
+    setNewMenuSubtitles((prevSubtitles) => {
+      const newSubtitles = [...prevSubtitles];
+      newSubtitles[subtitleIndex].items.splice(itemIndex, 1);
+      return newSubtitles;
+    });
   };
 
   return (
@@ -214,7 +271,6 @@ export default function MenuEditor() {
               </div>
               {activeDropdown1 && (
                 <div className="mt-2">
-                  {/* Dropdown content here */}
                   <ul className="my-4">
                     <h1> Men's New Arrivals</h1>
                     <li>Tops</li>
@@ -249,7 +305,6 @@ export default function MenuEditor() {
               </div>
               {activeDropdown2 && (
                 <div className="mt-2">
-                  {/* Dropdown content here */}
                   <ul className="my-4">
                     <h1> Men's New Arrivals</h1>
                     <li>Tops</li>
@@ -349,7 +404,7 @@ export default function MenuEditor() {
                   }
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold">
                   Items:
@@ -502,9 +557,10 @@ export default function MenuEditor() {
 
       {showCreateModal && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="modal-overlay">
-            <form className="bg-white p-4 rounded-lg shadow-md">
-              <h2 className="text-lg font-semibold mb-4">Create New Menu</h2>
+          <div className="modal-overlay w-[800px] h-[50vh] overflow-scroll">
+            <form className="bg-slate-400 p-4 rounded-lg shadow-md">
+              {/* ... */}
+
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold">
                   Title:
@@ -516,93 +572,67 @@ export default function MenuEditor() {
                   onChange={(e) => setNewMenuTitle(e.target.value)}
                 />
               </div>
+
+              {/* Add More Subtitles and Items */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold">
-                  Subtitle:
+                  Subtitles and Items:
                 </label>
-                <input
-                  type="text"
-                  className="border rounded w-full p-2"
-                  value={newMenuSubtitle}
-                  onChange={(e) => setNewMenuSubtitle(e.target.value)}
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700 font-semibold">
-                  Items:
-                </label>
-                {newMenuItems.map((item, index) => (
-                  <div key={index} className="mb-2">
-                    <label className="text-gray-700 font-semibold">
-                      Item {index + 1}:
-                    </label>
+                {newMenuSubtitles.map((subtitle, subtitleIndex) => (
+                  <div key={subtitleIndex} className="mb-2">
                     <input
                       type="text"
                       className="border rounded w-full p-2"
-                      value={item.text}
+                      value={subtitle.text}
                       onChange={(e) =>
-                        setNewMenuItems((prevItems) =>
-                          prevItems.map((prevItem, i) =>
-                            i === index
-                              ? { ...prevItem, text: e.target.value }
-                              : prevItem
-                          )
-                        )
+                        updateSubtitle(subtitleIndex, e.target.value)
                       }
+                      placeholder={`Subtitle ${subtitleIndex + 1}`}
                     />
-                    <input
-                      type="url"
-                      className="border rounded w-full p-2 mt-1"
-                      placeholder="Enter URL"
-                      value={item.link}
-                      onChange={(e) =>
-                        setNewMenuItems((prevItems) =>
-                          prevItems.map((prevItem, i) =>
-                            i === index
-                              ? { ...prevItem, link: e.target.value }
-                              : prevItem
-                          )
-                        )
-                      }
-                    />
+                    {subtitle.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="mb-2 flex mt-4">
+                        <input
+                          type="text"
+                          className="border rounded w-full p-2"
+                          value={item.text}
+                          onChange={(e) =>
+                            updateItem(
+                              subtitleIndex,
+                              itemIndex,
+                              e.target.value,
+                              "text"
+                            )
+                          }
+                          placeholder={`Item ${itemIndex + 1}`}
+                        />
+                        <button
+                          type="button"
+                          className="bg-red-500 text-white px-2 py-1 ml-2"
+                          onClick={() => removeItem(subtitleIndex, itemIndex)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ))}
+
+                    <button
+                      type="button"
+                      className="bg-green-500 text-white px-4 py-2 mt-2"
+                      onClick={() => addNewItem(subtitleIndex)}
+                    >
+                      Add Item
+                    </button>
                   </div>
                 ))}
-                <div className="mb-2">
-                  <label className="text-gray-700 font-semibold">
-                    New Item:
-                  </label>
-                  <input
-                    type="text"
-                    className="border rounded w-full p-2"
-                    value={newMenuItem.text}
-                    onChange={(e) =>
-                      setNewMenuItem({ ...newMenuItem, text: e.target.value })
-                    }
-                  />
-                  <input
-                    type="url"
-                    className="border rounded w-full p-2 mt-1"
-                    placeholder="Enter URL"
-                    value={newMenuItem.link}
-                    onChange={(e) =>
-                      setNewMenuItem({ ...newMenuItem, link: e.target.value })
-                    }
-                  />
-                  <button
-                    type="button"
-                    className="bg-green-500 text-white px-4 py-2 mt-2"
-                    onClick={() => {
-                      setNewMenuItems((prevItems) => [
-                        ...prevItems,
-                        newMenuItem,
-                      ]);
-                      setNewMenuItem({ text: "", link: "" });
-                    }}
-                  >
-                    Add Item
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="bg-green-500 text-white px-4 py-2 mt-2"
+                  onClick={addNewSubtitle}
+                >
+                  Add Subtitle
+                </button>
               </div>
+              {/* ... */}
               <div className="flex justify-end">
                 <span onClick={saveNewMenu} className="mr-4">
                   <Button text="Create Menu" />
