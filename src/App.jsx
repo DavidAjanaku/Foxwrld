@@ -22,6 +22,12 @@ import EditOrder from "./components/AdminDashboard/EditOrder";
 import Reports from "./components/AdminDashboard/Reports";
 import EditHomepage from "./components/AdminDashboard/EditHomepage";
 import MenuEditor from "./components/AdminDashboard/MenuEditor";
+import About from "./views/About";
+import Faq from "./views/Faq";
+import Privacy from "./views/Privacy";
+import Return from "./views/Return";
+import Shipping from "./views/Shipping";
+import Terms from "./views/Terms";
 
 // import "ionicons/dist/css/ionicons.min.css";
 
@@ -48,6 +54,15 @@ function App() {
         <Route path="/Reports" element={<Reports />} />
         <Route path="/EditHomepage" element={<EditHomepage />} />
         <Route path="/MenuEditor" element={<MenuEditor />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Faq" element={<Faq />} />
+        <Route path="/Privacy" element={<Privacy />} />
+        <Route path="/Return" element={<Return />} />
+        <Route path="/Shipping" element={<Shipping />} />
+        <Route path="/Terms" element={<Terms />} />
+
+
+
 
 
         <Route path="/*" element={<ErrorPage />} />
