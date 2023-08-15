@@ -45,7 +45,7 @@ export default function Header({ color, cartCount }) {
   const handleNewInDropdownClose = () => {
     newInDropdownTimeoutRef.current = setTimeout(() => {
       setIsNewInDropdownOpen(false);
-    }, 30000);
+    }, 300);
   };
 
   const handleNewInDropdownEnter = () => {
@@ -60,7 +60,7 @@ export default function Header({ color, cartCount }) {
   const handleWomenDropdownClose = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setIsWomenDropdown(false);
-    }, 300);
+    }, 300000);
   };
 
   const handleWomenDropdownEnter = () => {
@@ -81,9 +81,7 @@ export default function Header({ color, cartCount }) {
     clearTimeout(dropdownTimeoutRef.current);
   };
 
-  {
-    console.log(jsonData.data.Categories);
-  }
+ 
 
   const handleDropdownCart = () => {
     clearTimeout(dropdownTimeoutRef.current);
@@ -118,52 +116,70 @@ export default function Header({ color, cartCount }) {
           </Link>
           <header className={`text-${color}`}>
             <ul className="flex">
-              {jsonData.data.map((menu) => (
+              {jsonData.map((menu, index) => (
                 <li
-                  key={menu.id}
+                  key={index}
                   className="group"
-                  onMouseEnter={() => handleDropdownToggle(menu.id)}
+                  onMouseEnter={() => handleDropdownToggle(index)}
                   onMouseLeave={handleDropdownClose}
                 >
-                  <Link to="#" className="px-4 sm:px-8 py-6 font-bold uppercase">
-                    {menu.Title}
+                  <Link
+                    to="#"
+                    className="px-4 sm:px-8 py-6 font-bold uppercase"
+                  >
+                    {menu.title}
                   </Link>
-                  {isDropdownOpen === menu.id && (
+                  {isDropdownOpen === index && (
                     <div
                       className="absolute left-0 top-full w-full bg-white h-[80vh] p-10 flex "
-                      onMouseEnter={() => handleDropdownEnter(menu.id)}
+                      onMouseEnter={() => handleDropdownEnter(index)}
                       onMouseLeave={handleDropdownClose}
                     >
-                      {console.log("Subcategories:", menu.Categories)} {/* Log subcategories */}
-                      {menu.Categories && menu.Categories.length > 0 ? (
-                        // Group categories by submenu
-                        menu.Categories.reduce((acc, category) => {
-                          const existingSubMenu = acc.find((group) => group.subMenu === category.subMenu);
-                          if (existingSubMenu) {
-                            existingSubMenu.categories.push(category);
-                          } else {
-                            acc.push({
-                              subMenu: category.subMenu,
-                              categories: [category],
-                            });
-                          }
-                          return acc;
-                        }, []).map((subMenuGroup) => (
-                          <section key={subMenuGroup.subMenu} className="my-4 mr-16">
-                            <h1 className="text-black font-extrabold uppercase mb-1 text-[12px] font-bold">
-                              {subMenuGroup.subMenu}
-                            </h1>
-                            <ul className="flex flex-col text-black">
-                              {subMenuGroup.categories.map((category) => (
-                                <li key={category.id} className="text-black">
-                                  <Link to="#" className="text-[12px] fontThin">
-                                    {category.categories}
-                                  </Link>
-                                </li>
+                      {menu.subtitles && menu.subtitles.length > 0 ? (
+                        <section key={menu.title} className="my-4 mr-16">
+                          <ul className="flex  text-black">
+                            {menu.subtitles
+                              .reduce((acc, subtitle) => {
+                                const existingGroupIndex = acc.findIndex(
+                                  (group) =>
+                                    group.text === subtitle.items[0].text
+                                );
+                                if (existingGroupIndex === -1) {
+                                  acc.push({
+                                    text: subtitle.items[0].text,
+                                    items: [subtitle],
+                                  });
+                                } else {
+                                  acc[existingGroupIndex].items.push(subtitle);
+                                }
+                                return acc;
+                              }, [])
+                              .map((itemGroup) => (
+                                <React.Fragment key={itemGroup.text}>
+                               <div className="mr-10">
+                               <h1 className="text-black font-extrabold uppercase mb-1 text-[12px] font-bold">
+                                    {itemGroup.text}
+                                  </h1>
+                                  <ul className=" text-black">
+                                    {itemGroup.items.map((submenu) => (
+                                      <li
+                                        key={submenu.text}
+                                        className="text-black"
+                                      >
+                                        <Link
+                                          to={submenu.items[0].link || "#"}
+                                          className="text-[12px] fontThin"
+                                        >
+                                          {submenu.text}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                               </div>
+                                </React.Fragment>
                               ))}
-                            </ul>
-                          </section>
-                        ))
+                          </ul>
+                        </section>
                       ) : (
                         <div>No subcategories available</div>
                       )}

@@ -1,48 +1,170 @@
-{
-    "data": [
+[
+  {
+    "title": "Men",
+    "subtitles": [
       {
-        "Title": "Men",
-        "id": 1,
-        "Categories": [
-          { "id": 1, "categories": "Shirts", "subMenu": "TOPS", "menus": "Men" },
-          { "id": 2, "categories": "T-Shirt", "subMenu": "TOPS", "menus": "Men" },
-          { "id": 3, "categories": "Polo", "subMenu": "TOPS", "menus": "Men" },
-          { "id": 4, "categories": "Pant", "subMenu": "Bottom", "menus": "Men" },
-          { "id": 5, "categories": "Jean", "subMenu": "Bottom", "menus": "Men" },
-          { "id": 6, "categories": "Joggers", "subMenu": "SOM", "menus": "Men" }
+        "text": "Shirts",
+        "items": [
+          {
+            "text": "TOPS",
+            "link": null
+          }
         ]
       },
       {
-        "Title": "Women",
-        "id": 2,
-        "Categories": [
-          { "id": 7, "categories": "Blouses", "subMenu": "TOPS", "menus": "Women" },
-          { "id": 8, "categories": "T-Shirts", "subMenu": "TOPS", "menus": "Women" },
-          { "id": 9, "categories": "Tunics", "subMenu": "TOPS", "menus": "Women" },
-          { "id": 10, "categories": "Sweaters", "subMenu": "TOPS", "menus": "Women" },
-          { "id": 11, "categories": "Jeans", "subMenu": "BOTTOMS", "menus": "Women" },
-          { "id": 12, "categories": "Skirts", "subMenu": "BOTTOMS", "menus": "Women" },
-          { "id": 13, "categories": "Leggings", "subMenu": "BOTTOMS", "menus": "Women" },
-          { "id": 14, "categories": "Shorts", "subMenu": "DOMMM", "menus": "Women" }
+        "text": "T-Shirt",
+        "items": [
+          {
+            "text": "TOPS",
+            "link": null
+          }
         ]
       },
       {
-        "Title": "Children",
-        "id": 3,
-        "Categories": [
-          { "id": 15, "categories": "suit", "subMenu": "Swimsuit", "menus": "Children" },
-          { "id": 16, "categories": "trouser", "subMenu": "Swimsuit", "menus": "Children" }
+        "text": "Polo",
+        "items": [
+          {
+            "text": "TOPS",
+            "link": null
+          }
         ]
       },
-
       {
-        "Title": "John",
-        "id": 4,
-        "Categories": [
-          { "id": 15, "categories": "suit", "subMenu": "Swimsuit", "menus": "Children" },
-          { "id": 16, "categories": "trouser", "subMenu": "SWIM", "menus": "Children" }
+        "text": "Pant",
+        "items": [
+          {
+            "text": "Bottom",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Jean",
+        "items": [
+          {
+            "text": "Bottom",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Jean",
+        "items": [
+          {
+            "text": "Bottoms",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Joggers",
+        "items": [
+          {
+            "text": "Bottom",
+            "link": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Women",
+    "subtitles": [
+      {
+        "text": "Blouses",
+        "items": [
+          {
+            "text": "TOPS",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "T-Shirts",
+        "items": [
+          {
+            "text": "TOPS",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Tunics",
+        "items": [
+          {
+            "text": "TOPS",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Sweaters",
+        "items": [
+          {
+            "text": "TOPS",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Jeans",
+        "items": [
+          {
+            "text": "BOTTOMS",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Skirts",
+        "items": [
+          {
+            "text": "BOTTOMS",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Leggings",
+        "items": [
+          {
+            "text": "BOTTOMS",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "Shorts",
+        "items": [
+          {
+            "text": "BOTTOMS",
+            "link": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Children",
+    "subtitles": [
+      {
+        "text": "suit",
+        "items": [
+          {
+            "text": "Swimsuit",
+            "link": null
+          }
+        ]
+      },
+      {
+        "text": "trouser",
+        "items": [
+          {
+            "text": "Swimsuit",
+            "link": null
+          }
         ]
       }
     ]
   }
-  
+]

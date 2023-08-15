@@ -24,52 +24,61 @@ const HamburgerMenu = ({ color, cartCount }) => {
       case "main":
         return (
           <ul className="pt-24 px-3">
-            {jsonData.data.map((menu) => (
-              <li key={menu.id} onClick={() => navigateToSubMenu(menu.Title)} className="my-4">
-                <span className="cursor-pointer ">{menu.Title}</span>
+            {jsonData.map((menu) => (
+              <li
+                key={menu.title}
+                onClick={() => navigateToSubMenu(menu.title)}
+                className="my-4"
+              >
+                <span className="cursor-pointer">{menu.title}</span>
               </li>
             ))}
           </ul>
         );
-      default:
-        const selectedMenu = jsonData.data.find((menu) => menu.Title === currentMenu);
-        if (selectedMenu) {
-          const subMenus = [];
-          return (
-            <ul className="pt-24 px-3">
-              <li>
-                <span className="cursor-pointer" onClick={navigateBack}>
-                  &#8592;
-                </span>
-              </li>
-              {selectedMenu.Categories.map((category) => {
-                if (!subMenus.includes(category.subMenu)) {
-                  subMenus.push(category.subMenu);
-                  return (
-                    <li key={category.subMenu} className="my-4">
-                      <h3 className="text-[14px]">{category.subMenu}</h3>
-                      <ul>
-                        {selectedMenu.Categories
-                          .filter((subcategory) => subcategory.subMenu === category.subMenu)
-                          .map((subcategory) => (
-                            <li key={subcategory.id}>
-                              <Link to={subcategory.menus} className="text-sm fontThin">
-                                {subcategory.categories}
-                              </Link>
-                            </li>
-                          ))}
-                      </ul>
+        default:
+      const selectedMenu = jsonData.find((menu) => menu.title === currentMenu);
+      if (selectedMenu) {
+        const itemGroups = {};
+
+        selectedMenu.subtitles.forEach((submenu) => {
+          const groupName = submenu.items[0].text;
+          if (!itemGroups[groupName]) {
+            itemGroups[groupName] = [];
+          }
+          itemGroups[groupName].push(...submenu.items.map(item => submenu.text));
+        });
+
+        return (
+          <ul className="pt-24 px-3">
+            <li>
+              <span className="cursor-pointer" onClick={navigateBack}>
+                &#8592;
+              </span>
+            </li>
+            {Object.keys(itemGroups).map((groupName) => (
+              <li key={groupName} className="my-4">
+                <h3 className="text-[14px]">{groupName}</h3>
+                <ul>
+                  {itemGroups[groupName].map((itemText) => (
+                    <li key={itemText}>
+                      <Link to="#" className="text-sm fontThin">
+                        {itemText}
+                      </Link>
                     </li>
-                  );
-                }
-                return null;
-              })}
-            </ul>
-          );
-        }
-        return null;
-    }
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        );
+      }
+      return null;
+  }
   };
+
+  
+  
+  
 
   return (
     <div className="hamburger-menu mobile hidden">
