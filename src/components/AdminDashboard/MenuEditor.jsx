@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
+import yourJsonData from '../Navigation/jsonData.json'
 
 export default function MenuEditor() {
   const [activeDropdown1, setActiveDropdown1] = useState(false);
@@ -12,6 +13,7 @@ export default function MenuEditor() {
   const [newMenuSubtitle, setNewMenuSubtitle] = useState("");
   const [newMenuItems, setNewMenuItems] = useState([]);
   const [newMenuItem, setNewMenuItem] = useState({ text: "", link: "" });
+  const [editedMenuData, setEditedMenuData] = useState(yourJsonData);
 
   const toggleDropdown1 = () => {
     setActiveDropdown1(!activeDropdown1);
@@ -380,93 +382,112 @@ export default function MenuEditor() {
         </div>
       )}
 
-      {showEditModal1 && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="modal-overlay">
-            <form
-              className="bg-white p-4 rounded-lg shadow-md"
-              onSubmit={saveEditedContent1}
-            >
-              <h2 className="text-lg font-semibold mb-4">Edit Card Content</h2>
-              <div className="mb-4">
-                <label className="block text-gray-700 font-semibold">
-                  Title:
-                </label>
+{showEditModal1 && (
+  <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="modal-overlay">
+      <form
+        className="bg-white p-4 rounded-lg shadow-md overflow-scroll h-[70vh] w-[70vh]"
+        onSubmit={saveEditedContent1}
+      >
+        <h2 class="text-lg font-semibold mb-4">Edit Cards Content</h2>
+        {editedMenuData[0].subtitles.map((subtitle, subtitleIndex) => (
+          <div key={subtitleIndex} className="mb-10 p-4">
+            {/* Render subtitle text input */}
+            <input
+              type="text"
+              className="border rounded w-full p-2 mb-2"
+              value={subtitle.text}
+              onChange={(e) =>
+                setEditedMenuData((prevData) => ({
+                  ...prevData,
+                  [0]: {
+                    ...prevData[0],
+                    subtitles: prevData[0].subtitles.map((sub, i) =>
+                      i === subtitleIndex ? { ...sub, text: e.target.value } : sub
+                    ),
+                  },
+                }))
+              }
+            />
+
+            {/* Render items */}
+            {subtitle.items.map((item, itemIndex) => (
+              <div key={itemIndex}>
+                {/* Render item text input */}
                 <input
                   type="text"
-                  className="border rounded w-full p-2"
-                  value={editContent1.title}
+                  className="border rounded w-full p-2 mb-2"
+                  value={item.text}
                   onChange={(e) =>
-                    setEditContent1((prevContent) => ({
-                      ...prevContent,
-                      title: e.target.value,
+                    setEditedMenuData((prevData) => ({
+                      ...prevData,
+                      [0]: {
+                        ...prevData[0],
+                        subtitles: prevData[0].subtitles.map((sub, i) =>
+                          i === subtitleIndex
+                            ? {
+                                ...sub,
+                                items: sub.items.map((it, j) =>
+                                  j === itemIndex ? { ...it, text: e.target.value } : it
+                                ),
+                              }
+                            : sub
+                        ),
+                      },
+                    }))
+                  }
+                />
+
+                {/* Render item link input */}
+                <input
+                  type="url"
+                  className="border rounded w-full p-2 mb-2"
+                  placeholder="Enter URL"
+                  value={item.link}
+                  onChange={(e) =>
+                    setEditedMenuData((prevData) => ({
+                      ...prevData,
+                      [0]: {
+                        ...prevData[0],
+                        subtitles: prevData[0].subtitles.map((sub, i) =>
+                          i === subtitleIndex
+                            ? {
+                                ...sub,
+                                items: sub.items.map((it, j) =>
+                                  j === itemIndex ? { ...it, link: e.target.value } : it
+                                ),
+                              }
+                            : sub
+                        ),
+                      },
                     }))
                   }
                 />
               </div>
-
-              <div className="mb-4">
-                <label className="block text-gray-700 font-semibold">
-                  Items:
-                </label>
-                {editContent1.items.map((item, index) => (
-                  <div key={index} className="mb-2">
-                    <label className="text-gray-700 font-semibold">
-                      Item {index + 1}:
-                    </label>
-                    <input
-                      type="text"
-                      className="border rounded w-full p-2"
-                      value={item.text}
-                      onChange={(e) =>
-                        setEditContent1((prevContent) => ({
-                          ...prevContent,
-                          items: prevContent.items.map((item, i) =>
-                            i === index
-                              ? { ...item, text: e.target.value }
-                              : item
-                          ),
-                        }))
-                      }
-                    />
-                    <input
-                      type="url"
-                      className="border rounded w-full p-2 mt-1"
-                      placeholder="Enter URL"
-                      value={item.link}
-                      onChange={(e) =>
-                        setEditContent1((prevContent) => ({
-                          ...prevContent,
-                          items: prevContent.items.map((item, i) =>
-                            i === index
-                              ? { ...item, link: e.target.value }
-                              : item
-                          ),
-                        }))
-                      }
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-end">
-                <button
-                  type="submit"
-                  className="bg-green-500 text-white px-4 py-2 mr-2"
-                >
-                  Save
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-300 text-gray-700 px-4 py-2"
-                  onClick={closeEditModal1}
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
+            ))}
           </div>
+        ))}
+
+        <div className="flex justify-end mt-4">
+          <button
+            type="submit"
+            className="bg-green-500 text-white px-4 py-2 mr-2"
+          >
+            Save
+          </button>
+          <button
+            type="button"
+            className="bg-gray-300 text-gray-700 px-4 py-2"
+            onClick={closeEditModal1}
+          >
+            Cancel
+          </button>
         </div>
-      )}
+      </form>
+    </div>
+  </div>
+)}
+
 
       {showEditModal2 && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -475,7 +496,7 @@ export default function MenuEditor() {
               className="bg-white p-4 rounded-lg shadow-md"
               onSubmit={saveEditedContent2}
             >
-              <h2 className="text-lg font-semibold mb-4">Edit Card Content</h2>
+              <h2 className="text-lg font-semibold mb-4">Edit Cards Content</h2>
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold">
                   Title:
