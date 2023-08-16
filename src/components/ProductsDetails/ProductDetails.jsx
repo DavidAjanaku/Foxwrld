@@ -4,6 +4,7 @@ import pyjamas from "../../assets/pjamas1.jpeg";
 import jacket from "../../assets/jacket1.jpeg";
 import jacke2 from "../../assets/jacket2.jpeg";
 import { Link } from "react-router-dom";
+import data from "../Navigation/product.json";
 
 export default function ProductDetails({ updateCartCount }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -64,33 +65,37 @@ export default function ProductDetails({ updateCartCount }) {
           </div>
           <div className="w-full lg:w-2/4 details px-8">
             <div>
-              <div className="product-info py-6 border-b-2">
-                <div className="product-info-panel pb-10">
-                  <ul className="breadcumbs flex flex-wrap">
-                    <li className="mr-2">
-                      <Link>Women</Link>
-                    </li>
-                    <span className="divider mx-2">|</span>
-                    <li className="mr-2">
-                      <Link to="/NewArrivals">New Arrivals</Link>
-                    </li>
-                    <span className="divider mx-2">|</span>
-                    <li className="mr-2 underline-offset-4 underline">
-                      <Link>New in</Link>
-                    </li>
-                  </ul>
-                </div>
-                <h1 className="product-info-panel-title flex flex-col">
-                  <span className="mr-6 fontbold">Mini Frances Bag</span>
-                  <span className="product-info-panel__price fontThin text-[15px]">
-                    $2000
-                  </span>
-                </h1>
+              <div className="product-info-panel pb-10">
+                <ul className="breadcumbs flex flex-wrap">
+                  <li className="mr-2">
+                    <Link to={`/${data.categories[0].menu}`}>
+                      {data.categories[0].menu}
+                    </Link>
+                  </li>
+                  <span className="divider mx-2">|</span>
+                  <li className="mr-2 underline-offset-4 underline">
+                    <Link to={`/${data.categories[0].subMenu}`}>
+                      {data.categories[0].subMenu}
+                    </Link>
+                  </li>
+                  <span className="divider mx-2">|</span>
+                  <li className="mr-2 underline-offset-4 underline">
+                    <Link to={`/${data.categories[0].categories}`}>
+                      {data.categories[0].categories}
+                    </Link>
+                  </li>
+                </ul>
               </div>
+
               <div className="color-picker py-8 border-b-2">
                 <div className="color-picker__info flex items-center mb-4">
-                  <span className="color-picker__text uppercase fontbold text-sm">Color:</span> &nbsp;
-                  <div className="color-picker__label text-sm fontLight">Optic White</div>
+                  <span className="color-picker__text uppercase fontbold text-sm">
+                    Color:
+                  </span>{" "}
+                  &nbsp;
+                  <div className="color-picker__label text-sm fontLight">
+                    Optic White
+                  </div>
                 </div>
                 <div className="color-picker__swatch--container flex">
                   <div
@@ -136,18 +141,13 @@ export default function ProductDetails({ updateCartCount }) {
                       </div>
                       <div className="description-feature-text">
                         <ul className="">
-                        <p className="fontThin">
-  27 x 11 x 20cm/10.6 x 4.3 x 7.9in
-  Handle drop: 9cm/3.5in
-  Min. shoulder strap drop: 44.5cm/17.5in
-  Max. shoulder strap drop: 55.5cm/21.9in
-  Outer: 100% calf leather
-  Lining: 100% lambskin
-  Leather top handles
-  Made in Italy
-  Item 80725171
-</p>
-
+                          <p className="fontThin">
+                            27 x 11 x 20cm/10.6 x 4.3 x 7.9in Handle drop:
+                            9cm/3.5in Min. shoulder strap drop: 44.5cm/17.5in
+                            Max. shoulder strap drop: 55.5cm/21.9in Outer: 100%
+                            calf leather Lining: 100% lambskin Leather top
+                            handles Made in Italy Item 80725171
+                          </p>
                         </ul>
                       </div>
                     </div>
@@ -155,7 +155,9 @@ export default function ProductDetails({ updateCartCount }) {
                 </div>
               </div>
               <div className="product-sizes py-8">
-                <h3 className="fontBold mb-2 uppercase fontbold  text-sm mb-4">Sizes:</h3>
+                <h3 className="fontBold mb-2 uppercase fontbold  text-sm mb-4">
+                  Sizes:
+                </h3>
                 <div className="size-options flex">
                   <button
                     className={`size-option px-4 py-2 ${
