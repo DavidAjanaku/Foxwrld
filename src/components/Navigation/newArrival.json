@@ -1,209 +1,100 @@
-{
-    "data": [
-      {
-        "id": 8,
-        "image": [
-          {
-            "id": 8,
-            "image": "http://127.0.0.1:8000/images/Cqm4QCKwwCMSImce.jpeg"
-          },
-          {
-            "id": 9,
-            "image": "http://127.0.0.1:8000/images/wlrhChFi3YLbjMSn.jpeg"
-          },
-          {
-            "id": 10,
-            "image": "http://127.0.0.1:8000/images/e6ZUAOpoCSm8Xeix.jpeg"
-          }
-        ],
-        "frontImage": "http://127.0.0.1:8000/images/cR4Z8KdmQkPnuBl9.jpeg",
-        "alternateImage": "http://127.0.0.1:8000/images/g9Hv7MjyyUd5VwIf.jpeg",
-        "gender": "female",
-        "title": "Women Shirt",
-        "stock": "5",
-        "size": [
-          {
-            "id": 5,
-            "sizes": "XL"
-          },
-          {
-            "id": 6,
-            "sizes": "L"
-          },
-          {
-            "id": 7,
-            "sizes": "M"
-          }
-        ],
-        "categories": [
-          {
-            "id": 11,
-            "categories": "Jeans",
-            "subMenu": "BOTTOMS",
-            "menu": "Women"
-          },
-          {
-            "id": 12,
-            "categories": "Skirts",
-            "subMenu": "BOTTOMS",
-            "menu": "Women"
-          },
-          {
-            "id": 13,
-            "categories": "Leggings",
-            "subMenu": "BOTTOMS",
-            "menu": "Women"
-          }
-        ],
-        "details": "I love this",
-        "price": "100000",
-        "tag": "Tag4",
-        "upsell": "1000",
-        "salePrice": "1000",
-        "startDate": null,
-        "endDate": null,
-        "created_at": "2023/08/13 11:05 am"
-      },
-      {
-        "id": 9,
-        "image": [
-          {
-            "id": 11,
-            "image": "http://127.0.0.1:8000/images/image1.jpeg"
-          },
-          {
-            "id": 12,
-            "image": "http://127.0.0.1:8000/images/image2.jpeg"
-          }
-        ],
-        "frontImage": "http://127.0.0.1:8000/images/frontImage1.jpeg",
-        "alternateImage": "http://127.0.0.1:8000/images/alternateImage1.jpeg",
-        "gender": "male",
-        "title": "Men Shirt",
-        "stock": "10",
-        "size": [
-          {
-            "id": 8,
-            "sizes": "S"
-          },
-          {
-            "id": 9,
-            "sizes": "M"
-          },
-          {
-            "id": 10,
-            "sizes": "L"
-          }
-        ],
-        "categories": [
-          {
-            "id": 14,
-            "categories": "Shirts",
-            "subMenu": "TOPS",
-            "menu": "Men"
-          },
-          {
-            "id": 15,
-            "categories": "Trousers",
-            "subMenu": "TOPS",
-            "menu": "Men"
-          }
-        ],
-        "details": "Great fit",
-        "price": "75000",
-        "tag": "Tag2",
-        "upsell": "500",
-        "salePrice": "700",
-        "startDate": null,
-        "endDate": null,
-        "created_at": "2023/08/14 10:30 am"
-      },
-      {
-        "id": 10,
-        "image": [
-          {
-            "id": 13,
-            "image": "http://127.0.0.1:8000/images/image3.jpeg"
-          },
-          {
-            "id": 14,
-            "image": "http://127.0.0.1:8000/images/image4.jpeg"
-          }
-        ],
-        "frontImage": "http://127.0.0.1:8000/images/frontImage2.jpeg",
-        "alternateImage": "http://127.0.0.1:8000/images/alternateImage2.jpeg",
-        "gender": "female",
-        "title": "Women Dress",
-        "stock": "8",
-        "size": [
-          {
-            "id": 11,
-            "sizes": "S"
-          },
-          {
-            "id": 12,
-            "sizes": "M"
-          },
-          {
-            "id": 13,
-            "sizes": "XL"
-          }
-        ],
-        "categories": [
-          {
-            "id": 16,
-            "categories": "Dresses",
-            "subMenu": "BOTTOMS",
-            "menu": "Women"
-          },
-          {
-            "id": 17,
-            "categories": "Gowns",
-            "subMenu": "BOTTOMS",
-            "menu": "Women"
-          }
-        ],
-        "details": "Elegant design",
-        "price": "120000",
-        "tag": "Tag5",
-        "upsell": "1500",
-        "salePrice": "1100",
-        "startDate": null,
-        "endDate": null,
-        "created_at": "2023/08/15 09:45 am"
-      }
-    ],
-    "links": {
-      "first": "http://127.0.0.1:8000/api/female?page=1",
-      "last": "http://127.0.0.1:8000/api/female?page=1",
-      "prev": null,
-      "next": null
-    },
-    "meta": {
-      "current_page": 1,
-      "from": 1,
-      "last_page": 1,
-      "links": [
+ {
+  "data": [
+    {
+      "id": 8,
+      "image": [
         {
-          "url": null,
-          "label": "&laquo; Previous",
-          "active": false
+          "id": 8,
+          "image": "http://127.0.0.1:8000/images/Cqm4QCKwwCMSImce.jpeg"
         },
         {
-          "url": "http://127.0.0.1:8000/api/female?page=1",
-          "label": "1",
-          "active": true
+          "id": 9,
+          "image": "http://127.0.0.1:8000/images/wlrhChFi3YLbjMSn.jpeg"
         },
         {
-          "url": null,
-          "label": "Next &raquo;",
-          "active": false
+          "id": 10,
+          "image": "http://127.0.0.1:8000/images/e6ZUAOpoCSm8Xeix.jpeg"
         }
       ],
-      "path": "http://127.0.0.1:8000/api/female",
-      "per_page": 6,
-      "to": 1,
-      "total": 1
+      "frontImage": "http://127.0.0.1:8000/images/cR4Z8KdmQkPnuBl9.jpeg",
+      "alternateImage": "http://127.0.0.1:8000/images/g9Hv7MjyyUd5VwIf.jpeg",
+      "gender": "female",
+      "title": "Women Shirt",
+      "stock": "5",
+      "size": [
+        {
+          "id": 5,
+          "sizes": "XL"
+        },
+        {
+          "id": 6,
+          "sizes": "L"
+        },
+        {
+          "id": 7,
+          "sizes": "M"
+        }
+      ],
+      "categories": [
+        {
+          "id": 11,
+          "categories": "Jeans",
+          "subMenu": "BOTTOMS",
+          "menu": "Women"
+        },
+        {
+          "id": 12,
+          "categories": "Skirts",
+          "subMenu": "BOTTOMS",
+          "menu": "Women"
+        },
+        {
+          "id": 13,
+          "categories": "Leggings",
+          "subMenu": "BOTTOMS",
+          "menu": "Women"
+        }
+      ],
+      "details": "I love this",
+      "price": "100000",
+      "tag": "Tag4",
+      "upsell": "1000",
+      "salePrice": "1000",
+      "startDate": null,
+      "endDate": null,
+      "created_at": "2023/08/13 11:05 am"
     }
+  ],
+  "links": {
+    "first": "http://127.0.0.1:8000/api/female?page=1",
+    "last": "http://127.0.0.1:8000/api/female?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http://127.0.0.1:8000/api/female?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "path": "http://127.0.0.1:8000/api/female",
+    "per_page": 6,
+    "to": 1,
+    "total": 1
   }
-  
+}
