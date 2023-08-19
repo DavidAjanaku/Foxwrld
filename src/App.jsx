@@ -28,6 +28,8 @@ import Privacy from "./views/Privacy";
 import Return from "./views/Return";
 import Shipping from "./views/Shipping";
 import Terms from "./views/Terms";
+import Success from "./components/success"
+import Failure from "./components/failure";
 
 // import "ionicons/dist/css/ionicons.min.css";
 
@@ -60,6 +62,9 @@ function App() {
         <Route path="/Return" element={<Return />} />
         <Route path="/Shipping" element={<Shipping />} />
         <Route path="/Terms" element={<Terms />} />
+        <Route path="/Success" element={<Success />} />
+        <Route path="/Failure" element={<Failure />} />
+
 
 
 
