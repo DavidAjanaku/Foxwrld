@@ -1,57 +1,14 @@
 {
-    "data": {
-      "Categories": [
-        {
-          "id": 7,
-          "categories": "Blouses",
-          "subMenu": "TOPS",
-          "menu": "Women"
-        },
-        {
-          "id": 8,
-          "categories": "T-Shirts",
-          "subMenu": "TOPS",
-          "menu": "Women"
-        },
-        {
-          "id": 9,
-          "categories": "Tunics",
-          "subMenu": "TOPS",
-          "menu": "Women"
-        },
-        {
-          "id": 10,
-          "categories": "Sweaters",
-          "subMenu": "TOPS",
-          "menu": "Women"
-        },
-        {
-          "id": 11,
-          "categories": "Jeans",
-          "subMenu": "BOTTOMS",
-          "menu": "Women"
-        },
-        {
-          "id": 12,
-          "categories": "Skirts",
-          "subMenu": "BOTTOMS",
-          "menu": "Women"
-        },
-        {
-          "id": 13,
-          "categories": "Leggings",
-          "subMenu": "BOTTOMS",
-          "menu": "Women"
-        },
-        {
-          "id": 14,
-          "categories": "Shorts",
-          "subMenu": "BOTTOMS",
-          "menu": "Women"
-        }
-      ],
-      "Title": "Women",
-      "id": 2
-    }
+  "data": {
+    "id": 1,
+    "Title": "Men",
+    "Categories": [
+      { "id": 1, "categories": "Shirts", "subMenu": "TOPS", "menu": "Men" },
+      { "id": 2, "categories": "T-Shirt", "subMenu": "TOPS", "menu": "Men" },
+      { "id": 3, "categories": "Polo", "subMenu": "TOPS", "menu": "Men" },
+      { "id": 4, "categories": "Pant", "subMenu": "Bottom", "menu": "Men" },
+      { "id": 5, "categories": "Jean", "subMenu": "Bottom", "menu": "Men" },
+      { "id": 6, "categories": "Joggers", "subMenu": "Bottom", "menu": "Men" }
+    ]
   }
-  
+}

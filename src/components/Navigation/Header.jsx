@@ -8,6 +8,8 @@ export default function Header({ color, cartCount }) {
   const [isNewInDropdownOpen, setIsNewInDropdownOpen] = useState(false);
   const [isWomenDropdown, setIsWomenDropdown] = useState(false);
   const [isMenDropdown, setIsMenDropdown] = useState(false);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+
 
   const dropdownTimeoutRef = useRef(null);
   const newInDropdownTimeoutRef = useRef(null);
@@ -162,17 +164,22 @@ export default function Header({ color, cartCount }) {
                                   </h1>
                                   <ul className=" text-black">
                                     {itemGroup.items.map((submenu) => (
-                                      <li
-                                        key={submenu.text}
-                                        className="text-black"
-                                      >
-                                        <Link
-                                          to={submenu.items[0].link || "#"}
-                                          className="text-[12px] fontThin"
-                                        >
-                                          {submenu.text}
-                                        </Link>
-                                      </li>
+                                  <li
+                                  key={submenu.text}
+                                  className="text-black"
+                                  onClick={() => {
+                                    setSelectedSubcategory(submenu);
+                                    console.log("Selected Subcategory:", {
+                                      title: menu.title,
+                                      subtitle: submenu.text,
+                                      item: submenu.items[0].text
+                                    });
+                                  }}
+                                >
+                                  <Link to={submenu.items[0].link || "#"} className="text-[12px] fontThin">
+                                    {submenu.text}
+                                  </Link>
+                                </li>
                                     ))}
                                   </ul>
                                </div>

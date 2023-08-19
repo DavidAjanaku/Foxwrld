@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
-import yourJsonData from '../Navigation/jsonData.json'
+import yourJsonData from "../Navigation/menuOrder.json";
 
 export default function MenuEditor() {
   const [activeDropdown1, setActiveDropdown1] = useState(false);
@@ -64,9 +64,12 @@ export default function MenuEditor() {
     subtitle: "Frontpage",
     items: ["Tops", "Bottoms", "Accessories"],
   });
-
-  const openEditModal1 = () => {
+  const openEditModal1 = (subMenu) => {
     setShowEditModal1(true);
+    const filteredCategories = editedMenuData.data.Categories.filter(
+      (category) => category.subMenu === subMenu
+    );
+    setEditContent1(filteredCategories);
   };
 
   const closeEditModal1 = () => {
@@ -119,7 +122,6 @@ export default function MenuEditor() {
     // Log the form data to the console
     console.log("New Menu Data:", newMenuData);
 
- 
     closeCreateModal();
   };
 
@@ -173,6 +175,17 @@ export default function MenuEditor() {
       return newSubtitles;
     });
   };
+
+  const groupedCategories = editedMenuData.data.Categories.reduce(
+    (grouped, category) => {
+      if (!grouped[category.subMenu]) {
+        grouped[category.subMenu] = [];
+      }
+      grouped[category.subMenu].push(category.categories);
+      return grouped;
+    },
+    {}
+  );
 
   return (
     <div className="flex">
@@ -382,112 +395,67 @@ export default function MenuEditor() {
         </div>
       )}
 
-{showEditModal1 && (
-  <div className="fixed inset-0 flex items-center justify-center z-50">
-    <div className="modal-overlay">
-      <form
-        className="bg-white p-4 rounded-lg shadow-md overflow-scroll h-[70vh] w-[70vh]"
-        onSubmit={saveEditedContent1}
-      >
-        <h2 class="text-lg font-semibold mb-4">Edit Cards Content</h2>
-        {editedMenuData[0].subtitles.map((subtitle, subtitleIndex) => (
-          <div key={subtitleIndex} className="mb-10 p-4">
-            {/* Render subtitle text input */}
-            <input
-              type="text"
-              className="border rounded w-full p-2 mb-2"
-              value={subtitle.text}
-              onChange={(e) =>
-                setEditedMenuData((prevData) => ({
-                  ...prevData,
-                  [0]: {
-                    ...prevData[0],
-                    subtitles: prevData[0].subtitles.map((sub, i) =>
-                      i === subtitleIndex ? { ...sub, text: e.target.value } : sub
-                    ),
-                  },
-                }))
-              }
-            />
-
-            {/* Render items */}
-            {subtitle.items.map((item, itemIndex) => (
-              <div key={itemIndex}>
-                {/* Render item text input */}
-                <input
-                  type="text"
-                  className="border rounded w-full p-2 mb-2"
-                  value={item.text}
-                  onChange={(e) =>
-                    setEditedMenuData((prevData) => ({
-                      ...prevData,
-                      [0]: {
-                        ...prevData[0],
-                        subtitles: prevData[0].subtitles.map((sub, i) =>
-                          i === subtitleIndex
-                            ? {
-                                ...sub,
-                                items: sub.items.map((it, j) =>
-                                  j === itemIndex ? { ...it, text: e.target.value } : it
-                                ),
+      {showEditModal1 && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="modal-overlay">
+            <form
+              className="bg-white p-4 rounded-lg shadow-md overflow-scroll h-[70vh] w-[70vh]"
+              onSubmit={saveEditedContent1}
+            >
+              <h2 class="text-lg font-semibold mb-4">Edit Cards Content</h2>
+              {Object.entries(groupedCategories).map(
+                ([subMenu, categories]) => (
+                  <div
+                    key={subMenu}
+                    className="bg-white p-4 rounded-lg shadow-md my-4"
+                  >
+                    <div className="flex justify-between items-center">
+                      <span className="text-xl font-semibold">{subMenu}</span>
+                      {/* ... (other controls) */}
+                    </div>
+                    <div className="mt-2">
+                      <ul>
+                        {categories.map((category, categoryIndex) => (
+                          <li key={categoryIndex}>
+                            <input
+                              className="border m-4"
+                              type="text"
+                              value={category}
+                              onChange={(e) =>
+                                handleCategoryChange(
+                                  subMenu,
+                                  categoryIndex,
+                                  e.target.value
+                                )
                               }
-                            : sub
-                        ),
-                      },
-                    }))
-                  }
-                />
+                            />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )
+              )}
 
-                {/* Render item link input */}
-                <input
-                  type="url"
-                  className="border rounded w-full p-2 mb-2"
-                  placeholder="Enter URL"
-                  value={item.link}
-                  onChange={(e) =>
-                    setEditedMenuData((prevData) => ({
-                      ...prevData,
-                      [0]: {
-                        ...prevData[0],
-                        subtitles: prevData[0].subtitles.map((sub, i) =>
-                          i === subtitleIndex
-                            ? {
-                                ...sub,
-                                items: sub.items.map((it, j) =>
-                                  j === itemIndex ? { ...it, link: e.target.value } : it
-                                ),
-                              }
-                            : sub
-                        ),
-                      },
-                    }))
-                  }
-                />
+              <div className="flex justify-end mt-4">
+                <button
+                  type="submit"
+                  className="bg-green-500 text-white px-4 py-2 mr-2"
+                >
+                  Save
+                </button>
+                <button
+                  type="button"
+                  className="bg-gray-300 text-gray-700 px-4 py-2"
+                  onClick={closeEditModal1}
+                >
+                  Cancel
+                </button>
               </div>
-            ))}
+            </form>
           </div>
-        ))}
-
-        <div className="flex justify-end mt-4">
-          <button
-            type="submit"
-            className="bg-green-500 text-white px-4 py-2 mr-2"
-          >
-            Save
-          </button>
-          <button
-            type="button"
-            className="bg-gray-300 text-gray-700 px-4 py-2"
-            onClick={closeEditModal1}
-          >
-            Cancel
-          </button>
         </div>
-      </form>
-    </div>
-  </div>
-)}
-
+      )}
 
       {showEditModal2 && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -517,44 +485,35 @@ export default function MenuEditor() {
                 <label className="block text-gray-700 font-semibold">
                   Items:
                 </label>
-                {editContent2.items.map((item, index) => (
-                  <div key={index} className="mb-2">
-                    <label className="text-gray-700 font-semibold">
-                      Item {index + 1}:
-                    </label>
-                    <input
-                      type="text"
-                      className="border rounded w-full p-2"
-                      value={item.text}
-                      onChange={(e) =>
-                        setEditContent2((prevContent) => ({
-                          ...prevContent,
-                          items: prevContent.items.map((item, i) =>
-                            i === index
-                              ? { ...item, text: e.target.value }
-                              : item
-                          ),
-                        }))
-                      }
-                    />
-                    <input
-                      type="url"
-                      className="border rounded w-full p-2 mt-1"
-                      placeholder="Enter URL"
-                      value={item.link}
-                      onChange={(e) =>
-                        setEditContent2((prevContent) => ({
-                          ...prevContent,
-                          items: prevContent.items.map((item, i) =>
-                            i === index
-                              ? { ...item, link: e.target.value }
-                              : item
-                          ),
-                        }))
-                      }
-                    />
+                {editedMenuData.data.categories.length > 0 && (
+                  <div>
+                    {editedMenuData.data.categories.map((category) => (
+                      <div
+                        key={category.categories}
+                        className="bg-white p-4 rounded-lg shadow-md my-4"
+                      >
+                        <div
+                          className="flex justify-between items-center"
+                          onClick={() => toggleDropdown(category.subMenu)}
+                        >
+                          <span className="text-xl font-semibold">
+                            {category.subMenu}
+                          </span>
+                          {/* ... (other controls) */}
+                        </div>
+                        {activeDropdown === category.subMenu && (
+                          <div className="mt-2">
+                            <ul>
+                              {category.categories.map((item, itemIndex) => (
+                                <li key={itemIndex}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
               <div className="flex justify-end">
                 <button
