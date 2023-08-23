@@ -10,6 +10,13 @@ export default function Accordion() {
   const [selectedStyles, setSelectedStyles] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
 
+
+  const [selectedData, setSelectedData] = useState({
+    categories: [],
+    sizes: []
+  });
+
+
   const toggleCategory = () => {
     setCategoryOpen(!categoryOpen);
   };
@@ -23,6 +30,7 @@ export default function Accordion() {
   };
 
   const handleCategorySelection = (subcategory) => {
+    // Update selectedCategories state
     if (selectedCategories.includes(subcategory)) {
       setSelectedCategories(
         selectedCategories.filter((item) => item !== subcategory)
@@ -32,6 +40,8 @@ export default function Accordion() {
     }
   };
 
+ 
+
   const handleStyleSelection = (subcategory) => {
     if (selectedStyles.includes(subcategory)) {
       setSelectedStyles(selectedStyles.filter((item) => item !== subcategory));
@@ -40,13 +50,27 @@ export default function Accordion() {
     }
   };
 
-  const handleSizeSelection = (subcategory) => {
-    if (selectedSizes.includes(subcategory)) {
-      setSelectedSizes(selectedSizes.filter((item) => item !== subcategory));
+  const handleSizeSelection = (size) => {
+    // Update selectedSizes state
+    if (selectedSizes.includes(size)) {
+      setSelectedSizes(selectedSizes.filter((item) => item !== size));
     } else {
-      setSelectedSizes([...selectedSizes, subcategory]);
+      setSelectedSizes([...selectedSizes, size]);
     }
   };
+
+    // Update the selectedData state whenever categories or sizes change
+    useEffect(() => {
+      setSelectedData({
+        categories: selectedCategories,
+        sizes: selectedSizes
+      });
+    }, [selectedCategories, selectedSizes]);
+
+
+    useEffect(() => {
+      console.log("Selected Data:", selectedData);
+    }, [selectedData]);
 
   const handleResetCategories = () => {
     setSelectedCategories([]);

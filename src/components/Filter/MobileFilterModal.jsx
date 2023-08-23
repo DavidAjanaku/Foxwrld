@@ -38,6 +38,9 @@ const MobileFilterModal = () => {
       setSelectedTags([...selectedTags, tag]);
     }
   };
+
+
+  
  
   const getUniqueSubcategoryCounts = () => {
     const subcategoryCounts = {};
