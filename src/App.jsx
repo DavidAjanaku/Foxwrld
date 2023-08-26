@@ -30,6 +30,9 @@ import Shipping from "./views/Shipping";
 import Terms from "./views/Terms";
 import Success from "./components/success"
 import Failure from "./components/failure";
+import Forgot from "./views/Forgot";
+import ConfirmPassword from "./views/ConfirmPassword";
+import Verify from "./views/Verify";
 
 // import "ionicons/dist/css/ionicons.min.css";
 
@@ -64,6 +67,11 @@ function App() {
         <Route path="/Terms" element={<Terms />} />
         <Route path="/Success" element={<Success />} />
         <Route path="/Failure" element={<Failure />} />
+        <Route path="/Forgot" element={<Forgot />} />
+        <Route path="/ConfirmPassword" element={<ConfirmPassword />} />
+        <Route path="/Verify" element={<Verify />} />
+
+
 
 
 

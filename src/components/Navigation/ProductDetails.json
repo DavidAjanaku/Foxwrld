@@ -1,0 +1,57 @@
+[
+  {
+    "id": 8,
+    "image": [
+      {
+        "id": 8,
+        "image": "http://127.0.0.1:8000/images/Cqm4QCKwwCMSImce.jpeg"
+      },
+      {
+        "id": 9,
+        "image": "http://127.0.0.1:8000/images/wlrhChFi3YLbjMSn.jpeg"
+      },
+      {
+        "id": 10,
+        "image": "http://127.0.0.1:8000/images/e6ZUAOpoCSm8Xeix.jpeg"
+      }
+    ],
+    "frontImage": "http://127.0.0.1:8000/images/cR4Z8KdmQkPnuBl9.jpeg",
+    "alternateImage": "http://127.0.0.1:8000/images/g9Hv7MjyyUd5VwIf.jpeg",
+    "gender": "female",
+    "title": "Women Shirt",
+    "stock": "5",
+    "size": [
+      { "id": 5, "sizes": "XL" },
+      { "id": 6, "sizes": "L" },
+      { "id": 7, "sizes": "M" }
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "categories": "Jeans",
+        "subMenu": "BOTTOMS",
+        "menu": "Women"
+      },
+      {
+        "id": 12,
+        "categories": "Skirts",
+        "subMenu": "BOTTOMS",
+        "menu": "Women"
+      },
+      {
+        "id": 13,
+        "categories": "Leggings",
+        "subMenu": "BOTTOMS",
+        "menu": "Women"
+      }
+    ],
+    "details": "I love this",
+    "price": "100000",
+    "tag": "Tag4",
+    "upsell": "1000",
+    "salePrice": "1000",
+    "startDate": null,
+    "endDate": null,
+    "created_at": "2023/08/13 11:05 am"
+  }
+]

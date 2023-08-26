@@ -13,6 +13,7 @@ import pjamas1 from "../assets/pjamas1.jpeg";
 import pjamas2 from "../assets/pjamas2.jpeg";
 import jacket1 from "../assets/jacket1.jpeg";
 import jacket2 from "../assets/jacket2.jpeg";
+import productData from "../components/Navigation/ProductDetails.json"
 
 export default function NewArrivals() {
   return (
@@ -39,51 +40,18 @@ export default function NewArrivals() {
           </div>
         </div>
         <div>
-          <div className="flex flex-wrap justify-center">
-            <Link to="/ProductPage">
-              <ProductCard
-                image={sandals}
-                alternateImage={coats}
-                title={"Oversized Cat-eye Frame Sunglasses "}
-                color={"3"}
-                category={"New In"}
-              />
-            </Link>
-            <ProductCard
-              image={jacket1}
-              alternateImage={jacket2}
-              title={"Varsanol Casual Leather"}
-              color={"3"}
-              category={"New In"}
-            />
-            <ProductCard
-              image={sandals}
-              alternateImage={coats}
-              title={"Heyy"}
-              color={"3"}
-              category={"New In"}
-            />
-            <ProductCard
-              image={sandals}
-              alternateImage={coats}
-              title={"Heyy"}
-              color={"3"}
-              category={"New In"}
-            />
-            <ProductCard
-              image={pjamas1}
-              alternateImage={pjamas2}
-              title={"Pyjamas"}
-              color={"2"}
-              category={"New In"}
-            />
-            <ProductCard
-              image={sandals}
-              alternateImage={coats}
-              title={"Heyy"}
-              color={"3"}
-              category={"New In"}
-            />
+        <div className="flex flex-wrap justify-center">
+            {productData.map((product) => (
+              <Link to={`/ProductPage/${product.id}`} key={product.id}>
+                <ProductCard
+                  image={product.image[0].image} // Use the first image URL from the array
+                  alternateImage={product.alternateImage}
+                  title={product.title}
+                  color={product.color} // You should replace this with the actual color value
+                  category={product.categories[0].categories} // Use the first category from the array
+                />
+              </Link>
+            ))}
           </div>
           <Pagination />
         </div>
